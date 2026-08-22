@@ -1,1 +1,18 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding Academy</title>
+</head>
 
+<body>
+
+    <h1>🚀 Coding Academy</h1>
+
+    <p>यहाँ से Coding सीखना शुरू करें।</p>
+
+    <button>शुरू करें</button>
+
+</body>
+</html>
