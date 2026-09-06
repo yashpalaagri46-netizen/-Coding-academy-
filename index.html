@@ -1,1 +1,100 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mission Lakshya NEET 2027 - Main Portal</title>
+    <style>
+        * { box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        body { margin: 0; display: flex; height: 100vh; background-color: #0f172a; color: #f8fafc; }
+        
+        /* Sidebar Styling */
+        .sidebar { width: 250px; background-color: #1e293b; padding: 20px; display: flex; flex-direction: column; gap: 15px; }
+        .sidebar h2 { color: #38bdf8; font-size: 18px; margin-bottom: 20px; }
+        .nav-btn { background: #334155; color: white; border: none; padding: 12px; border-radius: 8px; cursor: pointer; text-align: left; font-size: 14px; }
+        .nav-btn:hover { background: #475569; }
 
+        /* Main Content Styling */
+        .main-content { flex-grow: 1; padding: 20px; overflow-y: auto; display: flex; flex-direction: column; gap: 20px; }
+        .card { background: #1e293b; padding: 20px; border-radius: 12px; }
+        .card h3 { margin-top: 0; color: #38bdf8; }
+        
+        /* Frame & Input Styling */
+        iframe { width: 100%; height: 550px; border: none; border-radius: 8px; background: #ffffff; }
+        .chat-box { display: flex; gap: 10px; margin-top: 15px; }
+        #ai-input { flex-grow: 1; padding: 12px; border-radius: 8px; border: none; background: #334155; color: white; }
+        #ask-btn { padding: 12px 24px; background: #6366f1; color: white; border: none; border-radius: 8px; cursor: pointer; }
+        #ai-response { margin-top: 15px; padding: 15px; background: #0f172a; border-radius: 8px; min-height: 60px; }
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <h2>Mission Lakshya 2027</h2>
+        <button class="nav-btn" onclick="openSection('ai-section')">✨ AI Doubt Solver</button>
+        <button class="nav-btn" onclick="openSection('youtube-section')">🔴 Live Classes</button>
+        <button class="nav-btn" onclick="openSection('other-website-section')">🌐 My Other Website</button>
+    </div>
+
+    <div class="main-content">
+        
+        <div id="ai-section" class="card">
+            <h3>AI Doubt Solver</h3>
+            <p>Physics, Chemistry, ya Biology ka koi bhi doubt poochein:</p>
+            <div id="ai-response">Jawab yahan dikhega...</div>
+            <div class="chat-box">
+                <input type="text" id="ai-input" placeholder="Jaise: Explain Newton's Third Law in Hindi...">
+                <button id="ask-btn" onclick="askAI()">Poochhein</button>
+            </div>
+        </div>
+
+        <div id="youtube-section" class="card" style="display: none;">
+            <h3>YouTube Live Class</h3>
+            <iframe src="https://www.youtube.com/embed/live_stream?channel=YOUR_CHANNEL_ID" allowfullscreen></iframe>
+        </div>
+
+        <div id="other-website-section" class="card" style="display: none;">
+            <h3>Other Study Portal</h3>
+            <iframe src="https://your-other-website.vercel.app"></iframe>
+        </div>
+
+    </div>
+
+    <script>
+        // Sidebar tabs ko switch karne ka function
+        function openSection(sectionId) {
+            document.getElementById('ai-section').style.display = 'none';
+            document.getElementById('youtube-section').style.display = 'none';
+            document.getElementById('other-website-section').style.display = 'none';
+            document.getElementById(sectionId).style.display = 'block';
+        }
+
+        // AI se doubt poochhne ka function
+        async function askAI() {
+            const question = document.getElementById('ai-input').value;
+            const responseBox = document.getElementById('ai-response');
+            
+            if(!question) {
+                alert("Kripya apna sawal likhein!");
+                return;
+            }
+
+            responseBox.innerHTML = "<em>Sawal ka jawab dhundha ja raha hai...</em>";
+
+            try {
+                // Express backend API route
+                const res = await fetch('/api/solve-doubt', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ prompt: question })
+                });
+
+                const data = await res.json();
+                responseBox.innerHTML = data.answer;
+            } catch (err) {
+                responseBox.innerHTML = "<span style='color: #ef4444;'>Backend server se connect hone me dikkat aayi. Check karein ki Express server chal raha hai ya nahi.</span>";
+            }
+        }
+    </script>
+</body>
+</html>
