@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Books Library | Mission Lakshya NEET 2027</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Main Website CSS -->
+  <link rel="stylesheet" href="../style.css">
+
+  <style>
+    /* ================================
+       BOOKS PAGE
+    ================================= */
+
+    .books-page {
+      min-height: 100vh;
+      padding: 24px;
+      max-width: 1450px;
+      margin: auto;
+    }
+
+    .books-topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+    }
+
+    .books-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .books-brand img {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      object-fit: cover;
+      background: rgba(255,255,255,.08);
+    }
+
+    .books-brand h2 {
+      margin: 0;
+      font-size: 20px;
+    }
+
+    .books-brand p {
+      margin: 3px 0 0;
+      opacity: .65;
+      font-size: 12px;
+    }
+
+    .books-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .books-btn {
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      color: inherit;
+      padding: 11px 15px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 700;
+      cursor: pointer;
+      transition: .2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .books-btn:hover {
+      transform: translateY(-2px);
+      background: rgba(255,255,255,.1);
+    }
+
+    .books-btn.primary {
+      background: linear-gradient(135deg,#6d28d9,#9333ea);
+      border-color: transparent;
+    }
+
+    /* Hero */
+
+    .books-hero {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 26px;
+      padding: 34px;
+      background:
+        radial-gradient(circle at 90% 20%,rgba(139,92,246,.28),transparent 35%),
+        radial-gradient(circle at 10% 100%,rgba(59,130,246,.15),transparent 35%),
+        rgba(255,255,255,.045);
+      margin-bottom: 24px;
+    }
+
+    .books-hero-content {
+      max-width: 780px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .books-badge {
+      display: inline-flex;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(139,92,246,.14);
+      border: 1px solid rgba(139,92,246,.3);
+      font-size: 12px;
+      font-weight: 800;
+      color: #c4b5fd;
+      margin-bottom: 15px;
+    }
+
+    .books-hero h1 {
+      margin: 0;
+      font-size: clamp(30px,5vw,52px);
+      line-height: 1.08;
+      font-weight: 900;
+    }
+
+    .books-hero h1 span {
+      background: linear-gradient(90deg,#a78bfa,#60a5fa);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .books-hero p {
+      max-width: 720px;
+      opacity: .72;
+      line-height: 1.7;
+      margin: 16px 0 0;
+    }
+
+    .hero-book-stack {
+      position: absolute;
+      right: 70px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 95px;
+      opacity: .16;
+      animation: floatBook 4s ease-in-out infinite;
+    }
+
+    @keyframes floatBook {
+      0%,100% { transform:translateY(-50%) rotate(-4deg); }
+      50% { transform:translateY(calc(-50% - 15px)) rotate(4deg); }
+    }
+
+    /* Stats */
+
+    .book-stats {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 14px;
+      margin-bottom: 25px;
+    }
+
+    .book-stat {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,.045);
+      border: 1px solid rgba(255,255,255,.09);
+    }
+
+    .book-stat-icon {
+      font-size: 25px;
+      margin-bottom: 10px;
+    }
+
+    .book-stat strong {
+      display: block;
+      font-size: 25px;
+    }
+
+    .book-stat span {
+      opacity: .6;
+      font-size: 12px;
+    }
+
+    /* Search */
+
+    .books-toolbar {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 22px;
+      flex-wrap: wrap;
+    }
+
+    .books-search {
+      flex: 1;
+      min-width: 230px;
+      position: relative;
+    }
+
+    .books-search input {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 14px 16px 14px 45px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.1);
+      background: rgba(255,255,255,.055);
+      color: inherit;
+      outline: none;
+      font-family: inherit;
+    }
+
+    .books-search-icon {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: .55;
+    }
+
+    .books-filter {
+      padding: 13px 14px;
+      border-radius: 13px;
+      border: 1px solid rgba(255,255,255,.1);
+      background: rgba(255,255,255,.055);
+      color: inherit;
+      outline: none;
+      font-family: inherit;
+    }
+
+    .books-filter option {
+      color: #111;
+    }
+
+    /* Subject cards */
+
+    .subject-section-title {
+      margin: 28px 0 14px;
+      font-size: 21px;
+    }
+
+    .subject-books {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 16px;
+    }
+
+    .subject-book {
+      position: relative;
+      overflow: hidden;
+      padding: 21px;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,.1);
+      background: rgba(255,255,255,.045);
+      transition: .25s ease;
+    }
+
+    .subject-book:hover {
+      transform: translateY(-5px);
+      border-color: rgba(167,139,250,.4);
+      box-shadow: 0 15px 45px rgba(0,0,0,.2);
+    }
+
+    .book-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .book-icon {
+      width: 50px;
+      height: 50px;
+      display: grid;
+      place-items: center;
+      border-radius: 15px;
+      font-size: 27px;
+      background: rgba(139,92,246,.13);
+    }
+
+    .book-tag {
+      padding: 5px 9px;
+      border-radius: 999px;
+      font-size: 10px;
+      font-weight: 800;
+      background: rgba(34,197,94,.12);
+      color: #86efac;
+    }
+
+    .subject-book h3 {
+      margin: 18px 0 7px;
+      font-size: 18px;
+    }
+
+    .subject-book p {
+      margin: 0;
+      font-size: 13px;
+      line-height: 1.6;
+      opacity: .62;
+    }
+
+    .book-meta {
+      display: flex;
+      gap: 12px;
+      margin-top: 15px;
+      font-size: 11px;
+      opacity: .6;
+      flex-wrap: wrap;
+    }
+
+    .book-actions {
+      display: flex;
+      gap: 8px;
+      margin-top: 17px;
+    }
+
+    .book-action {
+      flex: 1;
+      text-align: center;
+      padding: 10px;
+      border-radius: 11px;
+      text-decoration: none;
+      color: inherit;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.08);
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .book-action.primary {
+      background: linear-gradient(135deg,#6d28d9,#9333ea);
+      border: none;
+    }
+
+    /* NCERT */
+
+    .ncert-section {
+      margin-top: 30px;
+      padding: 24px;
+      border-radius: 22px;
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.09);
+    }
+
+    .ncert-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 17px;
+      flex-wrap: wrap;
+    }
+
+    .ncert-head h2 {
+      margin: 0;
+      font-size: 21px;
+    }
+
+    .ncert-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 12px;
+    }
+
+    .ncert-card {
+      padding: 17px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.035);
+      text-decoration: none;
+      color: inherit;
+      transition: .2s;
+    }
+
+    .ncert-card:hover {
+      transform: translateY(-3px);
+      background: rgba(255,255,255,.07);
+    }
+
+    .ncert-card strong {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .ncert-card span {
+      font-size: 11px;
+      opacity: .58;
+    }
+
+    /* Extra resources */
+
+    .resource-grid {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 13px;
+      margin-top: 18px;
+    }
+
+    .resource-card {
+      padding: 18px;
+      border-radius: 17px;
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.035);
+      text-decoration: none;
+      color: inherit;
+      transition: .2s;
+    }
+
+    .resource-card:hover {
+      transform: translateY(-3px);
+    }
+
+    .resource-card .r-icon {
+      font-size: 25px;
+      margin-bottom: 10px;
+    }
+
+    .resource-card strong {
+      display: block;
+      font-size: 14px;
+    }
+
+    .resource-card span {
+      display: block;
+      margin-top: 5px;
+      font-size: 11px;
+      opacity: .55;
+    }
+
+    .empty-books {
+      display: none;
+      padding: 40px;
+      text-align: center;
+      border-radius: 18px;
+      border: 1px dashed rgba(255,255,255,.15);
+      opacity: .65;
+      margin-top: 15px;
+    }
+
+    /* Mobile */
+
+    @media (max-width: 1000px) {
+      .book-stats {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      .subject-books {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      .ncert-grid {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      .resource-grid {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      .hero-book-stack {
+        right: 25px;
+      }
+    }
+
+    @media (max-width: 650px) {
+      .books-page {
+        padding: 15px;
+      }
+
+      .books-hero {
+        padding: 25px 20px;
+      }
+
+      .hero-book-stack {
+        display: none;
+      }
+
+      .book-stats,
+      .subject-books,
+      .ncert-grid,
+      .resource-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .books-topbar {
+        align-items: flex-start;
+      }
+
+      .books-actions {
+        width: 100%;
+      }
+
+      .books-actions .books-btn {
+        flex: 1;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="books-page">
+
+    <!-- TOP BAR -->
+    <header class="books-topbar">
+
+      <div class="books-brand">
+        <img src="../logo.png"
+             alt="Mission Lakshya Logo"
+             onerror="this.style.display='none'">
+
+        <div>
+          <h2>Mission Lakshya</h2>
+          <p>NEET UG 2027 • Books Library</p>
+        </div>
+      </div>
+
+      <div class="books-actions">
+        <a class="books-btn" href="../index.html">🏠 Home</a>
+        <a class="books-btn" href="library.html">📚 Library</a>
+        <a class="books-btn primary" href="question-bank.html">📝 Question Bank</a>
+      </div>
+
+    </header>
+
+
+    <!-- HERO -->
+    <section class="books-hero">
+
+      <div class="books-hero-content">
+
+        <div class="books-badge">
+          📚 NEET UG 2027 STUDY LIBRARY
+        </div>
+
+        <h1>
+          अपनी पढ़ाई की पूरी
+          <span>Digital Books Library</span>
+        </h1>
+
+        <p>
+          Physics, Chemistry और Biology की study books,
+          NCERT resources और NEET preparation material
+          एक ही जगह पर।
+        </p>
+
+      </div>
+
+      <div class="hero-book-stack">
+        📚
+      </div>
+
+    </section>
+
+
+    <!-- STATS -->
+    <section class="book-stats">
+
+      <div class="book-stat">
+        <div class="book-stat-icon">📚</div>
+        <strong>24+</strong>
+        <span>Study Resources</span>
+      </div>
+
+      <div class="book-stat">
+        <div class="book-stat-icon">🧬</div>
+        <strong>3</strong>
+        <span>NEET Subjects</span>
+      </div>
+
+      <div class="book-stat">
+        <div class="book-stat-icon">📖</div>
+        <strong>NCERT</strong>
+        <span>Core Material</span>
+      </div>
+
+      <div class="book-stat">
+        <div class="book-stat-icon">🎯</div>
+        <strong>2027</strong>
+        <span>Target Year</span>
+      </div>
+
+    </section>
+
+
+    <!-- SEARCH / FILTER -->
+    <section class="books-toolbar">
+
+      <div class="books-search">
+        <span class="books-search-icon">🔎</span>
+        <input
+          id="bookSearch"
+          type="search"
+          placeholder="Book, subject या chapter खोजें..."
+          autocomplete="off">
+      </div>
+
+      <select id="subjectFilter" class="books-filter">
+        <option value="all">सभी Subjects</option>
+        <option value="physics">Physics</option>
+        <option value="chemistry">Chemistry</option>
+        <option value="biology">Biology</option>
+      </select>
+
+    </section>
+
+
+    <!-- PHYSICS -->
+    <h2 class="subject-section-title">⚡ Physics</h2>
+
+    <section class="subject-books">
+
+      <article class="subject-book" data-subject="physics" data-search="physics ncert class 11">
+        <div class="book-top">
+          <div class="book-icon">⚡</div>
+          <span class="book-tag">NCERT</span>
+        </div>
+
+        <h3>Physics Class 11</h3>
+
+        <p>
+          Class 11 Physics के important chapters और
+          NEET preparation के लिए core study material.
+        </p>
+
+        <div class="book-meta">
+          <span>📖 Class 11</span>
+          <span>🎯 NEET</span>
+        </div>
+
+        <div class="book-actions">
+          <a href="question-bank.html" class="book-action primary">📝 Questions</a>
+          <button class="book-action" onclick="saveBook(this,'Physics Class 11')">☆ Save</button>
+        </div>
+      </article>
+
+
+      <article class="subject-book" data-subject="physics" data-search="physics ncert class 12">
+        <div class="book-top">
+          <div class="book-icon">🔋</div>
+          <span class="book-tag">NCERT</span>
+        </div>
+
+        <h3>Physics Class 12</h3>
+
+        <p>
+          Class 12 Physics topics और NEET-focused
+          revision resources.
+        </p>
+
+        <div class="book-meta">
+          <span>📖 Class 12</span>
+          <span>🎯 NEET</span>
+        </div>
+
+        <div class="book-actions">
+          <a href="question-bank.html" class="book-action primary">📝 Questions</a>
+          <button class="book-action" onclick="saveBook(this,'Physics Class 12')">☆ Save</button>
+        </div>
+      </article>
+
+
+      <article class="subject-book" data-subject="physics" data-search="physics formula revision">
+        <div class="book-top">
+          <div class="book-icon">📐</div>
+          <span class="book-tag">REVISION</span>
+        </div>
+
+        <h3>Physics Formula Revision</h3>
+
+        <p>
+          Important formulas, concepts और quick revision
+          के लिए dedicated section.
+        </p>
+
+        <div class="book-meta">
+          <span>⚡ Formula</span>
+          <span>🎯 Revision</span>
+        </div>
+
+        <div class="book-actions">
+          <a href="quiz.html" class="book-action primary">🧠 Quiz</a>
+          <button class="book-action" onclick="saveBook(this,'Physics Formula Revision')">☆ Save</button>
+        </div>
+      </article>
+
+    </section>
+
+
+    <!-- CHEMISTRY -->
+    <h2 class="subject-section-title">🧪 Chemistry</h2>
+
+    <section class="subject-books">
+
+      <article class="subject-book" data-subject="chemistry" data-search="chemistry ncert class 11">
+        <div class="book-top">
+          <div class="book-icon">🧪</div>
+          <span class="book-tag">NCERT</span>
+        </div>
+
+        <h3>Chemistry Class 11</h3>
+
+        <p>
+          Physical, Organic और Inorganic Chemistry
+          की foundation preparation.
+        </p>
+
+        <div class="book-meta">
+          <span>📖 Class 11</span>
+          <span>🎯 NEET</span>
+        </div>
+
+        <div class="book-actions">
+          <a href="question-bank.html" class="book-action primary">📝 Questions</a>
+          <button class="book-action" onclick="saveBook(this,'Chemistry Class 11')">☆ Save</button>
+        </div>
+      </article>
+
+
+      <article class="subject-book" data-subject="chemistry" data-search="chemistry ncert class 12">
+        <div class="book-top">
+          <div class="book-icon">⚗️</div>
+          <span class="book-tag">NCERT</span>
+        </div>
+
+        <h3>Chemistry Class 12</h3>
+
+        <p>
+          NEET Chemistry के लिए Class 12 concepts
+          और revision material.
+        </p>
+
+        <div class="book-meta">
+          <span>📖 Class 12</span>
+          <span>🎯 NEET</span>
+        </div>
+
+        <div class="book-actions">
+          <a href="quiz.html" class="book-action primary">🧠 Quiz</a>
+          <button class="book-action" onclick="saveBook(this,'Chemistry Class 12')">☆ Save</button>
+        </div>
+      </article>
+
+
+      <article class="subject-book" data-subject="chemistry" data-search="chemistry formula reaction revision">
+        <div class="book-top">
+          <div class="book-icon">🧬</div>
+          <span class="book-tag">REVISION</span>
+        </div>
+
+        <h3>Chemistry Quick Revision</h3>
+
+        <p>
+          Important reactions, formulas और concepts
+          की quick revision material.
+        </p>
+
+        <div class="book-meta">
+          <span>🧪 Reactions</span>
+          <span>📌 Revision</span>
+        </div>
+
+        <div class="book-actions">
+          <a href="dpp.html" class="book-action primary">📋 DPP</a>
+          <button class="book-action" onclick="saveBook(this,'Chemistry Quick Revision')">☆ Save</button>
+        </div>
+      </article>
+
+    </section>
+
+
+    <!-- BIOLOGY -->
+    <h2 class="subject-section-title">🧬 Biology</h2>
+
+    <section class="subject-books">
+
+      <article class="subject-book" data-subject="biology" data-search="biology ncert class 11">
+        <div class="book-top">
+          <div class="book-icon">🧬</div>
+          <span class="book-tag">NCERT</span>
+        </div>
+
+        <h3>Biology Class 11</h3>
+
+        <p>
+          Botany और Zoology के Class 11 chapters
+          और NEET-oriented study material.
+        </p>
+
+        <div class="book-meta">
+          <span>📖 Class 11</span>
+          <span>🎯 NEET</span>
+        </div>
+
+        <div class="book-actions">
+          <a href="question-bank.html" class="book-action primary">📝 Questions</a>
+          <button class="book-action" onclick="saveBook(this,'Biology Class 11')">☆ Save</button>
+        </div>
+      </article>
+
+
+      <article class="subject-book" data-subject="biology" data-search="biology ncert class 12">
+        <div class="book-top">
+          <div class="book-icon">🌱</div>
+          <span class="book-tag">NCERT</span>
+        </div>
+
+        <h3>Biology Class 12</h3>
+
+        <p>
+          Class 12 Biology के important concepts और
+          NEET revision resources.
+        </p>
+
+        <div class="book-meta">
+          <span>📖 Class 12</span>
+          <span>🎯 NEET</span>
+        </div>
+
+        <div class="book-actions">
+          <a href="quiz.html" class="book-action primary">🧠 Quiz</a>
+          <button class="book-action" onclick="saveBook(this,'Biology Class 12')">☆ Save</button>
+        </div>
+      </article>
+
+
+      <article class="subject-book" data-subject="biology" data-search="biology diagrams revision">
+        <div class="book-top">
+          <div class="book-icon">🔬</div>
+          <span class="book-tag">REVISION</span>
+        </div>
+
+        <h3>Biology Diagram Revision</h3>
+
+        <p>
+          Important diagrams, terms और high-yield
+          Biology revision resources.
+        </p>
+
+        <div class="book-meta">
+          <span>🔬 Diagrams</span>
+          <span>🎯 NEET</span>
+        </div>
+
+        <div class="book-actions">
+          <a href="dpp.html" class="book-action primary">📋 DPP</a>
+          <button class="book-action" onclick="saveBook(this,'Biology Diagram Revision')">☆ Save</button>
+        </div>
+      </article>
+
+    </section>
+
+
+    <!-- NCERT -->
+    <section class="ncert-section">
+
+      <div class="ncert-head">
+        <h2>📖 NCERT Study Hub</h2>
+        <span class="book-tag">NEET CORE</span>
+      </div>
+
+      <div class="ncert-grid">
+
+        <a href="https://ncert.nic.in/" target="_blank" rel="noopener" class="ncert-card">
+          <strong>📘 Official NCERT</strong>
+          <span>NCERT official website</span>
+        </a>
+
+        <a href="https://ncert.nic.in/textbook.php" target="_blank" rel="noopener" class="ncert-card">
+          <strong>📚 NCERT Textbooks</strong>
+          <span>Textbook access</span>
+        </a>
+
+        <a href="question-bank.html" class="ncert-card">
+          <strong>📝 NCERT Questions</strong>
+          <span>Practice questions</span>
+        </a>
+
+        <a href="dpp.html" class="ncert-card">
+          <strong>📋 Daily Practice</strong>
+          <span>Daily questions</span>
+        </a>
+
+        <a href="quiz.html" class="ncert-card">
+          <strong>🧠 NCERT Quiz</strong>
+          <span>Test your concepts</span>
+        </a>
+
+        <a href="mock-test.html" class="ncert-card">
+          <strong>🎯 NEET Mock Test</strong>
+          <span>Full test practice</span>
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- EXTRA RESOURCES -->
+    <h2 class="subject-section-title">🚀 Study Resources</h2>
+
+    <section class="resource-grid">
+
+      <a href="question-bank.html" class="resource-card">
+        <div class="r-icon">📝</div>
+        <strong>Question Bank</strong>
+        <span>MCQs और explanations</span>
+      </a>
+
+      <a href="dpp.html" class="resource-card">
+        <div class="r-icon">📋</div>
+        <strong>DPP</strong>
+        <span>Daily Practice Problems</span>
+      </a>
+
+      <a href="quiz.html" class="resource-card">
+        <div class="r-icon">🧠</div>
+        <strong>Quiz</strong>
+        <span>Chapter-wise practice</span>
+      </a>
+
+      <a href="mock-test.html" class="resource-card">
+        <div class="r-icon">🎯</div>
+        <strong>Mock Test</strong>
+        <span>NEET-style test</span>
+      </a>
+
+      <a href="videos.html" class="resource-card">
+        <div class="r-icon">▶️</div>
+        <strong>Video Lectures</strong>
+        <span>Concept learning</span>
+      </a>
+
+      <a href="youtube.html" class="resource-card">
+        <div class="r-icon">📺</div>
+        <strong>YouTube Classes</strong>
+        <span>Live & recorded classes</span>
+      </a>
+
+      <a href="ai.html" class="resource-card">
+        <div class="r-icon">🤖</div>
+        <strong>AI Doubt Solver</strong>
+        <span>अपने doubts पूछें</span>
+      </a>
+
+      <a href="bookmarks.html" class="resource-card">
+        <div class="r-icon">⭐</div>
+        <strong>Bookmarks</strong>
+        <span>Saved resources</span>
+      </a>
+
+    </section>
+
+
+    <!-- EMPTY SEARCH -->
+    <div id="emptyBooks" class="empty-books">
+      🔎 कोई resource नहीं मिला।<br>
+      <small>दूसरा keyword या subject try करें।</small>
+    </div>
+
+
+    <!-- FOOTER -->
+    <footer style="
+      margin-top:40px;
+      padding:25px 0 10px;
+      text-align:center;
+      opacity:.55;
+      font-size:12px;
+    ">
+      🎯 Mission Lakshya NEET 2027
+      <br>
+      Created by Yashpal Aagri
+    </footer>
+
+  </main>
+
+
+  <!-- MAIN WEBSITE JS -->
+  <script src="../script.js" defer></script>
+
+
+  <!-- BOOK PAGE JS -->
+  <script>
+
+    /* ============================
+       SEARCH + FILTER
+    ============================ */
+
+    const bookSearch = document.getElementById("bookSearch");
+    const subjectFilter = document.getElementById("subjectFilter");
+    const emptyBooks = document.getElementById("emptyBooks");
+
+    function filterBooks() {
+
+      const searchText =
+        (bookSearch.value || "").toLowerCase().trim();
+
+      const selectedSubject =
+        subjectFilter.value;
+
+      const books =
+        document.querySelectorAll(".subject-book");
+
+      let visible = 0;
+
+      books.forEach(book => {
+
+        const subject =
+          book.dataset.subject || "";
+
+        const searchData =
+          (
+            book.dataset.search ||
+            book.innerText ||
+            ""
+          ).toLowerCase();
+
+        const matchSearch =
+          !searchText ||
+          searchData.includes(searchText);
+
+        const matchSubject =
+          selectedSubject === "all" ||
+          subject === selectedSubject;
+
+        if (matchSearch && matchSubject) {
+          book.style.display = "";
+          visible++;
+        } else {
+          book.style.display = "none";
+        }
+
+      });
+
+      emptyBooks.style.display =
+        visible === 0 ? "block" : "none";
+    }
+
+
+    bookSearch.addEventListener(
+      "input",
+      filterBooks
+    );
+
+    subjectFilter.addEventListener(
+      "change",
+      filterBooks
+    );
+
+
+    /* ============================
+       SAVE BOOK
+    ============================ */
+
+    function saveBook(button, bookName) {
+
+      let saved =
+        JSON.parse(
+          localStorage.getItem("mission_lakshya_saved_books") || "[]"
+        );
+
+      if (saved.includes(bookName)) {
+
+        saved = saved.filter(
+          item => item !== bookName
+        );
+
+        button.textContent = "☆ Save";
+
+        showBookMessage("Bookmark हटाया गया");
+
+      } else {
+
+        saved.push(bookName);
+
+        button.textContent = "★ Saved";
+
+        showBookMessage("⭐ Book bookmark हो गई");
+
+      }
+
+      localStorage.setItem(
+        "mission_lakshya_saved_books",
+        JSON.stringify(saved)
+      );
+    }
+
+
+    /* ============================
+       MESSAGE
+    ============================ */
+
+    function showBookMessage(message) {
+
+      let toast =
+        document.getElementById("bookToast");
+
+      if (!toast) {
+
+        toast =
+          document.createElement("div");
+
+        toast.id = "bookToast";
+
+        toast.style.cssText = `
+          position:fixed;
+          left:50%;
+          bottom:25px;
+          transform:translateX(-50%);
+          background:#111827;
+          color:white;
+          border:1px solid rgba(255,255,255,.12);
+          padding:12px 18px;
+          border-radius:12px;
+          z-index:99999;
+          font-size:13px;
+          box-shadow:0 10px 35px rgba(0,0,0,.3);
+        `;
+
+        document.body.appendChild(toast);
+      }
+
+      toast.textContent = message;
+      toast.style.display = "block";
+
+      clearTimeout(window.bookToastTimer);
+
+      window.bookToastTimer =
+        setTimeout(() => {
+          toast.style.display = "none";
+        }, 1800);
+    }
+
+
+    /* ============================
+       RESTORE SAVED STATE
+    ============================ */
+
+    function restoreSavedBooks() {
+
+      const saved =
+        JSON.parse(
+          localStorage.getItem("mission_lakshya_saved_books") || "[]"
+        );
+
+      document
+        .querySelectorAll(".subject-book")
+        .forEach(book => {
+
+          const title =
+            book.querySelector("h3")?.textContent.trim();
+
+          const button =
+            book.querySelector(".book-action:not(.primary)");
+
+          if (
+            title &&
+            button &&
+            saved.includes(title)
+          ) {
+            button.textContent = "★ Saved";
+          }
+
+        });
+    }
+
+
+    restoreSavedBooks();
+
+  </script>
+
+</body>
+  </html>
