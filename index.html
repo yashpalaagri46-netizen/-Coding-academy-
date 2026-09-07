@@ -1,0 +1,1671 @@
+<!DOCTYPE html>
+<html lang="hi" data-language="hi">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Mission Lakshya NEET 2027 - Smart NEET preparation platform"
+  >
+
+  <meta name="theme-color" content="#7c3aed">
+
+  <title>Mission Lakshya NEET 2027</title>
+
+  <!-- Google Font -->
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- =========================================
+       BACKGROUND PARTICLES
+  ========================================== -->
+
+  <div class="particles" id="mlParticles" aria-hidden="true">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+
+  <!-- =========================================
+       TOP BAR
+  ========================================== -->
+
+  <header class="topbar">
+
+    <div class="topbar-left">
+
+      <button
+        class="icon-btn mobile-menu-btn"
+        onclick="toggleSidebar()"
+        aria-label="Open menu"
+      >
+        ☰
+      </button>
+
+      <!-- LOGO -->
+
+      <a
+        href="#home"
+        class="brand"
+        onclick="scrollToSection('home')"
+      >
+
+        <div class="brand-logo">
+          <div class="brand-logo-inner">
+            ML
+          </div>
+        </div>
+
+        <div class="brand-text">
+
+          <strong>
+            Mission Lakshya
+          </strong>
+
+          <span>
+            NEET 2027 • SMART STUDY
+          </span>
+
+        </div>
+
+      </a>
+
+    </div>
+
+
+    <!-- SEARCH -->
+
+    <div class="top-search">
+
+      <span>⌕</span>
+
+      <input
+        id="globalSearch"
+        type="search"
+        placeholder="Search करें..."
+        autocomplete="off"
+        oninput="searchWebsite()"
+      >
+
+    </div>
+
+
+    <!-- TOP ACTIONS -->
+
+    <div class="top-actions">
+
+      <button
+        id="languageButton"
+        class="action-btn"
+        onclick="toggleLanguage()"
+        title="Change Language"
+      >
+        EN
+      </button>
+
+      <button
+        id="themeButton"
+        class="action-btn"
+        onclick="toggleTheme()"
+        title="Change Theme"
+      >
+        ☀️
+      </button>
+
+      <button
+        class="action-btn"
+        onclick="showNotification('Notifications जल्द उपलब्ध होंगे')"
+        title="Notifications"
+      >
+        🔔
+      </button>
+
+    </div>
+
+  </header>
+
+
+
+  <!-- =========================================
+       SIDEBAR
+  ========================================== -->
+
+  <aside
+    id="sidebar"
+    class="sidebar"
+  >
+
+    <div class="sidebar-title">
+      <span>MISSION LAKSHYA</span>
+    </div>
+
+
+    <nav class="sidebar-nav">
+
+      <a
+        href="#home"
+        class="nav-item active"
+        onclick="scrollToSection('home')"
+      >
+        <span>⌂</span>
+        <span data-hi="होम" data-en="Home">होम</span>
+      </a>
+
+
+      <a
+        href="#library"
+        class="nav-item"
+        onclick="scrollToSection('library')"
+      >
+        <span>▣</span>
+        <span data-hi="लाइब्रेरी" data-en="Library">लाइब्रेरी</span>
+      </a>
+
+
+      <a
+        href="#books"
+        class="nav-item"
+        onclick="scrollToSection('books')"
+      >
+        <span>📚</span>
+        <span data-hi="Books" data-en="Books">Books</span>
+      </a>
+
+
+      <a
+        href="#videos"
+        class="nav-item"
+        onclick="scrollToSection('videos')"
+      >
+        <span>▶</span>
+        <span data-hi="वीडियो लेक्चर" data-en="Video Lectures">
+          वीडियो लेक्चर
+        </span>
+      </a>
+
+
+      <a
+        href="#questions"
+        class="nav-item"
+        onclick="scrollToSection('questions')"
+      >
+        <span>❓</span>
+        <span data-hi="Question Bank" data-en="Question Bank">
+          Question Bank
+        </span>
+      </a>
+
+
+      <a
+        href="#dpp"
+        class="nav-item"
+        onclick="scrollToSection('dpp')"
+      >
+        <span>📝</span>
+        <span data-hi="DPP" data-en="DPP">DPP</span>
+      </a>
+
+
+      <a
+        href="#quiz"
+        class="nav-item"
+        onclick="scrollToSection('quiz')"
+      >
+        <span>🧠</span>
+        <span data-hi="Quiz" data-en="Quiz">Quiz</span>
+      </a>
+
+
+      <a
+        href="#mock"
+        class="nav-item"
+        onclick="scrollToSection('mock')"
+      >
+        <span>⏱</span>
+        <span data-hi="Mock Test" data-en="Mock Test">
+          Mock Test
+        </span>
+      </a>
+
+
+      <a
+        href="#ai"
+        class="nav-item"
+        onclick="scrollToSection('ai')"
+      >
+        <span>✦</span>
+        <span data-hi="AI Doubt Solver" data-en="AI Doubt Solver">
+          AI Doubt Solver
+        </span>
+      </a>
+
+
+      <a
+        href="#planner"
+        class="nav-item"
+        onclick="scrollToSection('planner')"
+      >
+        <span>📅</span>
+        <span data-hi="Study Planner" data-en="Study Planner">
+          Study Planner
+        </span>
+      </a>
+
+
+      <a
+        href="#analytics"
+        class="nav-item"
+        onclick="scrollToSection('analytics')"
+      >
+        <span>📊</span>
+        <span data-hi="Analytics" data-en="Analytics">
+          Analytics
+        </span>
+      </a>
+
+
+      <a
+        href="#bookmarks"
+        class="nav-item"
+        onclick="scrollToSection('bookmarks')"
+      >
+        <span>🔖</span>
+        <span data-hi="Bookmarks" data-en="Bookmarks">
+          Bookmarks
+        </span>
+      </a>
+
+
+      <a
+        href="#youtube"
+        class="nav-item"
+        onclick="scrollToSection('youtube')"
+      >
+        <span>▶</span>
+        <span data-hi="YouTube Classes" data-en="YouTube Classes">
+          YouTube Classes
+        </span>
+      </a>
+
+
+      <a
+        href="#websites"
+        class="nav-item"
+        onclick="scrollToSection('websites')"
+      >
+        <span>🌐</span>
+        <span data-hi="Study Websites" data-en="Study Websites">
+          Study Websites
+        </span>
+      </a>
+
+
+      <a
+        href="#themes"
+        class="nav-item"
+        onclick="scrollToSection('themes')"
+      >
+        <span>🎨</span>
+        <span data-hi="Themes" data-en="Themes">
+          Themes
+        </span>
+      </a>
+
+
+      <a
+        href="#settings"
+        class="nav-item"
+        onclick="scrollToSection('settings')"
+      >
+        <span>⚙</span>
+        <span data-hi="Settings" data-en="Settings">
+          Settings
+        </span>
+      </a>
+
+    </nav>
+
+
+    <div class="sidebar-bottom">
+
+      <div class="sidebar-mini-card">
+
+        <div class="mini-icon">
+          💜
+        </div>
+
+        <div>
+          <strong>NEET 2027</strong>
+          <small>Keep Learning</small>
+        </div>
+
+      </div>
+
+    </div>
+
+  </aside>
+
+
+
+  <!-- =========================================
+       MAIN
+  ========================================== -->
+
+  <main id="home" class="main-content">
+
+
+    <!-- =======================================
+         HERO
+    ======================================== -->
+
+    <section class="hero-section">
+
+      <div class="hero-content">
+
+        <div class="hero-badge">
+          <span class="pulse-dot"></span>
+
+          <span
+            data-hi="NEET 2027 SMART PREPARATION"
+            data-en="NEET 2027 SMART PREPARATION"
+          >
+            NEET 2027 SMART PREPARATION
+          </span>
+
+        </div>
+
+
+        <h1>
+
+          <span
+            data-hi="Mission Lakshya"
+            data-en="Mission Lakshya"
+          >
+            Mission Lakshya
+          </span>
+
+          <br>
+
+          <span class="gradient-text">
+            NEET 2027
+          </span>
+
+        </h1>
+
+
+        <p
+          class="hero-description"
+          data-hi="एक ही जगह पर Books, Notes, Video Lectures, Question Bank, DPP, Mock Tests, AI Doubt Solver और Smart Study Tools."
+          data-en="Books, Notes, Video Lectures, Question Bank, DPP, Mock Tests, AI Doubt Solver and Smart Study Tools — all in one place."
+        >
+          एक ही जगह पर Books, Notes, Video Lectures,
+          Question Bank, DPP, Mock Tests,
+          AI Doubt Solver और Smart Study Tools.
+        </p>
+
+
+        <div class="hero-buttons">
+
+          <button
+            class="primary-btn"
+            onclick="scrollToSection('library')"
+          >
+            <span>🚀</span>
+
+            <span
+              data-hi="Study शुरू करें"
+              data-en="Start Studying"
+            >
+              Study शुरू करें
+            </span>
+
+          </button>
+
+
+          <button
+            class="secondary-btn"
+            onclick="scrollToSection('ai')"
+          >
+            <span>✦</span>
+
+            <span
+              data-hi="AI से पूछें"
+              data-en="Ask AI"
+            >
+              AI से पूछें
+            </span>
+
+          </button>
+
+        </div>
+
+
+        <div class="hero-trust">
+
+          <span>✓ NCERT Focused</span>
+          <span>✓ NEET Pattern</span>
+          <span>✓ Hindi + English</span>
+
+        </div>
+
+      </div>
+
+
+      <!-- HERO VISUAL -->
+
+      <div class="hero-visual">
+
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+        <div class="orbit orbit-three"></div>
+
+
+        <div class="hero-core">
+
+          <div class="core-glow"></div>
+
+          <div class="core-logo">
+            ML
+          </div>
+
+          <strong>
+            NEET
+          </strong>
+
+          <small>
+            2027
+          </small>
+
+        </div>
+
+
+        <div class="floating-card floating-card-one">
+          🧬 Biology
+        </div>
+
+        <div class="floating-card floating-card-two">
+          ⚛️ Physics
+        </div>
+
+        <div class="floating-card floating-card-three">
+          🧪 Chemistry
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =======================================
+         STATS
+    ======================================== -->
+
+    <section class="stats-grid">
+
+      <div class="stat-card">
+
+        <div class="stat-icon">
+          📚
+        </div>
+
+        <strong>
+          NCERT
+        </strong>
+
+        <span
+          data-hi="Focused Preparation"
+          data-en="Focused Preparation"
+        >
+          Focused Preparation
+        </span>
+
+      </div>
+
+
+      <div class="stat-card">
+
+        <div class="stat-icon">
+          ❓
+        </div>
+
+        <strong>
+          10K+
+        </strong>
+
+        <span
+          data-hi="Practice Questions"
+          data-en="Practice Questions"
+        >
+          Practice Questions
+        </span>
+
+      </div>
+
+
+      <div class="stat-card">
+
+        <div class="stat-icon">
+          🎯
+        </div>
+
+        <strong>
+          NEET
+        </strong>
+
+        <span
+          data-hi="Exam Pattern"
+          data-en="Exam Pattern"
+        >
+          Exam Pattern
+        </span>
+
+      </div>
+
+
+      <div class="stat-card">
+
+        <div class="stat-icon">
+          ✦
+        </div>
+
+        <strong>
+          AI
+        </strong>
+
+        <span
+          data-hi="Smart Doubt Solver"
+          data-en="Smart Doubt Solver"
+        >
+          Smart Doubt Solver
+        </span>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =======================================
+         LIBRARY
+    ======================================== -->
+
+    <section id="library" class="section-block">
+
+      <div class="section-heading">
+
+        <div>
+
+          <span class="section-kicker">
+            SMART LEARNING
+          </span>
+
+          <h2
+            data-hi="आपकी पूरी Study Library"
+            data-en="Your Complete Study Library"
+          >
+            आपकी पूरी Study Library
+          </h2>
+
+          <p
+            data-hi="NEET preparation के लिए जरूरी resources एक ही जगह।"
+            data-en="All essential resources for NEET preparation in one place."
+          >
+            NEET preparation के लिए जरूरी resources
+            एक ही जगह।
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="feature-grid">
+
+
+        <!-- BOOKS -->
+
+        <a
+          href="#books"
+          class="feature-card"
+          onclick="scrollToSection('books')"
+        >
+
+          <div class="feature-icon">
+            📚
+          </div>
+
+          <div class="feature-info">
+
+            <h3
+              data-hi="Books & Notes"
+              data-en="Books & Notes"
+            >
+              Books & Notes
+            </h3>
+
+            <p
+              data-hi="NCERT और study material"
+              data-en="NCERT and study material"
+            >
+              NCERT और study material
+            </p>
+
+          </div>
+
+          <span class="feature-arrow">
+            →
+          </span>
+
+        </a>
+
+
+        <!-- VIDEOS -->
+
+        <a
+          href="#videos"
+          class="feature-card"
+          onclick="scrollToSection('videos')"
+        >
+
+          <div class="feature-icon">
+            ▶
+          </div>
+
+          <div class="feature-info">
+
+            <h3
+              data-hi="Video Lectures"
+              data-en="Video Lectures"
+            >
+              Video Lectures
+            </h3>
+
+            <p
+              data-hi="Concept based classes"
+              data-en="Concept based classes"
+            >
+              Concept based classes
+            </p>
+
+          </div>
+
+          <span class="feature-arrow">
+            →
+          </span>
+
+        </a>
+
+
+        <!-- QUESTIONS -->
+
+        <a
+          href="#questions"
+          class="feature-card"
+          onclick="scrollToSection('questions')"
+        >
+
+          <div class="feature-icon">
+            ❓
+          </div>
+
+          <div class="feature-info">
+
+            <h3
+              data-hi="Question Bank"
+              data-en="Question Bank"
+            >
+              Question Bank
+            </h3>
+
+            <p
+              data-hi="NEET + JEE practice"
+              data-en="NEET + JEE practice"
+            >
+              NEET + JEE practice
+            </p>
+
+          </div>
+
+          <span class="feature-arrow">
+            →
+          </span>
+
+        </a>
+
+
+        <!-- MOCK -->
+
+        <a
+          href="#mock"
+          class="feature-card"
+          onclick="scrollToSection('mock')"
+        >
+
+          <div class="feature-icon">
+            ⏱
+          </div>
+
+          <div class="feature-info">
+
+            <h3
+              data-hi="Mock Tests"
+              data-en="Mock Tests"
+            >
+              Mock Tests
+            </h3>
+
+            <p
+              data-hi="Exam जैसी practice"
+              data-en="Exam-like practice"
+            >
+              Exam जैसी practice
+            </p>
+
+          </div>
+
+          <span class="feature-arrow">
+            →
+          </span>
+
+        </a>
+
+
+        <!-- DPP -->
+
+        <a
+          href="#dpp"
+          class="feature-card"
+          onclick="scrollToSection('dpp')"
+        >
+
+          <div class="feature-icon">
+            📝
+          </div>
+
+          <div class="feature-info">
+
+            <h3>DPP</h3>
+
+            <p
+              data-hi="Daily Practice Problems"
+              data-en="Daily Practice Problems"
+            >
+              Daily Practice Problems
+            </p>
+
+          </div>
+
+          <span class="feature-arrow">
+            →
+          </span>
+
+        </a>
+
+
+        <!-- QUIZ -->
+
+        <a
+          href="#quiz"
+          class="feature-card"
+          onclick="scrollToSection('quiz')"
+        >
+
+          <div class="feature-icon">
+            🧠
+          </div>
+
+          <div class="feature-info">
+
+            <h3>Quiz</h3>
+
+            <p
+              data-hi="Chapter wise quizzes"
+              data-en="Chapter wise quizzes"
+            >
+              Chapter wise quizzes
+            </p>
+
+          </div>
+
+          <span class="feature-arrow">
+            →
+          </span>
+
+        </a>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =======================================
+         SUBJECTS
+    ======================================== -->
+
+    <section id="books" class="section-block">
+
+      <div class="section-heading">
+
+        <div>
+
+          <span class="section-kicker">
+            NCERT + NEET
+          </span>
+
+          <h2
+            data-hi="तीनों Subjects एक जगह"
+            data-en="All Three Subjects"
+          >
+            तीनों Subjects एक जगह
+          </h2>
+
+        </div>
+
+      </div>
+
+
+      <div class="subject-grid">
+
+
+        <div class="subject-card">
+
+          <div class="subject-symbol">
+            ⚛️
+          </div>
+
+          <div>
+
+            <h3>Physics</h3>
+
+            <p
+              data-hi="Concepts • Formulas • MCQs"
+              data-en="Concepts • Formulas • MCQs"
+            >
+              Concepts • Formulas • MCQs
+            </p>
+
+          </div>
+
+          <button
+            onclick="showComingSoon('Physics Books')"
+          >
+            Open →
+          </button>
+
+        </div>
+
+
+        <div class="subject-card">
+
+          <div class="subject-symbol">
+            🧪
+          </div>
+
+          <div>
+
+            <h3>Chemistry</h3>
+
+            <p
+              data-hi="Organic • Inorganic • Physical"
+              data-en="Organic • Inorganic • Physical"
+            >
+              Organic • Inorganic • Physical
+            </p>
+
+          </div>
+
+          <button
+            onclick="showComingSoon('Chemistry Books')"
+          >
+            Open →
+          </button>
+
+        </div>
+
+
+        <div class="subject-card">
+
+          <div class="subject-symbol">
+            🧬
+          </div>
+
+          <div>
+
+            <h3>Biology</h3>
+
+            <p
+              data-hi="Botany • Zoology • NCERT"
+              data-en="Botany • Zoology • NCERT"
+            >
+              Botany • Zoology • NCERT
+            </p>
+
+          </div>
+
+          <button
+            onclick="showComingSoon('Biology Books')"
+          >
+            Open →
+          </button>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =======================================
+         VIDEOS
+    ======================================== -->
+
+    <section id="videos" class="section-block">
+
+      <div class="section-heading">
+
+        <div>
+
+          <span class="section-kicker">
+            LEARN
+          </span>
+
+          <h2
+            data-hi="Video Lectures"
+            data-en="Video Lectures"
+          >
+            Video Lectures
+          </h2>
+
+          <p
+            data-hi="Concept को video lectures से मजबूत करें।"
+            data-en="Strengthen your concepts with video lectures."
+          >
+            Concept को video lectures से मजबूत करें।
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="feature-grid">
+
+
+        <div class="feature-card">
+
+          <div class="feature-icon">
+            ▶
+          </div>
+
+          <div class="feature-info">
+
+            <h3>
+              Physics Classes
+            </h3>
+
+            <p>
+              Chapter wise lectures
+            </p>
+
+          </div>
+
+          <button
+            class="small-btn"
+            onclick="showComingSoon('Physics Video Lectures')"
+          >
+            Open
+          </button>
+
+        </div>
+
+
+        <div class="feature-card">
+
+          <div class="feature-icon">
+            ▶
+          </div>
+
+          <div class="feature-info">
+
+            <h3>
+              Chemistry Classes
+            </h3>
+
+            <p>
+              Complete concept classes
+            </p>
+
+          </div>
+
+          <button
+            class="small-btn"
+            onclick="showComingSoon('Chemistry Video Lectures')"
+          >
+            Open
+          </button>
+
+        </div>
+
+
+        <div class="feature-card">
+
+          <div class="feature-icon">
+            ▶
+          </div>
+
+          <div class="feature-info">
+
+            <h3>
+              Biology Classes
+            </h3>
+
+            <p>
+              NCERT focused lectures
+            </p>
+
+          </div>
+
+          <button
+            class="small-btn"
+            onclick="showComingSoon('Biology Video Lectures')"
+          >
+            Open
+          </button>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =======================================
+         PROGRESS
+    ======================================== -->
+
+    <section id="analytics" class="section-block">
+
+      <div class="section-heading">
+
+        <div>
+
+          <span class="section-kicker">
+            YOUR PROGRESS
+          </span>
+
+          <h2
+            data-hi="Study Progress"
+            data-en="Study Progress"
+          >
+            Study Progress
+          </h2>
+
+        </div>
+
+      </div>
+
+
+      <div class="dashboard-grid">
+
+
+        <div class="dashboard-card">
+
+          <div class="dashboard-card-header">
+
+            <div>
+              <span>Overall</span>
+              <strong>0%</strong>
+            </div>
+
+            <span>🎯</span>
+
+          </div>
+
+          <div class="progress-bar">
+            <span style="width:0%"></span>
+          </div>
+
+          <p>
+            Start studying to track your progress.
+          </p>
+
+        </div>
+
+
+        <div class="dashboard-card">
+
+          <div class="dashboard-card-header">
+
+            <div>
+              <span>Physics</span>
+              <strong>0%</strong>
+            </div>
+
+            <span>⚛️</span>
+
+          </div>
+
+          <div class="progress-bar">
+            <span style="width:0%"></span>
+          </div>
+
+          <p>
+            Complete chapters and practice questions.
+          </p>
+
+        </div>
+
+
+        <div class="dashboard-card">
+
+          <div class="dashboard-card-header">
+
+            <div>
+              <span>Chemistry</span>
+              <strong>0%</strong>
+            </div>
+
+            <span>🧪</span>
+
+          </div>
+
+          <div class="progress-bar">
+            <span style="width:0%"></span>
+          </div>
+
+          <p>
+            Track your Chemistry preparation.
+          </p>
+
+        </div>
+
+
+        <div class="dashboard-card">
+
+          <div class="dashboard-card-header">
+
+            <div>
+              <span>Biology</span>
+              <strong>0%</strong>
+            </div>
+
+            <span>🧬</span>
+
+          </div>
+
+          <div class="progress-bar">
+            <span style="width:0%"></span>
+          </div>
+
+          <p>
+            Build your Biology preparation.
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =======================================
+         PLANNER
+    ======================================== -->
+
+    <section id="planner" class="section-block">
+
+      <div class="section-heading">
+
+        <div>
+
+          <span class="section-kicker">
+            PLAN
+          </span>
+
+          <h2
+            data-hi="Study Planner"
+            data-en="Study Planner"
+          >
+            Study Planner
+          </h2>
+
+          <p
+            data-hi="अपने daily study goals को manage करें।"
+            data-en="Manage your daily study goals."
+          >
+            अपने daily study goals को manage करें।
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="goal-grid">
+
+        <div class="goal-card">
+          <span>📖</span>
+          <strong>Study</strong>
+          <small>Daily learning goal</small>
+        </div>
+
+        <div class="goal-card">
+          <span>❓</span>
+          <strong>Practice</strong>
+          <small>MCQs & DPP</small>
+        </div>
+
+        <div class="goal-card">
+          <span>🔄</span>
+          <strong>Revision</strong>
+          <small>Revise important concepts</small>
+        </div>
+
+        <div class="goal-card">
+          <span>🎯</span>
+          <strong>Test</strong>
+          <small>Improve your score</small>
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =======================================
+         AI
+    ======================================== -->
+
+    <section id="ai" class="ai-section">
+
+      <div class="ai-glow"></div>
+
+      <div class="ai-content">
+
+        <span class="section-kicker">
+          AI POWERED
+        </span>
+
+        <h2
+          data-hi="AI Doubt Solver"
+          data-en="AI Doubt Solver"
+        >
+          AI Doubt Solver
+        </h2>
+
+        <p
+          data-hi="Physics, Chemistry और Biology के doubts को smart AI Tutor से समझें।"
+          data-en="Understand Physics, Chemistry and Biology doubts with your smart AI Tutor."
+        >
+          Physics, Chemistry और Biology के doubts को
+          smart AI Tutor से समझें।
+        </p>
+
+
+        <button
+          class="primary-btn"
+          onclick="showComingSoon('AI Doubt Solver')"
+        >
+          ✦ Ask AI
+        </button>
+
+      </div>
+
+
+      <div class="ai-visual">
+
+        <div class="ai-circle">
+          ✦
+        </div>
+
+        <span class="ai-orbit-item one">
+          ⚛
+        </span>
+
+        <span class="ai-orbit-item two">
+          🧬
+        </span>
+
+        <span class="ai-orbit-item three">
+          🧪
+        </span>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =======================================
+         STUDY TOOLS
+    ======================================== -->
+
+    <section id="questions" class="section-block">
+
+      <div class="section-heading">
+
+        <div>
+
+          <span class="section-kicker">
+            PRACTICE
+          </span>
+
+          <h2
+            data-hi="Study Tools"
+            data-en="Study Tools"
+          >
+            Study Tools
+          </h2>
+
+        </div>
+
+      </div>
+
+
+      <div class="tool-grid">
+
+
+        <div
+          class="tool-card"
+          onclick="showComingSoon('Question Bank')"
+        >
+          <span>❓</span>
+          <strong>Question Bank</strong>
+          <small>NEET • JEE Main • JEE Advanced</small>
+        </div>
+
+
+        <div
+          id="dpp"
+          class="tool-card"
+          onclick="showComingSoon('DPP')"
+        >
+          <span>📝</span>
+          <strong>DPP</strong>
+          <small>Daily Practice Problems</small>
+        </div>
+
+
+        <div
+          id="mock"
+          class="tool-card"
+          onclick="showComingSoon('Mock Test')"
+        >
+          <span>⏱</span>
+          <strong>Mock Test</strong>
+          <small>Full exam simulation</small>
+        </div>
+
+
+        <div
+          id="quiz"
+          class="tool-card"
+          onclick="showComingSoon('Quiz')"
+        >
+          <span>🧠</span>
+          <strong>Quiz</strong>
+          <small>Chapter wise quiz</small>
+        </div>
+
+
+        <div
+          id="youtube"
+          class="tool-card"
+          onclick="showComingSoon('YouTube Classes')"
+        >
+          <span>▶</span>
+          <strong>YouTube Classes</strong>
+          <small>Live classes & lectures</small>
+        </div>
+
+
+        <div
+          id="websites"
+          class="tool-card"
+          onclick="showComingSoon('Study Websites')"
+        >
+          <span>🌐</span>
+          <strong>Study Websites</strong>
+          <small>Open study resources</small>
+        </div>
+
+
+        <div
+          id="bookmarks"
+          class="tool-card"
+          onclick="showComingSoon('Bookmarks')"
+        >
+          <span>🔖</span>
+          <strong>Bookmarks</strong>
+          <small>Saved resources</small>
+        </div>
+
+
+        <div
+          id="themes"
+          class="tool-card"
+          onclick="toggleTheme()"
+        >
+          <span>🎨</span>
+          <strong>Themes</strong>
+          <small>Dark / Light mode</small>
+        </div>
+
+
+        <div
+          id="settings"
+          class="tool-card"
+          onclick="showComingSoon('Settings')"
+        >
+          <span>⚙</span>
+          <strong>Settings</strong>
+          <small>Customize your experience</small>
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =======================================
+         CONTINUE LEARNING
+    ======================================== -->
+
+    <section class="section-block">
+
+      <div class="continue-card">
+
+        <div>
+
+          <span class="section-kicker">
+            KEEP GOING
+          </span>
+
+          <h2
+            data-hi="आज की पढ़ाई शुरू करें"
+            data-en="Start Today's Study"
+          >
+            आज की पढ़ाई शुरू करें
+          </h2>
+
+          <p
+            data-hi="Consistency ही NEET preparation की सबसे बड़ी ताकत है।"
+            data-en="Consistency is one of the biggest strengths in NEET preparation."
+          >
+            Consistency ही NEET preparation की
+            सबसे बड़ी ताकत है।
+          </p>
+
+        </div>
+
+
+        <button
+          class="primary-btn"
+          onclick="scrollToSection('library')"
+        >
+          🚀 Continue Learning
+        </button>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =======================================
+         SUPPORT
+    ======================================== -->
+
+    <section class="support-section">
+
+      <div>
+
+        <span class="section-kicker">
+          SUPPORT
+        </span>
+
+        <h2>
+          Need Help?
+        </h2>
+
+        <p>
+          Mission Lakshya से जुड़े updates और support के लिए Telegram पर आएँ।
+        </p>
+
+      </div>
+
+
+      <a
+        class="primary-btn"
+        href="https://t.me/Yashpal_aagri"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Telegram Support
+      </a>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- =========================================
+       FOOTER
+  ========================================== -->
+
+  <footer class="footer">
+
+    <div class="footer-brand">
+
+      <div class="footer-logo">
+        ML
+      </div>
+
+      <div>
+
+        <strong>
+          Mission Lakshya NEET 2027
+        </strong>
+
+        <span>
+          Smart preparation platform
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-links">
+
+      <a href="#home">
+        Home
+      </a>
+
+      <a href="#library">
+        Library
+      </a>
+
+      <a href="#questions">
+        Questions
+      </a>
+
+      <a href="#ai">
+        AI
+      </a>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      <span>
+        💜 Mission Lakshya NEET 2027
+      </span>
+
+      <span>
+        Created by Yashpal Aagri
+      </span>
+
+    </div>
+
+  </footer>
+
+
+
+  <!-- =========================================
+       MAIN JAVASCRIPT
+  ========================================== -->
+
+  <script src="script.js"></script>
+
+</body>
+            </html>
