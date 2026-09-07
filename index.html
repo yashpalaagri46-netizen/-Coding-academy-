@@ -4,13 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Coding Academy — Learn. Code. Build.</title>
-  <meta name="description" content="Coding Academy — Learn coding, practice, test and build projects.">
   <meta name="theme-color" content="#7c3aed">
+  <meta name="description" content="Coding Academy - Learn, Practice, Code and Grow">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>Coding Academy</title>
 
   <link rel="stylesheet" href="style.css">
 </head>
@@ -18,17 +15,18 @@
 <body>
 
   <!-- Background -->
-  <div class="background-effects">
-    <div class="glow glow-1"></div>
-    <div class="glow glow-2"></div>
-    <div class="grid-bg"></div>
+  <div class="bg-effects">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="particles"></div>
   </div>
 
   <!-- Mobile Overlay -->
-  <div id="sidebarOverlay" class="sidebar-overlay"></div>
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
-  <!-- Sidebar -->
-  <aside id="sidebar" class="sidebar">
+  <!-- ================= SIDEBAR ================= -->
+  <aside class="sidebar" id="sidebar">
 
     <div class="brand">
       <div class="brand-logo">
@@ -36,162 +34,158 @@
       </div>
 
       <div>
-        <div class="brand-name">Coding</div>
-        <div class="brand-subtitle">Academy</div>
+        <h1>Coding</h1>
+        <span>ACADEMY</span>
       </div>
     </div>
 
-    <div class="sidebar-section">
-      <p class="sidebar-label">MAIN</p>
+    <div class="sidebar-scroll">
 
-      <a href="#home" class="nav-item active" data-section="home">
-        <span class="nav-icon">⌂</span>
-        <span>Dashboard</span>
-      </a>
+      <div class="nav-group">
+        <p class="nav-title" data-en="MAIN" data-hi="मुख्य">MAIN</p>
 
-      <a href="#courses" class="nav-item" data-section="courses">
-        <span class="nav-icon">▣</span>
-        <span>Courses</span>
-      </a>
+        <button class="nav-item active" data-section="home">
+          <span>⌂</span>
+          <span data-en="Dashboard" data-hi="डैशबोर्ड">Dashboard</span>
+        </button>
 
-      <a href="#editor" class="nav-item" data-section="editor">
-        <span class="nav-icon">⌘</span>
-        <span>Code Editor</span>
-      </a>
+        <button class="nav-item" data-section="courses">
+          <span>📚</span>
+          <span data-en="Courses" data-hi="कोर्स">Courses</span>
+        </button>
 
-      <a href="#practice" class="nav-item" data-section="practice">
-        <span class="nav-icon">✓</span>
-        <span>Practice</span>
-      </a>
+        <button class="nav-item" data-section="editor">
+          <span>💻</span>
+          <span data-en="Code Editor" data-hi="कोड एडिटर">Code Editor</span>
+        </button>
 
-      <a href="#quiz" class="nav-item" data-section="quiz">
-        <span class="nav-icon">?</span>
-        <span>Quiz</span>
-      </a>
+        <button class="nav-item" data-section="practice">
+          <span>📝</span>
+          <span data-en="Practice" data-hi="प्रैक्टिस">Practice</span>
+        </button>
 
-      <a href="#tests" class="nav-item" data-section="tests">
-        <span class="nav-icon">▤</span>
-        <span>Tests</span>
-      </a>
-    </div>
+        <button class="nav-item" data-section="quiz">
+          <span>🧠</span>
+          <span data-en="Quiz" data-hi="क्विज़">Quiz</span>
+        </button>
 
-    <div class="sidebar-section">
-      <p class="sidebar-label">LEARNING</p>
-
-      <a href="#notes" class="nav-item" data-section="notes">
-        <span class="nav-icon">▤</span>
-        <span>Notes</span>
-      </a>
-
-      <a href="#bookmarks" class="nav-item" data-section="bookmarks">
-        <span class="nav-icon">☆</span>
-        <span>Bookmarks</span>
-      </a>
-
-      <a href="#videos" class="nav-item" data-section="videos">
-        <span class="nav-icon">▶</span>
-        <span>Video Learning</span>
-      </a>
-
-      <a href="#resources" class="nav-item" data-section="resources">
-        <span class="nav-icon">◈</span>
-        <span>Resources</span>
-      </a>
-
-      <a href="#planner" class="nav-item" data-section="planner">
-        <span class="nav-icon">□</span>
-        <span>Study Planner</span>
-      </a>
-    </div>
-
-    <div class="sidebar-section">
-      <p class="sidebar-label">TOOLS</p>
-
-      <a href="#ai" class="nav-item" data-section="ai">
-        <span class="nav-icon">✦</span>
-        <span>AI Coding Tutor</span>
-        <span class="new-badge">AI</span>
-      </a>
-
-      <a href="#analytics" class="nav-item" data-section="analytics">
-        <span class="nav-icon">◒</span>
-        <span>Analytics</span>
-      </a>
-    </div>
-
-    <div class="sidebar-bottom">
-
-      <a href="#support" class="nav-item" data-section="support">
-        <span class="nav-icon">?</span>
-        <span>Help & Support</span>
-      </a>
-
-      <a href="#settings" class="nav-item" data-section="settings">
-        <span class="nav-icon">⚙</span>
-        <span>Settings</span>
-      </a>
-
-      <div class="creator-card">
-        <div class="creator-avatar">YA</div>
-
-        <div>
-          <strong>Yashpal Aagri</strong>
-          <small>Creator</small>
-        </div>
+        <button class="nav-item" data-section="tests">
+          <span>🧪</span>
+          <span data-en="Tests" data-hi="टेस्ट">Tests</span>
+        </button>
       </div>
 
+      <div class="nav-group">
+        <p class="nav-title" data-en="LEARNING" data-hi="लर्निंग">LEARNING</p>
+
+        <button class="nav-item" data-section="notes">
+          <span>📒</span>
+          <span data-en="Notes" data-hi="नोट्स">Notes</span>
+        </button>
+
+        <button class="nav-item" data-section="bookmarks">
+          <span>🔖</span>
+          <span data-en="Bookmarks" data-hi="बुकमार्क">Bookmarks</span>
+        </button>
+
+        <button class="nav-item" data-section="videos">
+          <span>🎥</span>
+          <span data-en="Videos" data-hi="वीडियो">Videos</span>
+        </button>
+
+        <button class="nav-item" data-section="resources">
+          <span>🌐</span>
+          <span data-en="Resources" data-hi="रिसोर्स">Resources</span>
+        </button>
+
+        <button class="nav-item" data-section="planner">
+          <span>📅</span>
+          <span data-en="Study Planner" data-hi="स्टडी प्लानर">Study Planner</span>
+        </button>
+      </div>
+
+      <div class="nav-group">
+        <p class="nav-title" data-en="SMART TOOLS" data-hi="स्मार्ट टूल्स">SMART TOOLS</p>
+
+        <button class="nav-item" data-section="ai">
+          <span>🤖</span>
+          <span data-en="AI Coding Tutor" data-hi="AI कोडिंग ट्यूटर">AI Coding Tutor</span>
+        </button>
+
+        <button class="nav-item" data-section="analytics">
+          <span>📊</span>
+          <span data-en="Analytics" data-hi="एनालिटिक्स">Analytics</span>
+        </button>
+      </div>
+
+      <div class="nav-group">
+        <p class="nav-title" data-en="SYSTEM" data-hi="सिस्टम">SYSTEM</p>
+
+        <button class="nav-item" data-section="support">
+          <span>🆘</span>
+          <span data-en="Support & Help" data-hi="सपोर्ट और मदद">Support & Help</span>
+        </button>
+
+        <button class="nav-item" data-section="settings">
+          <span>⚙️</span>
+          <span data-en="Settings" data-hi="सेटिंग्स">Settings</span>
+        </button>
+      </div>
+
+    </div>
+
+    <div class="sidebar-user">
+      <div class="mini-avatar" id="sidebarAvatar">YA</div>
+
+      <div class="user-info">
+        <strong>Yashpal Aagri</strong>
+        <small>Student</small>
+      </div>
+
+      <button class="icon-btn" id="sidebarProfileBtn">⋯</button>
     </div>
 
   </aside>
 
 
-  <!-- Main -->
+  <!-- ================= MAIN APP ================= -->
+
   <main class="main">
 
-    <!-- Topbar -->
+    <!-- TOPBAR -->
     <header class="topbar">
 
-      <div class="topbar-left">
-
-        <button id="menuBtn" class="menu-btn" aria-label="Open menu">
-          ☰
-        </button>
-
-        <div class="mobile-brand">
-          <span>&lt;/&gt;</span>
-          Coding Academy
-        </div>
-
-      </div>
+      <button class="mobile-menu" id="mobileMenu">
+        ☰
+      </button>
 
       <div class="top-search">
-
-        <span class="search-icon">⌕</span>
-
+        <span>⌕</span>
         <input
           id="globalSearch"
           type="search"
           placeholder="Search courses, lessons, questions..."
-          autocomplete="off"
+          data-placeholder-en="Search courses, lessons, questions..."
+          data-placeholder-hi="कोर्स, लेसन, प्रश्न खोजें..."
         >
-
-        <kbd>⌘ K</kbd>
-
       </div>
 
       <div class="top-actions">
 
-        <button class="top-action" title="Notifications">
+        <button class="top-action" id="languageBtn" title="Language">
+          <span>🌐</span>
+          <span id="languageText">EN</span>
+        </button>
+
+        <button class="top-action notification-btn" id="notificationBtn">
           🔔
-          <span class="notification-dot"></span>
+          <i></i>
         </button>
 
-        <button class="top-action" title="Language" id="languageBtn">
-          EN
-        </button>
-
-        <button class="profile-mini" id="profileBtn">
-          <span id="topAvatar">YA</span>
+        <button class="profile-button" id="profileBtn">
+          <div class="avatar" id="topAvatar">YA</div>
+          <span>Yashpal</span>
+          <b>⌄</b>
         </button>
 
       </div>
@@ -199,558 +193,1039 @@
     </header>
 
 
-    <!-- Content -->
+    <!-- SEARCH RESULTS -->
+    <div class="search-results" id="searchResults"></div>
+
+
+    <!-- ================= CONTENT ================= -->
+
     <div class="content">
 
 
-      <!-- HERO -->
-      <section id="home" class="hero-section">
+      <!-- ================= HOME ================= -->
 
-        <div class="hero-content">
+      <section class="page-section active" id="section-home">
 
-          <div class="hero-badge">
-            <span class="pulse"></span>
-            CODING ACADEMY 2026
+        <div class="hero">
+
+          <div class="hero-content">
+
+            <div class="hero-badge">
+              <span class="pulse"></span>
+              <span data-en="LEARN • CODE • BUILD" data-hi="सीखें • कोड करें • बनाएँ">
+                LEARN • CODE • BUILD
+              </span>
+            </div>
+
+            <h2>
+              Build Your
+              <span>Future</span>
+              With Code.
+            </h2>
+
+            <p>
+              Learn programming, practice coding,
+              solve problems and track your progress
+              in one powerful learning platform.
+            </p>
+
+            <div class="hero-actions">
+
+              <button class="primary-btn" data-section-link="courses">
+                <span>🚀</span>
+                <span data-en="Start Learning" data-hi="लर्निंग शुरू करें">
+                  Start Learning
+                </span>
+              </button>
+
+              <button class="secondary-btn" data-section-link="editor">
+                <span>▶</span>
+                <span data-en="Try Code Editor" data-hi="कोड एडिटर चलाएँ">
+                  Try Code Editor
+                </span>
+              </button>
+
+            </div>
+
           </div>
 
-          <h1>
-            Learn to Code.
-            <span>Build the Future.</span>
-          </h1>
+          <div class="hero-visual">
 
-          <p>
-            Master programming through interactive courses,
-            coding practice, quizzes, tests and real-world projects.
-          </p>
+            <div class="code-orbit orbit-one"></div>
+            <div class="code-orbit orbit-two"></div>
 
-          <div class="hero-actions">
+            <div class="hero-code-card">
+              <div class="code-card-top">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
 
-            <button class="btn btn-primary" onclick="goToSection('courses')">
-              Start Learning
-              <span>→</span>
-            </button>
+              <pre><code><span class="code-purple">const</span> future = {
+  skills: <span class="code-string">"coding"</span>,
+  practice: <span class="code-number">100</span>,
+  success: <span class="code-string">"∞"</span>
+};
 
-            <button class="btn btn-secondary" onclick="goToSection('editor')">
-              Open Code Editor
-              <span>⌘</span>
-            </button>
+<span class="code-purple">console</span>.log(future);</code></pre>
 
-          </div>
-
-          <div class="hero-trust">
-            <span>✓ Beginner Friendly</span>
-            <span>✓ Practice Based</span>
-            <span>✓ Hindi + English</span>
-          </div>
-
-        </div>
-
-
-        <!-- 3D Visual -->
-        <div class="hero-visual">
-
-          <div class="orbit orbit-one"></div>
-          <div class="orbit orbit-two"></div>
-          <div class="orbit orbit-three"></div>
-
-          <div class="code-core">
-
-            <div class="core-glow"></div>
-
-            <div class="core-symbol">
-              &lt;/&gt;
-            </div>
-
-            <div class="floating-code code-one">
-              JS
-            </div>
-
-            <div class="floating-code code-two">
-              PY
-            </div>
-
-            <div class="floating-code code-three">
-              C++
-            </div>
-
-            <div class="floating-code code-four">
-              HTML
             </div>
 
           </div>
 
         </div>
 
-      </section>
 
+        <!-- STATS -->
 
-      <!-- STATS -->
-      <section class="stats-grid">
+        <div class="stats-grid">
 
-        <div class="stat-card">
-          <div class="stat-icon purple">▣</div>
-
-          <div>
-            <span class="stat-label">Courses</span>
-            <strong>9+</strong>
+          <div class="stat-card">
+            <div class="stat-icon purple">📚</div>
+            <div>
+              <span data-en="Courses" data-hi="कोर्स">Courses</span>
+              <strong id="statCourses">9</strong>
+            </div>
           </div>
 
-          <span class="stat-arrow">↗</span>
+          <div class="stat-card">
+            <div class="stat-icon blue">🎯</div>
+            <div>
+              <span data-en="Learning Progress" data-hi="लर्निंग प्रोग्रेस">
+                Learning Progress
+              </span>
+              <strong id="statProgress">0%</strong>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon orange">📝</div>
+            <div>
+              <span data-en="Questions Solved" data-hi="हल किए प्रश्न">
+                Questions Solved
+              </span>
+              <strong id="statQuestions">0</strong>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon green">🔥</div>
+            <div>
+              <span data-en="Study Streak" data-hi="स्टडी स्ट्रीक">
+                Study Streak
+              </span>
+              <strong id="statStreak">0 days</strong>
+            </div>
+          </div>
+
         </div>
 
 
-        <div class="stat-card">
-          <div class="stat-icon blue">✓</div>
-
-          <div>
-            <span class="stat-label">Practice Questions</span>
-            <strong>1000+</strong>
-          </div>
-
-          <span class="stat-arrow">↗</span>
-        </div>
-
-
-        <div class="stat-card">
-          <div class="stat-icon pink">▶</div>
-
-          <div>
-            <span class="stat-label">Video Lessons</span>
-            <strong>100+</strong>
-          </div>
-
-          <span class="stat-arrow">↗</span>
-        </div>
-
-
-        <div class="stat-card">
-          <div class="stat-icon orange">⚡</div>
-
-          <div>
-            <span class="stat-label">Your Progress</span>
-            <strong id="progressStat">0%</strong>
-          </div>
-
-          <span class="stat-arrow">↗</span>
-        </div>
-
-      </section>
-
-
-      <!-- QUICK ACCESS -->
-      <section class="section-block">
+        <!-- QUICK ACCESS -->
 
         <div class="section-heading">
-
           <div>
-            <span class="section-kicker">QUICK ACCESS</span>
-            <h2>Continue Your Journey</h2>
+            <small>QUICK ACCESS</small>
+            <h3 data-en="Continue Learning" data-hi="लर्निंग जारी रखें">
+              Continue Learning
+            </h3>
           </div>
-
-          <button class="view-all" onclick="goToSection('courses')">
-            View All →
-          </button>
-
         </div>
-
 
         <div class="quick-grid">
 
-          <button class="quick-card" onclick="goToSection('courses')">
-            <div class="quick-icon purple-icon">▣</div>
-
+          <button class="quick-card" data-section-link="courses">
+            <div class="quick-icon">📚</div>
             <div>
-              <strong>Explore Courses</strong>
-              <span>Learn programming from basics</span>
+              <strong>Courses</strong>
+              <span>Explore programming</span>
             </div>
-
-            <span>→</span>
+            <b>→</b>
           </button>
 
-
-          <button class="quick-card" onclick="goToSection('editor')">
-            <div class="quick-icon blue-icon">⌘</div>
-
+          <button class="quick-card" data-section-link="editor">
+            <div class="quick-icon">💻</div>
             <div>
-              <strong>Code & Practice</strong>
-              <span>Write and run your code</span>
+              <strong>Code Editor</strong>
+              <span>Write and run code</span>
             </div>
-
-            <span>→</span>
+            <b>→</b>
           </button>
 
-
-          <button class="quick-card" onclick="goToSection('quiz')">
-            <div class="quick-icon pink-icon">?</div>
-
+          <button class="quick-card" data-section-link="practice">
+            <div class="quick-icon">🧠</div>
             <div>
-              <strong>Take a Quiz</strong>
-              <span>Test your coding knowledge</span>
+              <strong>Practice</strong>
+              <span>Improve your skills</span>
             </div>
-
-            <span>→</span>
+            <b>→</b>
           </button>
 
-
-          <button class="quick-card" onclick="goToSection('ai')">
-            <div class="quick-icon orange-icon">✦</div>
-
+          <button class="quick-card" data-section-link="ai">
+            <div class="quick-icon">🤖</div>
             <div>
-              <strong>Ask AI Tutor</strong>
-              <span>Get help with your code</span>
+              <strong>AI Tutor</strong>
+              <span>Ask coding doubts</span>
+            </div>
+            <b>→</b>
+          </button>
+
+        </div>
+
+
+        <!-- RECENT COURSES -->
+
+        <div class="section-heading section-space">
+          <div>
+            <small>POPULAR</small>
+            <h3 data-en="Featured Courses" data-hi="फीचर्ड कोर्स">
+              Featured Courses
+            </h3>
+          </div>
+
+          <button class="text-btn" data-section-link="courses">
+            View all →
+          </button>
+        </div>
+
+        <div class="course-grid" id="homeCourses"></div>
+
+
+        <!-- ACTIVITY + PROGRESS -->
+
+        <div class="two-column section-space">
+
+          <div class="panel">
+            <div class="panel-header">
+              <div>
+                <small>ACTIVITY</small>
+                <h3>Recent Activity</h3>
+              </div>
             </div>
 
-            <span>→</span>
-          </button>
+            <div id="recentActivity" class="activity-list"></div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-header">
+              <div>
+                <small>PROGRESS</small>
+                <h3>Learning Overview</h3>
+              </div>
+            </div>
+
+            <div class="progress-overview">
+
+              <div class="progress-ring">
+                <span id="homeProgress">0%</span>
+              </div>
+
+              <div class="progress-details">
+                <strong>Your Learning</strong>
+                <p>Keep learning and complete more lessons.</p>
+
+                <div class="bar">
+                  <i id="homeProgressBar"></i>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
 
         </div>
 
       </section>
 
 
-      <!-- COURSES -->
-      <section id="courses" class="section-block">
+      <!-- ================= COURSES ================= -->
 
-        <div class="section-heading">
+      <section class="page-section" id="section-courses">
+
+        <div class="page-header">
+          <div>
+            <small>LEARNING</small>
+            <h2>Courses</h2>
+            <p>Learn programming from beginner to advanced.</p>
+          </div>
+
+          <div class="filter-row">
+            <select id="courseFilter">
+              <option value="all">All Courses</option>
+              <option value="beginner">Beginner</option>
+              <option value="intermediate">Intermediate</option>
+              <option value="advanced">Advanced</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="course-grid large" id="coursesGrid"></div>
+
+      </section>
+
+
+      <!-- ================= EDITOR ================= -->
+
+      <section class="page-section" id="section-editor">
+
+        <div class="page-header">
+          <div>
+            <small>CODE LAB</small>
+            <h2>Browser Code Editor</h2>
+            <p>Write HTML, CSS and JavaScript and run it directly.</p>
+          </div>
+
+          <div class="editor-actions">
+            <button class="secondary-btn small" id="editorReset">Reset</button>
+            <button class="primary-btn small" id="editorRun">▶ Run</button>
+          </div>
+        </div>
+
+        <div class="editor-layout">
+
+          <div class="editor-panel">
+
+            <div class="editor-tabs">
+
+              <button class="editor-tab active" data-editor="html">
+                HTML
+              </button>
+
+              <button class="editor-tab" data-editor="css">
+                CSS
+              </button>
+
+              <button class="editor-tab" data-editor="js">
+                JavaScript
+              </button>
+
+            </div>
+
+            <textarea id="htmlEditor" class="code-input"></textarea>
+            <textarea id="cssEditor" class="code-input hidden"></textarea>
+            <textarea id="jsEditor" class="code-input hidden"></textarea>
+
+          </div>
+
+          <div class="output-panel">
+
+            <div class="output-header">
+              <strong>Output</strong>
+              <button id="clearOutput">Clear</button>
+            </div>
+
+            <iframe
+              id="codeOutput"
+              title="Code Output"
+              sandbox="allow-scripts"
+            ></iframe>
+
+          </div>
+
+        </div>
+
+        <div class="exercise-grid">
+
+          <div class="exercise-card">
+            <span>01</span>
+            <h3>HTML Challenge</h3>
+            <p>Create a profile card using HTML.</p>
+            <button onclick="loadExercise('html')">Start →</button>
+          </div>
+
+          <div class="exercise-card">
+            <span>02</span>
+            <h3>CSS Challenge</h3>
+            <p>Create a responsive animated card.</p>
+            <button onclick="loadExercise('css')">Start →</button>
+          </div>
+
+          <div class="exercise-card">
+            <span>03</span>
+            <h3>JavaScript Challenge</h3>
+            <p>Create an interactive counter.</p>
+            <button onclick="loadExercise('js')">Start →</button>
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- ================= PRACTICE ================= -->
+
+      <section class="page-section" id="section-practice">
+
+        <div class="page-header">
+          <div>
+            <small>QUESTION BANK</small>
+            <h2>Practice</h2>
+            <p>Practice programming questions and improve your concepts.</p>
+          </div>
+
+          <select id="practiceFilter">
+            <option value="all">All Topics</option>
+            <option value="html">HTML</option>
+            <option value="css">CSS</option>
+            <option value="javascript">JavaScript</option>
+            <option value="python">Python</option>
+          </select>
+        </div>
+
+        <div id="practiceContainer"></div>
+
+      </section>
+
+
+      <!-- ================= QUIZ ================= -->
+
+      <section class="page-section" id="section-quiz">
+
+        <div class="page-header">
+          <div>
+            <small>TEST YOUR KNOWLEDGE</small>
+            <h2>Quiz</h2>
+            <p>Take a timed quiz and check your score.</p>
+          </div>
+
+          <div class="quiz-timer" id="quizTimer">05:00</div>
+        </div>
+
+        <div id="quizStart" class="start-card">
+
+          <div class="start-icon">🧠</div>
+
+          <h3>Ready for a Quiz?</h3>
+
+          <p>
+            Answer programming questions and receive
+            instant results with explanations.
+          </p>
+
+          <button class="primary-btn" id="startQuiz">
+            Start Quiz
+          </button>
+
+        </div>
+
+        <div id="quizArea" class="hidden"></div>
+
+        <div id="quizResult" class="hidden"></div>
+
+      </section>
+
+
+      <!-- ================= TESTS ================= -->
+
+      <section class="page-section" id="section-tests">
+
+        <div class="page-header">
+          <div>
+            <small>ASSESSMENT</small>
+            <h2>Tests</h2>
+            <p>Test yourself with topic and full-course tests.</p>
+          </div>
+        </div>
+
+        <div class="test-grid">
+
+          <button class="test-card" onclick="startTest('topic')">
+            <span>🎯</span>
+            <strong>Topic Test</strong>
+            <small>10 questions</small>
+          </button>
+
+          <button class="test-card" onclick="startTest('chapter')">
+            <span>📖</span>
+            <strong>Chapter Test</strong>
+            <small>20 questions</small>
+          </button>
+
+          <button class="test-card" onclick="startTest('course')">
+            <span>💻</span>
+            <strong>Course Test</strong>
+            <small>30 questions</small>
+          </button>
+
+          <button class="test-card" onclick="startTest('mock')">
+            <span>🏆</span>
+            <strong>Full Mock Test</strong>
+            <small>50 questions</small>
+          </button>
+
+        </div>
+
+        <div id="testArea" class="test-area"></div>
+
+      </section>
+
+
+      <!-- ================= NOTES ================= -->
+
+      <section class="page-section" id="section-notes">
+
+        <div class="page-header">
+          <div>
+            <small>PERSONAL LEARNING</small>
+            <h2>Notes</h2>
+            <p>Create and save your own study notes.</p>
+          </div>
+
+          <button class="primary-btn" id="newNoteBtn">
+            + New Note
+          </button>
+        </div>
+
+        <div class="notes-layout">
+
+          <div class="notes-sidebar">
+            <input
+              id="notesSearch"
+              type="search"
+              placeholder="Search notes..."
+            >
+
+            <div id="notesList"></div>
+          </div>
+
+          <div class="note-editor">
+
+            <input id="noteTitle" placeholder="Note title">
+
+            <textarea
+              id="noteContent"
+              placeholder="Write your notes here..."
+            ></textarea>
+
+            <div class="note-actions">
+              <button class="secondary-btn" id="deleteNoteBtn">
+                Delete
+              </button>
+
+              <button class="primary-btn" id="saveNoteBtn">
+                Save Note
+              </button>
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- ================= BOOKMARKS ================= -->
+
+      <section class="page-section" id="section-bookmarks">
+
+        <div class="page-header">
+          <div>
+            <small>SAVED ITEMS</small>
+            <h2>Bookmarks</h2>
+            <p>Your saved courses, questions and resources.</p>
+          </div>
+        </div>
+
+        <div id="bookmarksContainer" class="bookmark-grid"></div>
+
+      </section>
+
+
+      <!-- ================= VIDEOS ================= -->
+
+      <section class="page-section" id="section-videos">
+
+        <div class="page-header">
+          <div>
+            <small>VIDEO LEARNING</small>
+            <h2>Video Learning</h2>
+            <p>Find coding lessons and educational videos.</p>
+          </div>
+
+          <button class="secondary-btn" id="youtubeSearchBtn">
+            Search YouTube
+          </button>
+        </div>
+
+        <div class="video-search">
+          <input
+            id="videoSearch"
+            placeholder="Search coding videos..."
+          >
+          <button class="primary-btn" id="videoSearchAction">
+            Search
+          </button>
+        </div>
+
+        <div id="videoResults" class="video-grid"></div>
+
+        <div class="info-box">
+          <strong>YouTube API</strong>
+          <p>
+            Secure YouTube Data API integration should use a server-side
+            endpoint. Never place a private API key inside frontend JavaScript.
+          </p>
+        </div>
+
+      </section>
+
+
+      <!-- ================= RESOURCES ================= -->
+
+      <section class="page-section" id="section-resources">
+
+        <div class="page-header">
+          <div>
+            <small>WEB RESOURCES</small>
+            <h2>Resources</h2>
+            <p>Useful websites for learning and practicing coding.</p>
+          </div>
+        </div>
+
+        <div class="resource-grid" id="resourceGrid"></div>
+
+        <div class="viewer-card">
+
+          <div class="viewer-header">
+            <strong>Website Viewer</strong>
+
+            <button id="openResourceExternal">
+              Open in new tab ↗
+            </button>
+          </div>
+
+          <iframe
+            id="resourceViewer"
+            title="Resource Viewer"
+            sandbox="allow-scripts allow-forms allow-popups"
+          ></iframe>
+
+          <p class="viewer-note">
+            Some websites block iframe embedding for security reasons.
+            Those websites can be opened in a new tab.
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <!-- ================= PLANNER ================= -->
+
+      <section class="page-section" id="section-planner">
+
+        <div class="page-header">
+          <div>
+            <small>STUDY PLANNER</small>
+            <h2>Daily Planner</h2>
+            <p>Plan your learning and track completed tasks.</p>
+          </div>
+        </div>
+
+        <div class="planner-layout">
+
+          <div class="planner-add">
+
+            <h3>Add Task</h3>
+
+            <input id="taskInput" placeholder="What do you want to learn?">
+
+            <select id="taskPriority">
+              <option value="normal">Normal</option>
+              <option value="high">High</option>
+              <option value="low">Low</option>
+            </select>
+
+            <button class="primary-btn" id="addTaskBtn">
+              Add Task
+            </button>
+
+          </div>
+
+          <div class="planner-list">
+
+            <div class="planner-header">
+              <strong>Today's Tasks</strong>
+              <span id="taskCount">0 tasks</span>
+            </div>
+
+            <div id="tasksContainer"></div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- ================= AI ================= -->
+
+      <section class="page-section" id="section-ai">
+
+        <div class="ai-hero">
+
+          <div class="ai-icon">🤖</div>
 
           <div>
-            <span class="section-kicker">LEARNING PATH</span>
-            <h2>Popular Courses</h2>
+            <small>SMART LEARNING</small>
+            <h2>AI Coding Tutor</h2>
+            <p>
+              Ask coding questions, understand errors and improve your code.
+            </p>
           </div>
-
-          <button class="view-all">
-            All Courses →
-          </button>
 
         </div>
 
+        <div class="ai-layout">
 
-        <div class="course-grid">
+          <div class="ai-chat">
 
+            <div id="aiMessages" class="ai-messages">
 
-          <article class="course-card">
+              <div class="ai-message bot">
+                <span>🤖</span>
+                <div>
+                  <strong>AI Tutor</strong>
+                  <p>
+                    Hi! Ask me a coding question.
+                    I can help explain concepts and common errors.
+                  </p>
+                </div>
+              </div>
 
-            <div class="course-top html-bg">
-              <span class="course-language">HTML</span>
-              <div class="course-symbol">&lt;/&gt;</div>
             </div>
 
-            <div class="course-body">
+            <div class="ai-input">
 
-              <span class="level beginner">BEGINNER</span>
+              <textarea
+                id="aiQuestion"
+                placeholder="Ask your coding doubt..."
+              ></textarea>
 
-              <h3>HTML Fundamentals</h3>
-
-              <p>
-                Build the foundation of every modern website.
-              </p>
-
-              <div class="course-meta">
-                <span>12 Lessons</span>
-                <span>4.5 Hours</span>
-              </div>
-
-              <div class="progress-line">
-                <span style="width:0%"></span>
-              </div>
-
-              <button class="course-btn">
-                Start Course →
+              <button class="primary-btn" id="askAiBtn">
+                Ask AI
               </button>
 
             </div>
 
-          </article>
+          </div>
+
+          <div class="ai-tools">
+
+            <h3>Quick Help</h3>
+
+            <button data-ai-question="Explain HTML to me">
+              📄 Explain HTML
+            </button>
+
+            <button data-ai-question="Explain CSS flexbox">
+              🎨 Explain Flexbox
+            </button>
+
+            <button data-ai-question="Explain JavaScript variables">
+              ⚡ JavaScript Variables
+            </button>
+
+            <button data-ai-question="How do I fix a JavaScript error?">
+              🛠️ Fix JavaScript Error
+            </button>
+
+          </div>
+
+        </div>
+
+        <div class="info-box">
+          <strong>Secure AI Architecture</strong>
+          <p>
+            For real AI responses, connect a secure backend endpoint such as
+            /api/ai-tutor. API keys must remain server-side.
+          </p>
+        </div>
+
+      </section>
 
 
-          <article class="course-card">
+      <!-- ================= ANALYTICS ================= -->
 
-            <div class="course-top css-bg">
-              <span class="course-language">CSS</span>
-              <div class="course-symbol">#</div>
+      <section class="page-section" id="section-analytics">
+
+        <div class="page-header">
+          <div>
+            <small>YOUR PERFORMANCE</small>
+            <h2>Analytics</h2>
+            <p>Track your coding and learning progress.</p>
+          </div>
+        </div>
+
+        <div class="analytics-cards">
+
+          <div class="analytics-card">
+            <span>Overall Progress</span>
+            <strong id="analyticsProgress">0%</strong>
+          </div>
+
+          <div class="analytics-card">
+            <span>Questions Attempted</span>
+            <strong id="analyticsAttempted">0</strong>
+          </div>
+
+          <div class="analytics-card">
+            <span>Correct Answers</span>
+            <strong id="analyticsCorrect">0</strong>
+          </div>
+
+          <div class="analytics-card">
+            <span>Quiz Attempts</span>
+            <strong id="analyticsQuizzes">0</strong>
+          </div>
+
+        </div>
+
+        <div class="analytics-layout">
+
+          <div class="panel">
+            <div class="panel-header">
+              <div>
+                <small>COURSE PROGRESS</small>
+                <h3>Courses</h3>
+              </div>
             </div>
 
-            <div class="course-body">
+            <div id="courseAnalytics"></div>
+          </div>
 
-              <span class="level beginner">BEGINNER</span>
-
-              <h3>CSS Mastery</h3>
-
-              <p>
-                Design beautiful and responsive websites.
-              </p>
-
-              <div class="course-meta">
-                <span>18 Lessons</span>
-                <span>7 Hours</span>
+          <div class="panel">
+            <div class="panel-header">
+              <div>
+                <small>PERFORMANCE</small>
+                <h3>Quiz History</h3>
               </div>
-
-              <div class="progress-line">
-                <span style="width:0%"></span>
-              </div>
-
-              <button class="course-btn">
-                Start Course →
-              </button>
-
             </div>
 
-          </article>
-
-
-          <article class="course-card">
-
-            <div class="course-top js-bg">
-              <span class="course-language">JAVASCRIPT</span>
-              <div class="course-symbol">JS</div>
-            </div>
-
-            <div class="course-body">
-
-              <span class="level intermediate">INTERMEDIATE</span>
-
-              <h3>JavaScript Pro</h3>
-
-              <p>
-                Learn programming logic and interactive web development.
-              </p>
-
-              <div class="course-meta">
-                <span>30 Lessons</span>
-                <span>12 Hours</span>
-              </div>
-
-              <div class="progress-line">
-                <span style="width:0%"></span>
-              </div>
-
-              <button class="course-btn">
-                Start Course →
-              </button>
-
-            </div>
-
-          </article>
-
-
-          <article class="course-card">
-
-            <div class="course-top python-bg">
-              <span class="course-language">PYTHON</span>
-              <div class="course-symbol">PY</div>
-            </div>
-
-            <div class="course-body">
-
-              <span class="level beginner">BEGINNER</span>
-
-              <h3>Python Programming</h3>
-
-              <p>
-                Learn Python from zero to building real projects.
-              </p>
-
-              <div class="course-meta">
-                <span>25 Lessons</span>
-                <span>10 Hours</span>
-              </div>
-
-              <div class="progress-line">
-                <span style="width:0%"></span>
-              </div>
-
-              <button class="course-btn">
-                Start Course →
-              </button>
-
-            </div>
-
-          </article>
-
+            <div id="quizHistory"></div>
+          </div>
 
         </div>
 
       </section>
 
 
-      <!-- ACTIVITY -->
-      <section class="dashboard-two-column">
+      <!-- ================= SUPPORT ================= -->
 
+      <section class="page-section" id="section-support">
 
-        <div class="panel">
+        <div class="page-header">
+          <div>
+            <small>HELP CENTER</small>
+            <h2>Support & Help</h2>
+            <p>Get help, send feedback or contact Coding Academy.</p>
+          </div>
+        </div>
 
-          <div class="panel-header">
+        <div class="support-grid">
 
-            <div>
-              <span class="section-kicker">ACTIVITY</span>
-              <h2>Recent Activity</h2>
-            </div>
-
-            <button>View All</button>
-
+          <div class="support-card">
+            <span>❓</span>
+            <h3>FAQ</h3>
+            <p>Find answers to common questions.</p>
+            <button onclick="showToast('FAQ section is ready.')">
+              Open FAQ
+            </button>
           </div>
 
-          <div id="activityList" class="activity-list">
+          <div class="support-card">
+            <span>📢</span>
+            <h3>Announcements</h3>
+            <p>See Coding Academy updates.</p>
+            <button onclick="showToast('No new announcements.')">
+              View Updates
+            </button>
+          </div>
 
-            <div class="empty-state">
-              <div>◌</div>
-              <strong>No activity yet</strong>
-              <span>Start a course to see your activity here.</span>
-            </div>
+          <div class="support-card">
+            <span>🐞</span>
+            <h3>Report a Problem</h3>
+            <p>Tell us about a website problem.</p>
+            <button onclick="openFeedback('problem')">
+              Report
+            </button>
+          </div>
 
+          <div class="support-card">
+            <span>💡</span>
+            <h3>Feedback</h3>
+            <p>Share your ideas and suggestions.</p>
+            <button onclick="openFeedback('feedback')">
+              Send Feedback
+            </button>
           </div>
 
         </div>
 
 
-        <div class="panel">
-
-          <div class="panel-header">
-
-            <div>
-              <span class="section-kicker">PROGRESS</span>
-              <h2>Learning Progress</h2>
-            </div>
-
-            <button>Details</button>
-
-          </div>
-
-          <div class="progress-overview">
-
-            <div class="progress-circle">
-              <span id="circleProgress">0%</span>
-            </div>
-
-            <div class="progress-details">
-
-              <div>
-                <span>Courses Started</span>
-                <strong>0</strong>
-              </div>
-
-              <div>
-                <span>Lessons Completed</span>
-                <strong>0</strong>
-              </div>
-
-              <div>
-                <span>Tests Completed</span>
-                <strong>0</strong>
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-
-
-      </section>
-
-
-      <!-- FEATURES -->
-      <section class="section-block">
-
-        <div class="section-heading">
+        <div class="social-panel">
 
           <div>
-            <span class="section-kicker">EVERYTHING YOU NEED</span>
-            <h2>Learn Smarter</h2>
+            <small>CONNECT</small>
+            <h3>Social & Support</h3>
+            <p>
+              Social links are controlled from the configuration section
+              inside script.js.
+            </p>
           </div>
 
-        </div>
-
-
-        <div class="feature-grid">
-
-          <div class="feature-card">
-            <div class="feature-icon">⌘</div>
-            <h3>Interactive Coding</h3>
-            <p>Practice code directly in your browser with instant output.</p>
-          </div>
-
-          <div class="feature-card">
-            <div class="feature-icon">✦</div>
-            <h3>AI Coding Tutor</h3>
-            <p>Understand errors, concepts and code with AI assistance.</p>
-          </div>
-
-          <div class="feature-card">
-            <div class="feature-icon">◒</div>
-            <h3>Smart Analytics</h3>
-            <p>Track your learning progress, scores and activity.</p>
-          </div>
-
-          <div class="feature-card">
-            <div class="feature-icon">□</div>
-            <h3>Study Planner</h3>
-            <p>Create daily goals and build a consistent learning habit.</p>
-          </div>
+          <div id="socialLinks" class="social-links"></div>
 
         </div>
 
       </section>
 
 
-      <!-- FOOTER -->
-      <footer class="footer">
+      <!-- ================= SETTINGS ================= -->
 
-        <div>
-          <strong>Coding Academy</strong>
-          <span>Learn. Code. Build.</span>
+      <section class="page-section" id="section-settings">
+
+        <div class="page-header">
+          <div>
+            <small>PERSONALIZATION</small>
+            <h2>Settings</h2>
+            <p>Customize your Coding Academy experience.</p>
+          </div>
         </div>
 
-        <div>
-          Created by <strong>Yashpal Aagri</strong>
+        <div class="settings-grid">
+
+          <div class="settings-card">
+
+            <h3>Appearance</h3>
+
+            <div class="setting-row">
+              <div>
+                <strong>Mode</strong>
+                <small>Choose light or dark mode.</small>
+              </div>
+
+              <select id="appearanceSelect">
+                <option value="dark">Dark</option>
+                <option value="light">Light</option>
+              </select>
+            </div>
+
+          </div>
+
+
+          <div class="settings-card">
+
+            <h3>Accent Theme</h3>
+
+            <div id="themeGrid" class="theme-grid"></div>
+
+          </div>
+
+
+          <div class="settings-card">
+
+            <h3>Language</h3>
+
+            <div class="setting-row">
+
+              <div>
+                <strong>Interface Language</strong>
+                <small>English / Hindi</small>
+              </div>
+
+              <select id="languageSelect">
+                <option value="en">English</option>
+                <option value="hi">हिन्दी</option>
+              </select>
+
+            </div>
+
+          </div>
+
+
+          <div class="settings-card">
+
+            <h3>Data</h3>
+
+            <div class="setting-row">
+
+              <div>
+                <strong>Reset Local Data</strong>
+                <small>Remove saved progress and settings.</small>
+              </div>
+
+              <button class="danger-btn" id="resetDataBtn">
+                Reset
+              </button>
+
+            </div>
+
+          </div>
+
         </div>
 
-        <div>
-          © <span id="year"></span> Coding Academy
-        </div>
-
-      </footer>
-
+      </section>
 
     </div>
+
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+      <div>
+        <strong>Coding Academy</strong>
+        <span>Learn • Code • Build</span>
+      </div>
+
+      <p>
+        Created by <strong>Yashpal Aagri</strong>
+      </p>
+    </footer>
 
   </main>
 
 
-  <!-- Profile Modal -->
-  <div id="profileModal" class="modal">
+  <!-- ================= PROFILE MODAL ================= -->
 
-    <div class="modal-box">
+  <div class="modal" id="profileModal">
 
-      <button class="modal-close" id="closeProfile">×</button>
+    <div class="modal-card">
 
-      <div class="profile-large">
-        <div id="profileAvatarLarge">YA</div>
-      </div>
+      <button class="modal-close" data-close-modal="profileModal">
+        ×
+      </button>
 
-      <h2>Your Profile</h2>
+      <div class="modal-avatar" id="modalAvatar">YA</div>
 
-      <p>Yashpal Aagri</p>
+      <h2>Profile</h2>
 
-      <div class="profile-stats">
-        <div>
-          <strong>0</strong>
-          <span>Courses</span>
-        </div>
+      <p>Customize your learning profile.</p>
 
-        <div>
-          <strong>0</strong>
-          <span>Tests</span>
-        </div>
+      <label class="upload-photo">
 
-        <div>
-          <strong>0%</strong>
-          <span>Progress</span>
-        </div>
-      </div>
+        <span>📷</span>
+        Change Profile Photo
 
-      <button class="btn btn-primary full-btn" onclick="goToSection('settings')">
-        Profile Settings
+        <input
+          type="file"
+          id="profilePhotoInput"
+          accept="image/*"
+        >
+
+      </label>
+
+      <button class="secondary-btn full" id="removePhotoBtn">
+        Remove Photo
+      </button>
+
+      <label class="modal-label">
+        Your Name
+        <input id="profileNameInput" value="Yashpal Aagri">
+      </label>
+
+      <button class="primary-btn full" id="saveProfileBtn">
+        Save Profile
       </button>
 
     </div>
@@ -758,13 +1233,42 @@
   </div>
 
 
-  <!-- Notification -->
-  <div id="toast" class="toast">
-    <span id="toastMessage">Welcome to Coding Academy!</span>
+  <!-- ================= FEEDBACK MODAL ================= -->
+
+  <div class="modal" id="feedbackModal">
+
+    <div class="modal-card">
+
+      <button class="modal-close" data-close-modal="feedbackModal">
+        ×
+      </button>
+
+      <h2 id="feedbackTitle">Feedback</h2>
+
+      <textarea
+        id="feedbackText"
+        placeholder="Write your message..."
+      ></textarea>
+
+      <button class="primary-btn full" id="sendFeedbackBtn">
+        Send
+      </button>
+
+    </div>
+
   </div>
 
 
+  <!-- ================= TOAST ================= -->
+
+  <div class="toast" id="toast">
+    <span>✓</span>
+    <p id="toastMessage">Done</p>
+  </div>
+
+
+  <!-- SCRIPT -->
   <script src="script.js"></script>
 
 </body>
-                           </html>
+                </html>
