@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>YouTube Classes | Mission Lakshya NEET 2027</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../style.css">
+
+  <style>
+    .youtube-page {
+      padding-bottom: 50px;
+    }
+
+    .yt-hero {
+      position: relative;
+      overflow: hidden;
+      padding: 32px;
+      border-radius: 28px;
+      margin-bottom: 24px;
+      background:
+        radial-gradient(circle at 90% 20%, rgba(124,58,237,.28), transparent 30%),
+        radial-gradient(circle at 10% 90%, rgba(59,130,246,.18), transparent 30%),
+        var(--card);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    .yt-hero h1 {
+      margin: 10px 0;
+      font-size: clamp(30px, 5vw, 52px);
+      line-height: 1.05;
+    }
+
+    .yt-hero p {
+      max-width: 750px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .yt-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 13px;
+      border-radius: 999px;
+      background: rgba(124,58,237,.14);
+      border: 1px solid rgba(124,58,237,.28);
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 13px;
+    }
+
+    .yt-search {
+      display: flex;
+      gap: 10px;
+      margin-top: 22px;
+      max-width: 850px;
+    }
+
+    .yt-search input {
+      flex: 1;
+      min-width: 0;
+      padding: 14px 16px;
+      border-radius: 15px;
+      border: 1px solid var(--border);
+      outline: none;
+      background: var(--bg);
+      color: var(--text);
+      font: inherit;
+    }
+
+    .yt-btn {
+      border: 0;
+      border-radius: 15px;
+      padding: 13px 18px;
+      cursor: pointer;
+      font-weight: 800;
+      background: var(--primary);
+      color: white;
+    }
+
+    .yt-btn.secondary {
+      background: var(--bg);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    .yt-section {
+      margin-top: 28px;
+    }
+
+    .yt-section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 15px;
+    }
+
+    .yt-section-head h2 {
+      margin: 0;
+    }
+
+    .yt-section-head span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .channel-grid,
+    .live-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .channel-card,
+    .live-card {
+      border: 1px solid var(--border);
+      background: var(--card);
+      border-radius: 22px;
+      padding: 20px;
+      box-shadow: var(--shadow);
+      transition: .25s ease;
+    }
+
+    .channel-card:hover,
+    .live-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .channel-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      font-size: 25px;
+      background: rgba(124,58,237,.14);
+      margin-bottom: 14px;
+    }
+
+    .channel-card h3,
+    .live-card h3 {
+      margin: 0 0 8px;
+    }
+
+    .channel-card p,
+    .live-card p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .channel-actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+    }
+
+    .channel-actions a,
+    .channel-actions button {
+      text-decoration: none;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--text);
+      border-radius: 11px;
+      padding: 9px 12px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .channel-actions .primary {
+      background: var(--primary);
+      color: white;
+      border-color: transparent;
+    }
+
+    .live-card {
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .live-thumb {
+      height: 170px;
+      display: grid;
+      place-items: center;
+      font-size: 48px;
+      background:
+        linear-gradient(135deg, rgba(124,58,237,.35), rgba(37,99,235,.20)),
+        var(--bg);
+    }
+
+    .live-body {
+      padding: 18px;
+    }
+
+    .live-label {
+      display: inline-flex;
+      padding: 5px 9px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 800;
+      margin-bottom: 10px;
+      background: rgba(239,68,68,.13);
+      color: #ef4444;
+    }
+
+    .viewer-box {
+      margin-top: 25px;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: #000;
+      box-shadow: var(--shadow);
+    }
+
+    .viewer-top {
+      padding: 14px 16px;
+      background: var(--card);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .viewer-top strong {
+      font-size: 14px;
+    }
+
+    .viewer-frame {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border: 0;
+      display: block;
+    }
+
+    .empty-state {
+      padding: 35px 20px;
+      text-align: center;
+      color: var(--muted);
+      border: 1px dashed var(--border);
+      border-radius: 20px;
+      background: var(--card);
+    }
+
+    .note-box {
+      margin-top: 18px;
+      padding: 15px;
+      border-radius: 16px;
+      background: rgba(124,58,237,.08);
+      border: 1px solid rgba(124,58,237,.18);
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 13px;
+    }
+
+    @media (max-width: 950px) {
+      .channel-grid,
+      .live-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 650px) {
+      .yt-hero {
+        padding: 22px;
+      }
+
+      .yt-search {
+        flex-direction: column;
+      }
+
+      .yt-search button {
+        width: 100%;
+      }
+
+      .channel-grid,
+      .live-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .viewer-top {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- TOPBAR -->
+  <header class="topbar">
+    <div class="brand">
+      <a href="../index.html" style="text-decoration:none;color:inherit;">
+        <img src="../logo.png" alt="Mission Lakshya Logo"
+             onerror="this.style.display='none'">
+        <div>
+          <strong>Mission Lakshya</strong>
+          <span>NEET 2027</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="topbar-actions">
+      <button class="icon-btn" onclick="history.back()" title="Back">←</button>
+      <a href="../index.html" class="icon-btn" title="Home">⌂</a>
+    </div>
+  </header>
+
+
+  <main class="main youtube-page">
+
+    <!-- HERO -->
+    <section class="yt-hero reveal">
+
+      <div class="yt-badge">
+        🔴 YouTube Learning Hub
+      </div>
+
+      <h1>
+        YouTube Classes 🎬
+      </h1>
+
+      <p>
+        Mission Lakshya NEET 2027 में Physics, Chemistry और Biology
+        की video lectures, live classes और useful YouTube channels
+        एक ही जगह से access करो।
+      </p>
+
+      <div class="yt-search">
+        <input
+          id="youtubeUrl"
+          type="text"
+          placeholder="YouTube video URL यहाँ paste करें..."
+        >
+
+        <button class="yt-btn" onclick="openYouTube()">
+          ▶ Open Video
+        </button>
+
+        <button class="yt-btn secondary" onclick="clearYouTube()">
+          Clear
+        </button>
+      </div>
+
+    </section>
+
+
+    <!-- CHANNELS -->
+    <section class="yt-section reveal">
+
+      <div class="yt-section-head">
+        <div>
+          <h2>Popular Study Channels</h2>
+          <span>NEET और Science preparation के लिए</span>
+        </div>
+      </div>
+
+      <div class="channel-grid">
+
+        <article class="channel-card">
+          <div class="channel-icon">📚</div>
+          <h3>Physics Wallah</h3>
+          <p>
+            NEET और JEE की Physics, Chemistry और Biology classes.
+          </p>
+
+          <div class="channel-actions">
+            <a
+              class="primary"
+              href="https://www.youtube.com/@PhysicsWallah"
+              target="_blank"
+              rel="noopener"
+            >
+              Open Channel
+            </a>
+
+            <button onclick="loadChannel('@PhysicsWallah')">
+              Viewer
+            </button>
+          </div>
+        </article>
+
+
+        <article class="channel-card">
+          <div class="channel-icon">🧬</div>
+          <h3>PW NEET</h3>
+          <p>
+            NEET-focused lectures, revision और preparation content.
+          </p>
+
+          <div class="channel-actions">
+            <a
+              class="primary"
+              href="https://www.youtube.com/@PW-NEET"
+              target="_blank"
+              rel="noopener"
+            >
+              Open Channel
+            </a>
+
+            <button onclick="searchYouTube('PW NEET')">
+              Search
+            </button>
+          </div>
+        </article>
+
+
+        <article class="channel-card">
+          <div class="channel-icon">⚛️</div>
+          <h3>Unacademy NEET</h3>
+          <p>
+            NEET preparation और subject-wise educational content.
+          </p>
+
+          <div class="channel-actions">
+            <a
+              class="primary"
+              href="https://www.youtube.com/@unacademyneet"
+              target="_blank"
+              rel="noopener"
+            >
+              Open Channel
+            </a>
+
+            <button onclick="searchYouTube('Unacademy NEET')">
+              Search
+            </button>
+          </div>
+        </article>
+
+
+        <article class="channel-card">
+          <div class="channel-icon">🔬</div>
+          <h3>NEET Biology</h3>
+          <p>
+            Biology concepts, NCERT-based preparation और revision.
+          </p>
+
+          <div class="channel-actions">
+            <button
+              class="primary"
+              onclick="searchYouTube('NEET Biology NCERT Hindi')"
+            >
+              Search Videos
+            </button>
+          </div>
+        </article>
+
+
+        <article class="channel-card">
+          <div class="channel-icon">🧪</div>
+          <h3>NEET Chemistry</h3>
+          <p>
+            Physical, Organic और Inorganic Chemistry lectures.
+          </p>
+
+          <div class="channel-actions">
+            <button
+              class="primary"
+              onclick="searchYouTube('NEET Chemistry Hindi')"
+            >
+              Search Videos
+            </button>
+          </div>
+        </article>
+
+
+        <article class="channel-card">
+          <div class="channel-icon">📐</div>
+          <h3>NEET Physics</h3>
+          <p>
+            Physics concepts, numericals और NEET preparation lectures.
+          </p>
+
+          <div class="channel-actions">
+            <button
+              class="primary"
+              onclick="searchYouTube('NEET Physics Hindi')"
+            >
+              Search Videos
+            </button>
+          </div>
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- LIVE CLASSES -->
+    <section class="yt-section reveal">
+
+      <div class="yt-section-head">
+        <div>
+          <h2>🔴 Live Classes</h2>
+          <span>Latest live classes खोजने के लिए</span>
+        </div>
+
+        <button
+          class="yt-btn secondary"
+          onclick="searchYouTube('NEET live class')"
+        >
+          Find Live
+        </button>
+      </div>
+
+      <div class="live-grid">
+
+        <article class="live-card">
+          <div class="live-thumb">🎥</div>
+          <div class="live-body">
+            <span class="live-label">LIVE / SEARCH</span>
+            <h3>NEET Physics Live</h3>
+            <p>
+              Physics की latest live classes YouTube पर खोजें।
+            </p>
+
+            <button
+              class="yt-btn"
+              onclick="searchYouTube('NEET Physics live class')"
+            >
+              Watch
+            </button>
+          </div>
+        </article>
+
+
+        <article class="live-card">
+          <div class="live-thumb">🧪</div>
+          <div class="live-body">
+            <span class="live-label">LIVE / SEARCH</span>
+            <h3>NEET Chemistry Live</h3>
+            <p>
+              Chemistry की latest live classes और revision sessions.
+            </p>
+
+            <button
+              class="yt-btn"
+              onclick="searchYouTube('NEET Chemistry live class')"
+            >
+              Watch
+            </button>
+          </div>
+        </article>
+
+
+        <article class="live-card">
+          <div class="live-thumb">🧬</div>
+          <div class="live-body">
+            <span class="live-label">LIVE / SEARCH</span>
+            <h3>NEET Biology Live</h3>
+            <p>
+              Biology की latest live classes और NCERT sessions.
+            </p>
+
+            <button
+              class="yt-btn"
+              onclick="searchYouTube('NEET Biology live class')"
+            >
+              Watch
+            </button>
+          </div>
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- VIEWER -->
+    <section class="yt-section reveal">
+
+      <div class="yt-section-head">
+        <div>
+          <h2>▶ YouTube Viewer</h2>
+          <span>Video को Mission Lakshya के अंदर देखें</span>
+        </div>
+      </div>
+
+      <div class="viewer-box">
+
+        <div class="viewer-top">
+          <strong id="viewerTitle">
+            YouTube Video Viewer
+          </strong>
+
+          <button
+            class="yt-btn secondary"
+            onclick="closeViewer()"
+          >
+            Close
+          </button>
+        </div>
+
+        <iframe
+          id="youtubeFrame"
+          class="viewer-frame"
+          src="about:blank"
+          title="YouTube Viewer"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+
+      </div>
+
+      <div class="note-box">
+        💡 कुछ YouTube videos या channels embedding को allow नहीं करते।
+        ऐसे videos के लिए YouTube पर Open करने का option इस्तेमाल करें।
+      </div>
+
+    </section>
+
+
+    <!-- BACK -->
+    <section class="yt-section">
+      <div class="empty-state">
+        <h3>📚 और पढ़ाई करनी है?</h3>
+        <p>
+          Books, Videos, Question Bank और बाकी features Mission Lakshya
+          के Home page से खोल सकते हो।
+        </p>
+
+        <a
+          href="../index.html"
+          class="yt-btn"
+          style="display:inline-block;text-decoration:none;"
+        >
+          ← Back to Home
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+
+  <script src="../script.js" defer></script>
+
+  <script>
+
+    function getYouTubeId(url) {
+
+      if (!url) return null;
+
+      try {
+
+        const value = url.trim();
+
+        const patterns = [
+          /youtube\.com\/watch\?v=([^&]+)/,
+          /youtu\.be\/([^?&]+)/,
+          /youtube\.com\/shorts\/([^?&]+)/,
+          /youtube\.com\/embed\/([^?&]+)/
+        ];
+
+        for (const pattern of patterns) {
+
+          const match = value.match(pattern);
+
+          if (match) {
+            return match[1];
+          }
+
+        }
+
+      } catch (error) {
+        console.error(error);
+      }
+
+      return null;
+    }
+
+
+    function openYouTube() {
+
+      const input = document.getElementById("youtubeUrl");
+
+      const url = input.value.trim();
+
+      if (!url) {
+
+        alert("पहले YouTube URL डालें।");
+
+        return;
+      }
+
+      const videoId = getYouTubeId(url);
+
+      if (!videoId) {
+
+        alert("Valid YouTube video URL डालें।");
+
+        return;
+      }
+
+      loadVideo(videoId, "YouTube Video");
+
+      document.querySelector(".viewer-box")
+        .scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+    }
+
+
+    function loadVideo(videoId, title) {
+
+      const frame = document.getElementById("youtubeFrame");
+
+      const viewerTitle = document.getElementById("viewerTitle");
+
+      frame.src =
+        "https://www.youtube.com/embed/" +
+        encodeURIComponent(videoId) +
+        "?rel=0";
+
+      viewerTitle.textContent =
+        title || "YouTube Video Viewer";
+    }
+
+
+    function clearYouTube() {
+
+      document.getElementById("youtubeUrl").value = "";
+
+      closeViewer();
+    }
+
+
+    function closeViewer() {
+
+      document.getElementById("youtubeFrame").src =
+        "about:blank";
+
+      document.getElementById("viewerTitle").textContent =
+        "YouTube Video Viewer";
+    }
+
+
+    function searchYouTube(query) {
+
+      const url =
+        "https://www.youtube.com/results?search_query=" +
+        encodeURIComponent(query);
+
+      window.open(url, "_blank", "noopener");
+
+    }
+
+
+    function loadChannel(channel) {
+
+      searchYouTube(channel + " NEET lectures");
+    }
+
+  </script>
+
+</body>
+  </html>
