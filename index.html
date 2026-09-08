@@ -1,1 +1,1545 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#7c3aed">
+  <meta name="description" content="Study Wallah - NEET & JEE Preparation Platform">
+  <title>Study Wallah | NEET & JEE</title>
 
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --bg:#080612;
+      --card:#121020;
+      --card2:#18152a;
+      --primary:#8b5cf6;
+      --primary2:#a78bfa;
+      --text:#f7f5ff;
+      --muted:#a9a4bc;
+      --border:rgba(255,255,255,.09);
+      --success:#22c55e;
+      --danger:#ef4444;
+      --shadow:0 20px 60px rgba(0,0,0,.35)
+    }
+    body{
+      font-family:Inter,system-ui,Arial,sans-serif;
+      background:
+        radial-gradient(circle at 20% 10%,rgba(124,58,237,.18),transparent 30%),
+        radial-gradient(circle at 90% 20%,rgba(139,92,246,.12),transparent 25%),
+        var(--bg);
+      color:var(--text);
+      min-height:100vh;
+      overflow-x:hidden
+    }
+    button,input,select,textarea{font:inherit}
+    button{cursor:pointer}
+    a{text-decoration:none;color:inherit}
+
+    /* SIDEBAR */
+    .sidebar{
+      position:fixed;left:0;top:0;bottom:0;width:250px;
+      background:rgba(10,8,20,.94);
+      border-right:1px solid var(--border);
+      padding:22px 14px;
+      z-index:20;
+      backdrop-filter:blur(20px)
+    }
+    .brand{
+      display:flex;align-items:center;gap:12px;
+      padding:8px 10px 24px;
+      font-weight:900;font-size:22px
+    }
+    .logo{
+      width:42px;height:42px;border-radius:14px;
+      display:grid;place-items:center;
+      background:linear-gradient(135deg,#7c3aed,#c084fc);
+      box-shadow:0 10px 30px rgba(124,58,237,.35);
+      font-weight:900
+    }
+    .nav{
+      display:flex;flex-direction:column;gap:5px;
+      overflow:auto;height:calc(100vh - 110px)
+    }
+    .nav button{
+      border:0;background:transparent;color:var(--muted);
+      padding:12px 14px;border-radius:12px;
+      text-align:left;display:flex;gap:12px;align-items:center
+    }
+    .nav button:hover,.nav button.active{
+      background:rgba(139,92,246,.15);
+      color:white
+    }
+
+    /* MAIN */
+    .main{margin-left:250px;min-height:100vh}
+    .topbar{
+      height:72px;border-bottom:1px solid var(--border);
+      display:flex;align-items:center;gap:14px;
+      padding:0 28px;position:sticky;top:0;z-index:10;
+      background:rgba(8,6,18,.78);backdrop-filter:blur(18px)
+    }
+    .menu{display:none}
+    .search{
+      flex:1;max-width:600px;
+      display:flex;align-items:center;
+      background:var(--card);border:1px solid var(--border);
+      border-radius:14px;padding:0 14px
+    }
+    .search input{
+      width:100%;padding:12px;border:0;outline:0;
+      color:white;background:transparent
+    }
+    .top-actions{margin-left:auto;display:flex;gap:8px}
+    .icon-btn{
+      border:1px solid var(--border);background:var(--card);
+      color:white;border-radius:12px;padding:10px 12px
+    }
+
+    .page{display:none;padding:30px;max-width:1500px;margin:auto}
+    .page.active{display:block}
+    .section-title{
+      display:flex;justify-content:space-between;
+      align-items:center;margin-bottom:18px
+    }
+    .section-title h2{font-size:24px}
+    .muted{color:var(--muted)}
+
+    /* HERO */
+    .hero{
+      min-height:390px;border:1px solid var(--border);
+      border-radius:28px;padding:38px;
+      position:relative;overflow:hidden;
+      background:
+        radial-gradient(circle at 80% 30%,rgba(168,85,247,.28),transparent 30%),
+        linear-gradient(135deg,#171129,#0e0b19)
+    }
+    .hero:before,.hero:after{
+      content:"";position:absolute;border-radius:50%;
+      filter:blur(1px);opacity:.45
+    }
+    .hero:before{
+      width:240px;height:240px;right:5%;top:10%;
+      border:1px solid rgba(167,139,250,.25);
+      box-shadow:0 0 80px rgba(139,92,246,.2)
+    }
+    .hero:after{
+      width:120px;height:120px;right:18%;top:27%;
+      border:1px solid rgba(196,181,253,.25)
+    }
+    .hero-content{position:relative;z-index:2;max-width:760px}
+    .badge{
+      display:inline-flex;padding:7px 12px;border-radius:999px;
+      background:rgba(139,92,246,.14);
+      border:1px solid rgba(139,92,246,.3);
+      color:#c4b5fd;font-size:13px;margin-bottom:16px
+    }
+    .hero h1{
+      font-size:clamp(38px,6vw,70px);
+      line-height:1.02;margin-bottom:16px
+    }
+    .gradient{
+      background:linear-gradient(90deg,#c4b5fd,#8b5cf6,#e9d5ff);
+      -webkit-background-clip:text;background-clip:text;color:transparent
+    }
+    .hero p{color:var(--muted);font-size:17px;line-height:1.7}
+    .hero-actions{display:flex;gap:12px;margin-top:24px;flex-wrap:wrap}
+    .btn{
+      border:0;border-radius:13px;padding:12px 18px;
+      font-weight:800
+    }
+    .primary{background:linear-gradient(135deg,#7c3aed,#a855f7);color:white}
+    .secondary{background:var(--card);color:white;border:1px solid var(--border)}
+
+    /* CARDS */
+    .grid{
+      display:grid;grid-template-columns:repeat(4,1fr);
+      gap:16px
+    }
+    .grid-3{grid-template-columns:repeat(3,1fr)}
+    .grid-2{grid-template-columns:repeat(2,1fr)}
+    .card{
+      background:linear-gradient(145deg,rgba(24,21,42,.96),rgba(14,12,25,.96));
+      border:1px solid var(--border);
+      border-radius:20px;padding:20px;
+      box-shadow:var(--shadow)
+    }
+    .card:hover{
+      transform:translateY(-2px);
+      border-color:rgba(139,92,246,.28)
+    }
+    .stat{position:relative;overflow:hidden}
+    .stat .big{font-size:30px;font-weight:900;margin-top:8px}
+    .stat .icon{font-size:27px}
+    .course-card h3{margin:10px 0 6px}
+    .course-icon{
+      width:48px;height:48px;border-radius:15px;
+      display:grid;place-items:center;
+      background:rgba(139,92,246,.15);font-size:23px
+    }
+    .progress{
+      height:7px;background:#252238;border-radius:99px;
+      overflow:hidden;margin:14px 0 6px
+    }
+    .progress span{
+      display:block;height:100%;
+      background:linear-gradient(90deg,#7c3aed,#c084fc)
+    }
+    .tag{
+      display:inline-block;padding:5px 9px;border-radius:999px;
+      font-size:12px;background:rgba(255,255,255,.07);
+      color:var(--muted)
+    }
+
+    /* FILTERS */
+    .filters{
+      display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px
+    }
+    select,.input,textarea{
+      background:#0f0c1b;color:white;
+      border:1px solid var(--border);
+      border-radius:12px;padding:11px;outline:none
+    }
+
+    /* QUESTIONS */
+    .question{margin-bottom:16px}
+    .question h3{line-height:1.6;margin-bottom:14px}
+    .options{display:grid;gap:9px}
+    .option{
+      padding:13px;border:1px solid var(--border);
+      border-radius:12px;background:#0e0c18;color:white;
+      text-align:left
+    }
+    .option:hover{border-color:#8b5cf6}
+    .option.correct{border-color:var(--success);background:rgba(34,197,94,.1)}
+    .option.wrong{border-color:var(--danger);background:rgba(239,68,68,.1)}
+
+    /* TABLE/LISTS */
+    .list{display:flex;flex-direction:column;gap:10px}
+    .list-item{
+      display:flex;align-items:center;gap:14px;
+      padding:14px;border:1px solid var(--border);
+      background:#0f0c1b;border-radius:14px
+    }
+    .list-item .grow{flex:1}
+
+    /* AI */
+    .ai-box{
+      min-height:420px;display:flex;flex-direction:column;
+      gap:15px
+    }
+    .ai-avatar{
+      width:90px;height:90px;border-radius:50%;
+      display:grid;place-items:center;font-size:45px;
+      background:linear-gradient(135deg,#7c3aed,#c084fc);
+      box-shadow:0 0 45px rgba(139,92,246,.3)
+    }
+    .chat{
+      flex:1;min-height:220px;max-height:380px;
+      overflow:auto;padding:15px;
+      background:#0b0914;border-radius:16px
+    }
+    .msg{
+      max-width:80%;padding:12px 14px;
+      border-radius:14px;margin-bottom:10px;line-height:1.6
+    }
+    .msg.ai{background:#18142a}
+    .msg.user{background:#5b21b6;margin-left:auto}
+    .ai-input{display:flex;gap:8px}
+    .ai-input textarea{flex:1;resize:none}
+
+    /* NOTES */
+    .note-editor textarea{width:100%;min-height:160px;margin:10px 0}
+
+    /* MODAL */
+    .modal{
+      position:fixed;inset:0;background:rgba(0,0,0,.7);
+      display:none;place-items:center;z-index:100;
+      padding:20px
+    }
+    .modal.show{display:grid}
+    .modal-box{
+      width:min(600px,100%);background:#121020;
+      border:1px solid var(--border);border-radius:20px;
+      padding:24px
+    }
+
+    .toast{
+      position:fixed;right:20px;bottom:20px;
+      background:#18142a;border:1px solid var(--border);
+      padding:13px 18px;border-radius:12px;
+      transform:translateY(100px);transition:.3s;z-index:200
+    }
+    .toast.show{transform:translateY(0)}
+
+    /* MOBILE */
+    @media(max-width:1000px){
+      .grid{grid-template-columns:repeat(2,1fr)}
+      .sidebar{width:220px}
+      .main{margin-left:220px}
+    }
+    @media(max-width:700px){
+      .sidebar{
+        transform:translateX(-100%);
+        transition:.25s;width:270px
+      }
+      .sidebar.open{transform:translateX(0)}
+      .main{margin-left:0}
+      .menu{display:block}
+      .topbar{padding:0 14px}
+      .page{padding:18px 14px}
+      .hero{padding:25px;min-height:360px}
+      .grid,.grid-3,.grid-2{grid-template-columns:1fr}
+      .hero h1{font-size:42px}
+      .search{max-width:none}
+      .top-actions .icon-btn:nth-child(2){display:none}
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+<aside class="sidebar" id="sidebar">
+  <div class="brand">
+    <div class="logo">SW</div>
+    <div>Study Wallah</div>
+  </div>
+
+  <nav class="nav">
+    <button class="active" data-page="home">🏠 Home</button>
+    <button data-page="courses">📚 Courses</button>
+    <button data-page="dpp">📝 DPP</button>
+    <button data-page="practice">❓ Question Bank</button>
+    <button data-page="quiz">🎯 Quiz</button>
+    <button data-page="tests">⏱️ Tests</button>
+    <button data-page="notes">📖 Notes</button>
+    <button data-page="videos">▶️ YouTube Learning</button>
+    <button data-page="planner">📅 Study Planner</button>
+    <button data-page="bookmarks">🔖 Bookmarks</button>
+    <button data-page="analytics">📊 Analytics</button>
+    <button data-page="ai">🤖 AI Study Tutor</button>
+    <button data-page="resources">🌐 Resources</button>
+    <button data-page="support">💬 Support</button>
+    <button data-page="settings">⚙️ Settings</button>
+  </nav>
+</aside>
+
+<main class="main">
+
+<header class="topbar">
+  <button class="icon-btn menu" id="menuBtn">☰</button>
+
+  <div class="search">
+    🔎
+    <input id="globalSearch" placeholder="Courses, chapters, questions, notes, videos...">
+  </div>
+
+  <div class="top-actions">
+    <button class="icon-btn" onclick="showNotifications()">🔔</button>
+    <button class="icon-btn" onclick="openProfile()">👤</button>
+  </div>
+</header>
+
+<!-- HOME -->
+<section class="page active" id="home">
+
+  <div class="hero">
+    <div class="hero-content">
+      <span class="badge">🚀 NEET + JEE Preparation Platform</span>
+
+      <h1>
+        Learn Smart.<br>
+        <span class="gradient">Prepare Better.</span>
+      </h1>
+
+      <p>
+        Study Wallah पर NEET और JEE की तैयारी के लिए
+        Courses, DPP, Question Bank, Tests, Notes,
+        AI Tutor और Study Planner एक ही जगह।
+      </p>
+
+      <div class="hero-actions">
+        <button class="btn primary" onclick="go('courses')">📚 Start Learning</button>
+        <button class="btn secondary" onclick="go('practice')">❓ Practice Questions</button>
+      </div>
+    </div>
+  </div>
+
+  <br>
+
+  <div class="section-title">
+    <h2>📊 Your Progress</h2>
+  </div>
+
+  <div class="grid">
+    <div class="card stat">
+      <div class="icon">📚</div>
+      <div class="muted">Courses</div>
+      <div class="big">6</div>
+    </div>
+
+    <div class="card stat">
+      <div class="icon">❓</div>
+      <div class="muted">Questions</div>
+      <div class="big" id="homeQuestions">0</div>
+    </div>
+
+    <div class="card stat">
+      <div class="icon">🎯</div>
+      <div class="muted">Quiz Attempts</div>
+      <div class="big" id="homeQuizzes">0</div>
+    </div>
+
+    <div class="card stat">
+      <div class="icon">🔥</div>
+      <div class="muted">Study Streak</div>
+      <div class="big" id="homeStreak">0</div>
+    </div>
+  </div>
+
+  <br>
+
+  <div class="section-title">
+    <h2>⚡ Quick Access</h2>
+  </div>
+
+  <div class="grid grid-3">
+
+    <div class="card course-card">
+      <div class="course-icon">🧬</div>
+      <h3>NEET Biology</h3>
+      <p class="muted">NCERT-focused preparation</p>
+      <div class="progress"><span style="width:35%"></span></div>
+      <button class="btn primary" onclick="go('courses')">Continue</button>
+    </div>
+
+    <div class="card course-card">
+      <div class="course-icon">⚛️</div>
+      <h3>NEET Physics</h3>
+      <p class="muted">Concept + numerical practice</p>
+      <div class="progress"><span style="width:22%"></span></div>
+      <button class="btn primary" onclick="go('courses')">Continue</button>
+    </div>
+
+    <div class="card course-card">
+      <div class="course-icon">📐</div>
+      <h3>JEE Mathematics</h3>
+      <p class="muted">Basic to advanced practice</p>
+      <div class="progress"><span style="width:18%"></span></div>
+      <button class="btn primary" onclick="go('courses')">Continue</button>
+    </div>
+
+  </div>
+
+  <br>
+
+  <div class="card">
+    <div class="section-title">
+      <h2>🔄 Continue Learning</h2>
+      <button class="btn secondary" onclick="go('courses')">View All</button>
+    </div>
+
+    <div class="list">
+      <div class="list-item">
+        <div>⚛️</div>
+        <div class="grow">
+          <b>Physics — Units & Measurements</b>
+          <div class="muted">Continue your lesson</div>
+        </div>
+        <button class="btn primary">Continue</button>
+      </div>
+
+      <div class="list-item">
+        <div>🧬</div>
+        <div class="grow">
+          <b>Biology — Cell Structure</b>
+          <div class="muted">Continue your lesson</div>
+        </div>
+        <button class="btn primary">Continue</button>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- COURSES -->
+<section class="page" id="courses">
+  <div class="section-title">
+    <h2>📚 Courses</h2>
+  </div>
+
+  <div class="filters">
+    <select id="courseExam">
+      <option value="all">All Exams</option>
+      <option value="NEET">NEET</option>
+      <option value="JEE">JEE</option>
+    </select>
+  </div>
+
+  <div class="grid grid-3" id="courseGrid"></div>
+</section>
+
+<!-- DPP -->
+<section class="page" id="dpp">
+  <div class="section-title">
+    <h2>📝 Daily Practice Problems</h2>
+  </div>
+
+  <div class="filters">
+    <select>
+      <option>NEET</option>
+      <option>JEE</option>
+    </select>
+
+    <select>
+      <option>All Subjects</option>
+      <option>Physics</option>
+      <option>Chemistry</option>
+      <option>Biology</option>
+      <option>Mathematics</option>
+    </select>
+  </div>
+
+  <div class="grid grid-2">
+    <div class="card">
+      <span class="tag">Today's DPP</span>
+      <h2 style="margin:12px 0">NEET Physics DPP</h2>
+      <p class="muted">20 practice questions • Chapter-wise</p>
+      <br>
+      <button class="btn primary" onclick="go('practice')">Start DPP</button>
+    </div>
+
+    <div class="card">
+      <span class="tag">Today's DPP</span>
+      <h2 style="margin:12px 0">JEE Mathematics DPP</h2>
+      <p class="muted">20 practice questions • Chapter-wise</p>
+      <br>
+      <button class="btn primary" onclick="go('practice')">Start DPP</button>
+    </div>
+  </div>
+</section>
+
+<!-- QUESTION BANK -->
+<section class="page" id="practice">
+  <div class="section-title">
+    <h2>❓ Question Bank</h2>
+  </div>
+
+  <div class="filters">
+    <select id="qExam">
+      <option value="all">All</option>
+      <option value="NEET">NEET</option>
+      <option value="JEE">JEE</option>
+    </select>
+
+    <select id="qSubject">
+      <option value="all">All Subjects</option>
+      <option>Physics</option>
+      <option>Chemistry</option>
+      <option>Biology</option>
+      <option>Mathematics</option>
+    </select>
+  </div>
+
+  <div id="questionList"></div>
+</section>
+
+<!-- QUIZ -->
+<section class="page" id="quiz">
+  <div class="section-title">
+    <h2>🎯 Quiz</h2>
+  </div>
+
+  <div class="card">
+    <h2>Chapter Quiz</h2>
+    <p class="muted">Choose a topic and test your preparation.</p>
+    <br>
+
+    <div class="filters">
+      <select>
+        <option>NEET</option>
+        <option>JEE</option>
+      </select>
+
+      <select>
+        <option>Physics</option>
+        <option>Chemistry</option>
+        <option>Biology</option>
+        <option>Mathematics</option>
+      </select>
+
+      <button class="btn primary" onclick="startQuiz()">Start Quiz</button>
+    </div>
+
+    <div id="quizBox"></div>
+  </div>
+</section>
+
+<!-- TESTS -->
+<section class="page" id="tests">
+  <div class="section-title">
+    <h2>⏱️ Tests & Mock Tests</h2>
+  </div>
+
+  <div class="grid grid-3">
+
+    <div class="card">
+      <span class="tag">NEET</span>
+      <h2>NEET Full Mock</h2>
+      <p class="muted">Exam-style complete mock test</p>
+      <br>
+      <button class="btn primary" onclick="startMock('NEET')">Start Test</button>
+    </div>
+
+    <div class="card">
+      <span class="tag">JEE</span>
+      <h2>JEE Full Mock</h2>
+      <p class="muted">JEE-style complete mock test</p>
+      <br>
+      <button class="btn primary" onclick="startMock('JEE')">Start Test</button>
+    </div>
+
+    <div class="card">
+      <span class="tag">Chapter</span>
+      <h2>Chapter Test</h2>
+      <p class="muted">Practice chapter-wise</p>
+      <br>
+      <button class="btn primary" onclick="go('practice')">Choose Chapter</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- NOTES -->
+<section class="page" id="notes">
+  <div class="section-title">
+    <h2>📖 Notes</h2>
+  </div>
+
+  <div class="grid grid-2">
+
+    <div class="card note-editor">
+      <h3>✍️ Personal Notes</h3>
+      <input class="input" id="noteTitle" placeholder="Note title" style="width:100%;margin-top:12px">
+      <textarea id="noteText" placeholder="अपना note यहाँ लिखें..."></textarea>
+      <button class="btn primary" onclick="saveNote()">💾 Save Note</button>
+    </div>
+
+    <div class="card">
+      <h3>📚 Important Topics</h3>
+      <br>
+      <div class="list">
+        <div class="list-item">🧬 Cell Biology</div>
+        <div class="list-item">⚛️ Physics Units</div>
+        <div class="list-item">🧪 Chemical Bonding</div>
+        <div class="list-item">📐 Mathematics Algebra</div>
+      </div>
+    </div>
+
+  </div>
+
+  <br>
+  <div class="card">
+    <h3>Saved Notes</h3>
+    <br>
+    <div id="notesList"></div>
+  </div>
+</section>
+
+<!-- VIDEOS -->
+<section class="page" id="videos">
+  <div class="section-title">
+    <h2>▶️ YouTube Learning</h2>
+  </div>
+
+  <div class="filters">
+    <input class="input" id="videoSearch" placeholder="Search NEET/JEE lectures...">
+    <button class="btn primary" onclick="searchYouTube()">Search</button>
+  </div>
+
+  <div class="card">
+    <h3>🔴 Live Classes</h3>
+    <p class="muted">YouTube API backend connect होने पर live classes यहाँ automatically दिखाई जाएँगी।</p>
+    <br>
+    <button class="btn primary" onclick="openYouTube()">Open YouTube Search</button>
+  </div>
+
+  <br>
+  <div id="videoResults" class="grid grid-3"></div>
+</section>
+
+<!-- PLANNER -->
+<section class="page" id="planner">
+  <div class="section-title">
+    <h2>📅 Study Planner</h2>
+  </div>
+
+  <div class="card">
+    <div class="filters">
+      <input class="input" id="taskInput" placeholder="आज क्या पढ़ना है?">
+      <button class="btn primary" onclick="addTask()">+ Add Task</button>
+    </div>
+
+    <div id="taskList" class="list"></div>
+  </div>
+</section>
+
+<!-- BOOKMARKS -->
+<section class="page" id="bookmarks">
+  <div class="section-title">
+    <h2>🔖 Bookmarks</h2>
+  </div>
+
+  <div class="card">
+    <p class="muted">आपके saved questions, notes, lessons और videos यहाँ दिखाई देंगे।</p>
+    <br>
+    <div id="bookmarkList" class="list"></div>
+  </div>
+</section>
+
+<!-- ANALYTICS -->
+<section class="page" id="analytics">
+  <div class="section-title">
+    <h2>📊 Analytics</h2>
+  </div>
+
+  <div class="grid">
+
+    <div class="card stat">
+      <div class="muted">Questions Attempted</div>
+      <div class="big" id="analyticsAttempted">0</div>
+    </div>
+
+    <div class="card stat">
+      <div class="muted">Correct</div>
+      <div class="big" id="analyticsCorrect">0</div>
+    </div>
+
+    <div class="card stat">
+      <div class="muted">Accuracy</div>
+      <div class="big" id="analyticsAccuracy">0%</div>
+    </div>
+
+    <div class="card stat">
+      <div class="muted">Quiz Attempts</div>
+      <div class="big" id="analyticsQuiz">0</div>
+    </div>
+
+  </div>
+
+  <br>
+
+  <div class="card">
+    <h3>📈 Subject Performance</h3>
+    <br>
+
+    <p>Physics</p>
+    <div class="progress"><span style="width:65%"></span></div>
+
+    <p>Chemistry</p>
+    <div class="progress"><span style="width:52%"></span></div>
+
+    <p>Biology</p>
+    <div class="progress"><span style="width:76%"></span></div>
+
+    <p>Mathematics</p>
+    <div class="progress"><span style="width:44%"></span></div>
+  </div>
+</section>
+
+<!-- AI -->
+<section class="page" id="ai">
+  <div class="section-title">
+    <h2>🤖 AI Study Tutor</h2>
+  </div>
+
+  <div class="card ai-box">
+
+    <div style="display:flex;align-items:center;gap:15px">
+      <div class="ai-avatar">👩‍🏫</div>
+      <div>
+        <h2>Study Wallah AI Teacher</h2>
+        <p class="muted">Hindi + English • NEET + JEE</p>
+      </div>
+    </div>
+
+    <div class="chat" id="chat">
+      <div class="msg ai">
+        नमस्ते! 👋 मैं Study Wallah AI Tutor हूँ।<br>
+        Physics, Chemistry, Biology या Mathematics का doubt पूछ सकते हो।
+      </div>
+    </div>
+
+    <div class="ai-input">
+      <textarea id="aiQuestion" rows="2" placeholder="अपना doubt यहाँ लिखें..."></textarea>
+      <button class="btn primary" onclick="askAI()">Send</button>
+    </div>
+
+    <p class="muted">
+      🔐 Real Gemini AI के लिए secure backend/API key बाद में connect किया जाएगा।
+    </p>
+
+  </div>
+</section>
+
+<!-- RESOURCES -->
+<section class="page" id="resources">
+  <div class="section-title">
+    <h2>🌐 Resources</h2>
+  </div>
+
+  <div class="grid grid-2">
+
+    <div class="card">
+      <span class="tag">Official</span>
+      <h2>📘 NCERT</h2>
+      <p class="muted">Official NCERT resources</p>
+      <br>
+      <button class="btn primary" onclick="openResource('https://ncert.nic.in/')">Open</button>
+    </div>
+
+    <div class="card">
+      <span class="tag">Official</span>
+      <h2>🏛️ NTA</h2>
+      <p class="muted">Exam information and updates</p>
+      <br>
+      <button class="btn primary" onclick="openResource('https://www.nta.ac.in/')">Open</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- SUPPORT -->
+<section class="page" id="support">
+  <div class="section-title">
+    <h2>💬 Support & Help Center</h2>
+  </div>
+
+  <div class="grid grid-2">
+
+    <div class="card">
+      <h2>❓ Help Center</h2>
+      <br>
+      <div class="list">
+        <div class="list-item">📚 Courses कैसे शुरू करें?</div>
+        <div class="list-item">📝 DPP कैसे attempt करें?</div>
+        <div class="list-item">🎯 Quiz/Test का result कहाँ मिलेगा?</div>
+        <div class="list-item">🤖 AI Tutor कैसे use करें?</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>📨 Contact Support</h2>
+      <p class="muted" style="margin:12px 0">
+        किसी समस्या या feedback के लिए contact करें।
+      </p>
+
+      <a class="btn primary" href="https://t.me/Yashpal_aagri" target="_blank">
+        Telegram Support
+      </a>
+
+      <br><br>
+      <button class="btn secondary" onclick="feedback()">📝 Send Feedback</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- SETTINGS -->
+<section class="page" id="settings">
+  <div class="section-title">
+    <h2>⚙️ Settings</h2>
+  </div>
+
+  <div class="grid grid-2">
+
+    <div class="card">
+      <h3>🌐 Language</h3>
+      <br>
+      <select id="languageSetting">
+        <option value="hi">हिन्दी</option>
+        <option value="en">English</option>
+      </select>
+    </div>
+
+    <div class="card">
+      <h3>🎨 Appearance</h3>
+      <br>
+      <select id="appearanceSetting" onchange="changeAppearance(this.value)">
+        <option value="dark">Dark</option>
+        <option value="light">Light</option>
+      </select>
+    </div>
+
+    <div class="card">
+      <h3>🔔 Notifications</h3>
+      <br>
+      <button class="btn secondary" onclick="toast('Notification setting saved')">
+        Enable Study Reminders
+      </button>
+    </div>
+
+    <div class="card">
+      <h3>🗑️ Data</h3>
+      <br>
+      <button class="btn secondary" onclick="resetData()">Reset Local Data</button>
+    </div>
+
+  </div>
+</section>
+
+<footer style="padding:30px;text-align:center;color:#777">
+  © 2026 Study Wallah • NEET + JEE Preparation
+</footer>
+
+</main>
+
+<!-- PROFILE MODAL -->
+<div class="modal" id="profileModal">
+  <div class="modal-box">
+    <div class="section-title">
+      <h2>👤 Profile</h2>
+      <button class="icon-btn" onclick="closeModal('profileModal')">✕</button>
+    </div>
+
+    <input class="input" id="profileName" placeholder="Your name" style="width:100%">
+    <br><br>
+    <button class="btn primary" onclick="saveProfile()">Save Profile</button>
+  </div>
+</div>
+
+<!-- FEEDBACK MODAL -->
+<div class="modal" id="feedbackModal">
+  <div class="modal-box">
+    <div class="section-title">
+      <h2>📝 Feedback</h2>
+      <button class="icon-btn" onclick="closeModal('feedbackModal')">✕</button>
+    </div>
+
+    <textarea id="feedbackText" style="width:100%;min-height:150px" placeholder="अपना feedback लिखें..."></textarea>
+    <br><br>
+    <button class="btn primary" onclick="sendFeedback()">Send Feedback</button>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+/* ==============================
+   STUDY WALLAH CORE
+============================== */
+
+const state = JSON.parse(localStorage.getItem("studyWallahState") || "{}");
+
+state.name = state.name || "Student";
+state.attempted = state.attempted || 0;
+state.correct = state.correct || 0;
+state.quizzes = state.quizzes || 0;
+state.streak = state.streak || 0;
+state.notes = state.notes || [];
+state.tasks = state.tasks || [];
+state.bookmarks = state.bookmarks || [];
+
+function saveState(){
+  localStorage.setItem("studyWallahState",JSON.stringify(state));
+}
+
+/* NAVIGATION */
+
+function go(page){
+  document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
+  const target=document.getElementById(page);
+
+  if(target) target.classList.add("active");
+
+  document.querySelectorAll(".nav button").forEach(btn=>{
+    btn.classList.toggle("active",btn.dataset.page===page);
+  });
+
+  document.getElementById("sidebar").classList.remove("open");
+
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+document.querySelectorAll(".nav button").forEach(btn=>{
+  btn.addEventListener("click",()=>go(btn.dataset.page));
+});
+
+document.getElementById("menuBtn").onclick=()=>{
+  document.getElementById("sidebar").classList.toggle("open");
+};
+
+/* TOAST */
+
+function toast(message){
+  const t=document.getElementById("toast");
+  t.textContent=message;
+  t.classList.add("show");
+
+  setTimeout(()=>t.classList.remove("show"),2500);
+}
+
+/* COURSES */
+
+const courses=[
+  {
+    exam:"NEET",
+    subject:"Physics",
+    icon:"⚛️",
+    title:"NEET Physics",
+    chapters:20,
+    progress:22
+  },
+  {
+    exam:"NEET",
+    subject:"Chemistry",
+    icon:"🧪",
+    title:"NEET Chemistry",
+    chapters:20,
+    progress:18
+  },
+  {
+    exam:"NEET",
+    subject:"Biology",
+    icon:"🧬",
+    title:"NEET Biology",
+    chapters:22,
+    progress:35
+  },
+  {
+    exam:"JEE",
+    subject:"Physics",
+    icon:"⚛️",
+    title:"JEE Physics",
+    chapters:25,
+    progress:15
+  },
+  {
+    exam:"JEE",
+    subject:"Chemistry",
+    icon:"🧪",
+    title:"JEE Chemistry",
+    chapters:25,
+    progress:14
+  },
+  {
+    exam:"JEE",
+    subject:"Mathematics",
+    icon:"📐",
+    title:"JEE Mathematics",
+    chapters:30,
+    progress:18
+  }
+];
+
+function renderCourses(filter="all"){
+  const grid=document.getElementById("courseGrid");
+
+  const list=filter==="all"
+    ? courses
+    : courses.filter(c=>c.exam===filter);
+
+  grid.innerHTML=list.map(c=>`
+    <div class="card course-card">
+      <div class="course-icon">${c.icon}</div>
+      <span class="tag">${c.exam}</span>
+      <h3>${c.title}</h3>
+      <p class="muted">${c.chapters} Chapters</p>
+
+      <div class="progress">
+        <span style="width:${c.progress}%"></span>
+      </div>
+
+      <p class="muted">${c.progress}% completed</p>
+      <br>
+
+      <button class="btn primary"
+        onclick="openCourse('${c.title}')">
+        Open Course
+      </button>
+    </div>
+  `).join("");
+}
+
+document.getElementById("courseExam").onchange=e=>{
+  renderCourses(e.target.value);
+};
+
+function openCourse(name){
+  toast(name+" course opened");
+}
+
+/* QUESTIONS */
+
+const questions=[
+  {
+    exam:"NEET",
+    subject:"Physics",
+    chapter:"Units & Measurements",
+    q:"SI system में length की SI unit क्या है?",
+    options:["metre","second","kilogram","ampere"],
+    answer:0,
+    explanation:"Length की SI base unit metre है।"
+  },
+  {
+    exam:"NEET",
+    subject:"Biology",
+    chapter:"Cell",
+    q:"Cell का genetic material मुख्य रूप से कहाँ पाया जाता है?",
+    options:["Nucleus","Ribosome","Golgi body","Lysosome"],
+    answer:0,
+    explanation:"Eukaryotic cells में genetic material मुख्य रूप से nucleus में होता है।"
+  },
+  {
+    exam:"NEET",
+    subject:"Chemistry",
+    chapter:"Mole Concept",
+    q:"1 mole में लगभग कितने particles होते हैं?",
+    options:["6.022 × 10²³","9.8 × 10²","3 × 10⁸","1.6 × 10⁻¹⁹"],
+    answer:0,
+    explanation:"Avogadro constant लगभग 6.022 × 10²³ mol⁻¹ है।"
+  },
+  {
+    exam:"JEE",
+    subject:"Mathematics",
+    chapter:"Algebra",
+    q:"यदि x + 5 = 12 है, तो x का मान क्या होगा?",
+    options:["7","5","17","6"],
+    answer:0,
+    explanation:"दोनों sides से 5 घटाने पर x = 7 मिलता है।"
+  }
+];
+
+function renderQuestions(){
+  const box=document.getElementById("questionList");
+
+  box.innerHTML=questions.map((item,index)=>`
+    <div class="card question">
+      <span class="tag">${item.exam} • ${item.subject}</span>
+
+      <h3 style="margin-top:12px">
+        Q${index+1}. ${item.q}
+      </h3>
+
+      <div class="options">
+        ${item.options.map((op,i)=>`
+          <button
+            class="option"
+            onclick="answerQuestion(${index},${i},this)">
+            ${String.fromCharCode(65+i)}. ${op}
+          </button>
+        `).join("")}
+      </div>
+
+      <div id="exp${index}" style="display:none;margin-top:14px">
+        <b>Explanation:</b>
+        <p class="muted">${item.explanation}</p>
+      </div>
+    </div>
+  `).join("");
+}
+
+function answerQuestion(qIndex,option,button){
+  const q=questions[qIndex];
+  const parent=button.parentElement;
+
+  if(parent.dataset.done==="1") return;
+
+  parent.dataset.done="1";
+  state.attempted++;
+
+  if(option===q.answer){
+    button.classList.add("correct");
+    state.correct++;
+    toast("Correct answer! 🎉");
+  }else{
+    button.classList.add("wrong");
+    parent.children[q.answer].classList.add("correct");
+    toast("Answer check karo");
+  }
+
+  document.getElementById("exp"+qIndex).style.display="block";
+
+  saveState();
+  updateStats();
+}
+
+/* QUIZ */
+
+let quizQuestions=[];
+let quizIndex=0;
+let quizScore=0;
+
+function startQuiz(){
+  quizQuestions=[...questions].sort(()=>Math.random()-.5).slice(0,4);
+  quizIndex=0;
+  quizScore=0;
+  showQuizQuestion();
+}
+
+function showQuizQuestion(){
+  const box=document.getElementById("quizBox");
+
+  if(quizIndex>=quizQuestions.length){
+    state.quizzes++;
+    saveState();
+    updateStats();
+
+    box.innerHTML=`
+      <div class="card" style="margin-top:20px">
+        <h2>🎉 Quiz Complete</h2>
+        <p>Your Score: ${quizScore}/${quizQuestions.length}</p>
+        <br>
+        <button class="btn primary" onclick="startQuiz()">Retry</button>
+      </div>
+    `;
+    return;
+  }
+
+  const q=quizQuestions[quizIndex];
+
+  box.innerHTML=`
+    <div style="margin-top:20px">
+      <span class="tag">Question ${quizIndex+1}/${quizQuestions.length}</span>
+      <h3 style="margin:14px 0">${q.q}</h3>
+
+      <div class="options">
+        ${q.options.map((o,i)=>`
+          <button class="option"
+            onclick="quizAnswer(${i})">
+            ${String.fromCharCode(65+i)}. ${o}
+          </button>
+        `).join("")}
+      </div>
+    </div>
+  `;
+}
+
+function quizAnswer(index){
+  if(index===quizQuestions[quizIndex].answer){
+    quizScore++;
+    toast("Correct! 🎯");
+  }else{
+    toast("Keep practicing 💪");
+  }
+
+  quizIndex++;
+  setTimeout(showQuizQuestion,400);
+}
+
+/* NOTES */
+
+function saveNote(){
+  const title=document.getElementById("noteTitle").value.trim();
+  const text=document.getElementById("noteText").value.trim();
+
+  if(!title || !text){
+    toast("Title और note दोनों लिखें");
+    return;
+  }
+
+  state.notes.unshift({
+    id:Date.now(),
+    title,
+    text
+  });
+
+  saveState();
+
+  document.getElementById("noteTitle").value="";
+  document.getElementById("noteText").value="";
+
+  renderNotes();
+  toast("Note saved 📖");
+}
+
+function renderNotes(){
+  const box=document.getElementById("notesList");
+
+  if(!state.notes.length){
+    box.innerHTML='<p class="muted">अभी कोई saved note नहीं है।</p>';
+    return;
+  }
+
+  box.innerHTML=state.notes.map(n=>`
+    <div class="list-item">
+      <div class="grow">
+        <b>${escapeHTML(n.title)}</b>
+        <p class="muted">${escapeHTML(n.text)}</p>
+      </div>
+
+      <button class="icon-btn"
+        onclick="deleteNote(${n.id})">
+        🗑️
+      </button>
+    </div>
+  `).join("");
+}
+
+function deleteNote(id){
+  state.notes=state.notes.filter(n=>n.id!==id);
+  saveState();
+  renderNotes();
+}
+
+/* PLANNER */
+
+function addTask(){
+  const input=document.getElementById("taskInput");
+  const text=input.value.trim();
+
+  if(!text){
+    toast("Task लिखें");
+    return;
+  }
+
+  state.tasks.push({
+    id:Date.now(),
+    text,
+    done:false
+  });
+
+  input.value="";
+  saveState();
+  renderTasks();
+}
+
+function renderTasks(){
+  const box=document.getElementById("taskList");
+
+  if(!state.tasks.length){
+    box.innerHTML='<p class="muted">आज का study plan खाली है।</p>';
+    return;
+  }
+
+  box.innerHTML=state.tasks.map(t=>`
+    <div class="list-item">
+      <input
+        type="checkbox"
+        ${t.done?"checked":""}
+        onchange="toggleTask(${t.id})">
+
+      <div class="grow" style="${t.done?'text-decoration:line-through;color:#777':''}">
+        ${escapeHTML(t.text)}
+      </div>
+
+      <button class="icon-btn" onclick="deleteTask(${t.id})">🗑️</button>
+    </div>
+  `).join("");
+}
+
+function toggleTask(id){
+  const t=state.tasks.find(x=>x.id===id);
+  if(t)t.done=!t.done;
+  saveState();
+  renderTasks();
+}
+
+function deleteTask(id){
+  state.tasks=state.tasks.filter(t=>t.id!==id);
+  saveState();
+  renderTasks();
+}
+
+/* AI */
+
+async function askAI(){
+  const input=document.getElementById("aiQuestion");
+  const text=input.value.trim();
+
+  if(!text){
+    toast("Question लिखें");
+    return;
+  }
+
+  const chat=document.getElementById("chat");
+
+  chat.innerHTML+=`
+    <div class="msg user">
+      ${escapeHTML(text)}
+    </div>
+  `;
+
+  input.value="";
+
+  chat.innerHTML+=`
+    <div class="msg ai">
+      🤔 आपका question receive हो गया।<br>
+      अभी AI backend connect नहीं है। Gemini secure backend connect होने के बाद मैं full step-by-step answer दूँगा।
+    </div>
+  `;
+
+  chat.scrollTop=chat.scrollHeight;
+}
+
+/* YOUTUBE */
+
+function searchYouTube(){
+  const q=document.getElementById("videoSearch").value.trim();
+
+  if(!q){
+    toast("Search term लिखें");
+    return;
+  }
+
+  const url=
+    "https://www.youtube.com/results?search_query="+
+    encodeURIComponent(q+" NEET JEE");
+
+  window.open(url,"_blank");
+}
+
+function openYouTube(){
+  window.open(
+    "https://www.youtube.com/results?search_query=NEET+JEE+lectures",
+    "_blank"
+  );
+}
+
+/* RESOURCES */
+
+function openResource(url){
+  window.open(url,"_blank");
+}
+
+/* MOCK TEST */
+
+function startMock(exam){
+  toast(exam+" Full Mock जल्द available होगा");
+  go("practice");
+}
+
+/* PROFILE */
+
+function openProfile(){
+  document.getElementById("profileName").value=state.name;
+  document.getElementById("profileModal").classList.add("show");
+}
+
+function saveProfile(){
+  const name=document.getElementById("profileName").value.trim();
+
+  if(name)state.name=name;
+
+  saveState();
+  closeModal("profileModal");
+
+  toast("Profile saved 👤");
+}
+
+function closeModal(id){
+  document.getElementById(id).classList.remove("show");
+}
+
+/* NOTIFICATIONS */
+
+function showNotifications(){
+  toast("🔔 अभी कोई नई notification नहीं है");
+}
+
+/* FEEDBACK */
+
+function feedback(){
+  document.getElementById("feedbackModal").classList.add("show");
+}
+
+function sendFeedback(){
+  const text=document.getElementById("feedbackText").value.trim();
+
+  if(!text){
+    toast("Feedback लिखें");
+    return;
+  }
+
+  closeModal("feedbackModal");
+  document.getElementById("feedbackText").value="";
+  toast("Feedback saved. धन्यवाद! ❤️");
+}
+
+/* APPEARANCE */
+
+function changeAppearance(value){
+  if(value==="light"){
+    document.body.style.background="#f5f3ff";
+    document.body.style.color="#171327";
+    toast("Light mode selected");
+  }else{
+    document.body.style.background="#080612";
+    document.body.style.color="white";
+    toast("Dark mode selected");
+  }
+}
+
+/* GLOBAL SEARCH */
+
+document.getElementById("globalSearch").addEventListener("keydown",e=>{
+  if(e.key==="Enter"){
+    const query=e.target.value.trim().toLowerCase();
+
+    if(!query)return;
+
+    const found=questions.some(q=>
+      (q.q+" "+q.subject+" "+q.chapter).toLowerCase().includes(query)
+    );
+
+    if(found){
+      go("practice");
+      toast("Search result Question Bank में मिला");
+    }else{
+      toast("Search result अभी नहीं मिला");
+    }
+  }
+});
+
+/* RESET */
+
+function resetData(){
+  if(confirm("क्या आप local study data reset करना चाहते हैं?")){
+    localStorage.removeItem("studyWallahState");
+    location.reload();
+  }
+}
+
+/* STATS */
+
+function updateStats(){
+  document.getElementById("homeQuestions").textContent=state.attempted;
+  document.getElementById("homeQuizzes").textContent=state.quizzes;
+  document.getElementById("homeStreak").textContent=state.streak;
+
+  document.getElementById("analyticsAttempted").textContent=state.attempted;
+  document.getElementById("analyticsCorrect").textContent=state.correct;
+
+  const accuracy=state.attempted
+    ? Math.round((state.correct/state.attempted)*100)
+    : 0;
+
+  document.getElementById("analyticsAccuracy").textContent=accuracy+"%";
+  document.getElementById("analyticsQuiz").textContent=state.quizzes;
+}
+
+/* SECURITY */
+
+function escapeHTML(value){
+  return String(value)
+    .replaceAll("&","&amp;")
+    .replaceAll("<","&lt;")
+    .replaceAll(">","&gt;")
+    .replaceAll('"',"&quot;")
+    .replaceAll("'","&#039;");
+}
+
+/* INITIALIZE */
+
+renderCourses();
+renderQuestions();
+renderNotes();
+renderTasks();
+updateStats();
+
+console.log("Study Wallah loaded successfully 🚀");
+</script>
+
+</body>
+  </html>
