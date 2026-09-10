@@ -1,0 +1,5282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+  >
+
+  <meta name="theme-color" content="#07111f">
+
+  <meta
+    name="description"
+    content="Study Wallah - Complete NEET and JEE Preparation Platform created by Yashpal Aagri"
+  >
+
+  <title>Study Wallah | NEET & JEE Preparation</title>
+
+  <link rel="manifest" href="manifest.json">
+
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Optional favicon/logo -->
+  <link rel="icon" href="images/logo.png">
+
+  <!-- Google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+</head>
+
+<body>
+
+<!-- =========================================================
+     APP LOADER
+========================================================= -->
+
+<div id="appLoader" class="app-loader">
+
+  <div class="loader-content">
+
+    <div class="loader-logo">
+      <img
+        src="images/logo.png"
+        alt="Study Wallah"
+        onerror="this.style.display='none'"
+      >
+    </div>
+
+    <h1 class="loader-title">
+      Study Wallah
+    </h1>
+
+    <p class="loader-subtitle">
+      NEET & JEE Preparation
+    </p>
+
+    <div class="loader-line"></div>
+
+  </div>
+
+</div>
+
+
+<!-- =========================================================
+     MOBILE OVERLAY
+========================================================= -->
+
+<div id="mobileOverlay" class="mobile-overlay"></div>
+
+
+<!-- =========================================================
+     MAIN APP
+========================================================= -->
+
+<div id="app" class="app">
+
+
+  <!-- =======================================================
+       SIDEBAR
+  ======================================================== -->
+
+  <aside id="sidebar" class="sidebar">
+
+    <!-- Brand -->
+
+    <div class="brand">
+
+      <div class="brand-logo">
+
+        <img
+          src="images/logo.png"
+          alt="Study Wallah Logo"
+          onerror="this.style.display='none'"
+        >
+
+        <span class="brand-fallback">
+          SW
+        </span>
+
+      </div>
+
+      <div class="brand-text">
+
+        <strong>
+          Study Wallah
+        </strong>
+
+        <span>
+          NEET & JEE
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <!-- Student Mini Profile -->
+
+    <div class="student-mini-card">
+
+      <div class="student-avatar">
+
+        <img
+          id="sidebarStudentAvatar"
+          src="images/profile.png"
+          alt="Student"
+          onerror="this.style.display='none'"
+        >
+
+        <span>
+          YA
+        </span>
+
+      </div>
+
+      <div class="student-mini-info">
+
+        <strong id="sidebarStudentName">
+          Yashpal Aagri
+        </strong>
+
+        <small>
+          NEET / JEE Aspirant
+        </small>
+
+      </div>
+
+    </div>
+
+
+    <!-- Navigation -->
+
+    <nav class="sidebar-nav">
+
+      <div class="nav-label">
+        MAIN
+      </div>
+
+      <button
+        class="nav-item active"
+        data-page="home"
+        type="button"
+      >
+        <span class="nav-icon">⌂</span>
+        <span>Home</span>
+      </button>
+
+
+      <button
+        class="nav-item"
+        data-page="courses"
+        type="button"
+      >
+        <span class="nav-icon">▦</span>
+        <span>Courses</span>
+      </button>
+
+
+      <button
+        class="nav-item"
+        data-page="dpp"
+        type="button"
+      >
+        <span class="nav-icon">📝</span>
+        <span>DPP</span>
+        <span class="nav-badge">NEW</span>
+      </button>
+
+
+      <button
+        class="nav-item"
+        data-page="question-bank"
+        type="button"
+      >
+        <span class="nav-icon">❓</span>
+        <span>Question Bank</span>
+      </button>
+
+
+      <button
+        class="nav-item"
+        data-page="quiz"
+        type="button"
+      >
+        <span class="nav-icon">🧠</span>
+        <span>Quiz</span>
+      </button>
+
+
+      <button
+        class="nav-item"
+        data-page="tests"
+        type="button"
+      >
+        <span class="nav-icon">🏆</span>
+        <span>Mock Tests</span>
+      </button>
+
+
+      <div class="nav-label">
+        STUDY
+      </div>
+
+
+      <button
+        class="nav-item"
+        data-page="notes"
+        type="button"
+      >
+        <span class="nav-icon">📚</span>
+        <span>Books & Notes</span>
+      </button>
+
+
+      <button
+        class="nav-item"
+        data-page="youtube"
+        type="button"
+      >
+        <span class="nav-icon">▶</span>
+        <span>YouTube Classes</span>
+      </button>
+
+
+      <button
+        class="nav-item"
+        data-page="resources"
+        type="button"
+      >
+        <span class="nav-icon">🌐</span>
+        <span>Study Websites</span>
+      </button>
+
+
+      <button
+        class="nav-item"
+        data-page="ai"
+        type="button"
+      >
+        <span class="nav-icon">🤖</span>
+        <span>Khushi AI Tutor</span>
+        <span class="nav-badge">AI</span>
+      </button>
+
+
+      <div class="nav-label">
+        TRACK
+      </div>
+
+
+      <button
+        class="nav-item"
+        data-page="planner"
+        type="button"
+      >
+        <span class="nav-icon">📅</span>
+        <span>Study Planner</span>
+      </button>
+
+
+      <button
+        class="nav-item"
+        data-page="analytics"
+        type="button"
+      >
+        <span class="nav-icon">📊</span>
+        <span>Analytics</span>
+      </button>
+
+
+      <button
+        class="nav-item"
+        data-page="bookmarks"
+        type="button"
+      >
+        <span class="nav-icon">🔖</span>
+        <span>Bookmarks</span>
+      </button>
+
+
+      <div class="nav-label">
+        ACCOUNT
+      </div>
+
+
+      <button
+        class="nav-item"
+        data-page="profile"
+        type="button"
+      >
+        <span class="nav-icon">👤</span>
+        <span>Profile</span>
+      </button>
+
+
+      <button
+        class="nav-item"
+        data-page="settings"
+        type="button"
+      >
+        <span class="nav-icon">⚙</span>
+        <span>Settings</span>
+      </button>
+
+
+      <button
+        class="nav-item"
+        data-page="support"
+        type="button"
+      >
+        <span class="nav-icon">💬</span>
+        <span>Help & Support</span>
+      </button>
+
+    </nav>
+
+
+    <!-- Sidebar Goal -->
+
+    <div class="sidebar-goal">
+
+      <div class="goal-title">
+        <span>🎯</span>
+        Your Goal
+      </div>
+
+      <strong>
+        NEET / JEE 2027
+      </strong>
+
+      <div class="sidebar-progress">
+
+        <div class="progress-track">
+
+          <div
+            id="sidebarProgressBar"
+            class="progress-fill"
+            style="width:68%"
+          ></div>
+
+        </div>
+
+        <span id="sidebarProgressText">
+          68%
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <!-- Sidebar Dream Card -->
+
+    <div class="sidebar-dream-card">
+
+      <div class="dream-glow">
+        🧬
+      </div>
+
+      <h3>
+        Dream
+        <br>
+        Prepare
+        <br>
+        Achieve
+      </h3>
+
+      <strong>
+        NEET & JEE
+      </strong>
+
+    </div>
+
+
+    <div class="sidebar-footer">
+
+      <div>
+        Created by
+      </div>
+
+      <strong>
+        Yashpal Aagri
+      </strong>
+
+      <a
+        href="https://t.me/Yashpal_aagri"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        ✈ Telegram Support
+      </a>
+
+    </div>
+
+  </aside>
+
+
+  <!-- =======================================================
+       MAIN
+  ======================================================== -->
+
+  <main class="main">
+
+
+    <!-- =====================================================
+         TOPBAR
+    ====================================================== -->
+
+    <header class="topbar">
+
+      <div class="topbar-left">
+
+        <button
+          id="menuBtn"
+          class="menu-btn"
+          type="button"
+          aria-label="Open menu"
+        >
+          ☰
+        </button>
+
+
+        <div class="mobile-brand">
+
+          <img
+            src="images/logo.png"
+            alt="Study Wallah"
+            onerror="this.style.display='none'"
+          >
+
+          <strong>
+            Study Wallah
+          </strong>
+
+        </div>
+
+
+        <!-- Global Search -->
+
+        <div class="global-search">
+
+          <span class="search-icon">
+            🔍
+          </span>
+
+          <input
+            id="globalSearch"
+            type="search"
+            placeholder="Search anything... Chapters, Topics, Questions, Videos, Websites..."
+            autocomplete="off"
+          >
+
+          <button
+            type="button"
+            aria-label="Search"
+          >
+            ⌕
+          </button>
+
+          <div
+            id="searchSuggestions"
+            class="search-suggestions"
+          ></div>
+
+        </div>
+
+      </div>
+
+
+      <!-- Topbar Actions -->
+
+      <div class="topbar-actions">
+
+        <button
+          class="top-action notification-btn"
+          type="button"
+          data-action="notifications"
+          aria-label="Notifications"
+        >
+          🔔
+          <span class="notification-count">
+            3
+          </span>
+        </button>
+
+
+        <button
+          class="top-action"
+          type="button"
+          data-action="toggle-theme"
+          aria-label="Toggle theme"
+        >
+          🌙
+        </button>
+
+
+        <button
+          class="top-action"
+          type="button"
+          data-page="settings"
+          aria-label="Settings"
+        >
+          ⚙
+        </button>
+
+
+        <button
+          class="profile-top"
+          type="button"
+          data-page="profile"
+        >
+
+          <div id="topProfileAvatar" class="top-avatar">
+            YA
+          </div>
+
+          <div>
+
+            <strong id="topStudentName">
+              Yashpal Aagri
+            </strong>
+
+            <small>
+              NEET Aspirant
+            </small>
+
+          </div>
+
+        </button>
+
+      </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         PAGE CONTAINER
+    ====================================================== -->
+
+    <div class="page-container">
+
+
+      <!-- ===================================================
+           HOME
+      ==================================================== -->
+
+      <section
+        id="page-home"
+        class="page active"
+      >
+
+        <!-- Hero -->
+
+        <div class="hero-dashboard">
+
+          <div class="hero-content">
+
+            <span class="hero-tag">
+              🚀 YOUR DREAM • YOUR MISSION
+            </span>
+
+            <h1>
+              Welcome back,
+              <span id="heroStudentName">
+                Yashpal
+              </span>
+            </h1>
+
+            <h2>
+              Prepare for
+              <span>
+                NEET & JEE 2027
+              </span>
+            </h2>
+
+            <p>
+              Learn smarter. Practice daily.
+              Track your progress. Achieve your dream.
+            </p>
+
+            <div class="hero-actions">
+
+              <button
+                class="primary-btn"
+                type="button"
+                data-page="courses"
+              >
+                Start Learning →
+              </button>
+
+              <button
+                class="secondary-btn"
+                type="button"
+                data-page="tests"
+              >
+                Take a Test
+              </button>
+
+            </div>
+
+          </div>
+
+
+          <!-- Science Visual -->
+
+          <div class="hero-visual">
+
+            <div class="orb orb-one"></div>
+            <div class="orb orb-two"></div>
+
+            <div class="science-orbit">
+
+              <div class="orbit-ring ring-one"></div>
+              <div class="orbit-ring ring-two"></div>
+
+              <div class="science-core">
+                🧬
+              </div>
+
+            </div>
+
+
+            <div class="hero-floating-card floating-one">
+              <span>📚</span>
+              <strong>12+</strong>
+              <small>Chapters</small>
+            </div>
+
+
+            <div class="hero-floating-card floating-two">
+              <span>🔥</span>
+              <strong>7</strong>
+              <small>Day Streak</small>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- Quick Stats -->
+
+        <div class="stats-grid">
+
+          <div class="stat-card">
+
+            <div class="stat-icon blue">
+              📚
+            </div>
+
+            <div>
+              <small>Chapters</small>
+              <strong>12 / 17</strong>
+            </div>
+
+          </div>
+
+
+          <div class="stat-card">
+
+            <div class="stat-icon purple">
+              🏆
+            </div>
+
+            <div>
+              <small>Tests</small>
+              <strong>8 / 15</strong>
+            </div>
+
+          </div>
+
+
+          <div class="stat-card">
+
+            <div class="stat-icon green">
+              📝
+            </div>
+
+            <div>
+              <small>DPP Solved</small>
+              <strong>5 / 10</strong>
+            </div>
+
+          </div>
+
+
+          <div class="stat-card">
+
+            <div class="stat-icon orange">
+              ⏱
+            </div>
+
+            <div>
+              <small>Study Hours</small>
+              <strong>48h</strong>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- Quick Access -->
+
+        <div class="section-header">
+
+          <div>
+            <span class="section-kicker">
+              STUDY FASTER
+            </span>
+
+            <h2>
+              Quick Access
+            </h2>
+          </div>
+
+          <button
+            class="text-btn"
+            type="button"
+            data-page="courses"
+          >
+            View All →
+          </button>
+
+        </div>
+
+
+        <div class="quick-grid">
+
+
+          <button
+            class="quick-card blue"
+            type="button"
+            data-page="notes"
+          >
+
+            <span class="quick-icon">
+              📖
+            </span>
+
+            <strong>
+              Books
+            </strong>
+
+            <small>
+              & Notes
+            </small>
+
+          </button>
+
+
+          <button
+            class="quick-card purple"
+            type="button"
+            data-page="youtube"
+          >
+
+            <span class="quick-icon">
+              ▶
+            </span>
+
+            <strong>
+              Videos
+            </strong>
+
+            <small>
+              Lectures
+            </small>
+
+          </button>
+
+
+          <button
+            class="quick-card red"
+            type="button"
+            data-page="youtube"
+          >
+
+            <span class="quick-icon">
+              ▶
+            </span>
+
+            <strong>
+              YouTube
+            </strong>
+
+            <small>
+              Live Classes
+            </small>
+
+          </button>
+
+
+          <button
+            class="quick-card cyan"
+            type="button"
+            data-page="resources"
+          >
+
+            <span class="quick-icon">
+              🌐
+            </span>
+
+            <strong>
+              Websites
+            </strong>
+
+            <small>
+              Viewer
+            </small>
+
+          </button>
+
+
+          <button
+            class="quick-card violet"
+            type="button"
+            data-page="question-bank"
+          >
+
+            <span class="quick-icon">
+              📄
+            </span>
+
+            <strong>
+              Question
+            </strong>
+
+            <small>
+              Bank
+            </small>
+
+          </button>
+
+
+          <button
+            class="quick-card green"
+            type="button"
+            data-page="dpp"
+          >
+
+            <span class="quick-icon">
+              📝
+            </span>
+
+            <strong>
+              DPP
+            </strong>
+
+            <small>
+              Daily Practice
+            </small>
+
+          </button>
+
+
+          <button
+            class="quick-card pink"
+            type="button"
+            data-page="quiz"
+          >
+
+            <span class="quick-icon">
+              🧠
+            </span>
+
+            <strong>
+              Quiz
+            </strong>
+
+            <small>
+              Practice
+            </small>
+
+          </button>
+
+
+          <button
+            class="quick-card gold"
+            type="button"
+            data-page="tests"
+          >
+
+            <span class="quick-icon">
+              🏆
+            </span>
+
+            <strong>
+              Mock Test
+            </strong>
+
+            <small>
+              NEET / JEE
+            </small>
+
+          </button>
+
+        </div>
+
+
+        <!-- Three Column Dashboard -->
+
+        <div class="dashboard-two-column">
+
+
+          <!-- Main Column -->
+
+          <div class="dashboard-main-column">
+
+
+            <!-- Continue Learning -->
+
+            <div class="dashboard-panel">
+
+              <div class="panel-header">
+
+                <div>
+
+                  <span class="section-kicker">
+                    KEEP GOING
+                  </span>
+
+                  <h3>
+                    Continue Learning
+                  </h3>
+
+                </div>
+
+                <button
+                  class="text-btn"
+                  type="button"
+                  data-page="courses"
+                >
+                  View All
+                </button>
+
+              </div>
+
+
+              <div class="continue-card">
+
+                <div class="course-symbol physics">
+                  ⚡
+                </div>
+
+                <div class="continue-info">
+
+                  <span>
+                    NEET Physics
+                  </span>
+
+                  <h4>
+                    Current Electricity
+                  </h4>
+
+                  <div class="progress-line">
+
+                    <div>
+                      <span style="width:68%"></span>
+                    </div>
+
+                    <small>
+                      68%
+                    </small>
+
+                  </div>
+
+                  <div class="continue-bottom">
+
+                    <small>
+                      8 / 12 lessons completed
+                    </small>
+
+                    <button
+                      class="mini-btn"
+                      type="button"
+                      data-page="courses"
+                    >
+                      Continue →
+                    </button>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+
+              <div class="continue-card">
+
+                <div class="course-symbol chemistry">
+                  🧪
+                </div>
+
+                <div class="continue-info">
+
+                  <span>
+                    JEE Chemistry
+                  </span>
+
+                  <h4>
+                    Chemical Bonding
+                  </h4>
+
+                  <div class="progress-line">
+
+                    <div>
+                      <span style="width:52%"></span>
+                    </div>
+
+                    <small>
+                      52%
+                    </small>
+
+                  </div>
+
+                  <div class="continue-bottom">
+
+                    <small>
+                      5 / 10 lessons completed
+                    </small>
+
+                    <button
+                      class="mini-btn"
+                      type="button"
+                      data-page="courses"
+                    >
+                      Continue →
+                    </button>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+
+            </div>
+
+
+            <!-- YouTube / Websites / Bookmarks -->
+
+            <div class="dashboard-panel">
+
+              <div class="panel-tabs">
+
+                <button
+                  class="panel-tab active"
+                  type="button"
+                  data-tab="youtube"
+                >
+                  ▶ YouTube
+                </button>
+
+                <button
+                  class="panel-tab"
+                  type="button"
+                  data-tab="websites"
+                >
+                  🌐 Websites
+                </button>
+
+                <button
+                  class="panel-tab"
+                  type="button"
+                  data-tab="bookmarks"
+                >
+                  🔖 Bookmarks
+                </button>
+
+              </div>
+
+
+              <div class="youtube-dashboard-grid">
+
+
+                <!-- Popular Channels -->
+
+                <div class="channel-panel">
+
+                  <h4>
+                    Popular YouTube Channels
+                  </h4>
+
+
+                  <div class="channel-item">
+
+                    <div class="channel-avatar">
+                      P
+                    </div>
+
+                    <div>
+
+                      <strong>
+                        Physics Wallah
+                      </strong>
+
+                      <small>
+                        🔴 Live / Classes
+                      </small>
+
+                    </div>
+
+                  </div>
+
+
+                  <div class="channel-item">
+
+                    <div class="channel-avatar">
+                      K
+                    </div>
+
+                    <div>
+
+                      <strong>
+                        Khan Academy
+                      </strong>
+
+                      <small>
+                        Classes
+                      </small>
+
+                    </div>
+
+                  </div>
+
+
+                  <div class="channel-item">
+
+                    <div class="channel-avatar">
+                      U
+                    </div>
+
+                    <div>
+
+                      <strong>
+                        Unacademy NEET
+                      </strong>
+
+                      <small>
+                        Classes
+                      </small>
+
+                    </div>
+
+                  </div>
+
+
+                  <div class="channel-item">
+
+                    <div class="channel-avatar">
+                      B
+                    </div>
+
+                    <div>
+
+                      <strong>
+                        Biology at Ease
+                      </strong>
+
+                      <small>
+                        Biology
+                      </small>
+
+                    </div>
+
+                  </div>
+
+
+                  <div class="channel-item">
+
+                    <div class="channel-avatar">
+                      N
+                    </div>
+
+                    <div>
+
+                      <strong>
+                        NCERT Wallah
+                      </strong>
+
+                      <small>
+                        NCERT
+                      </small>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+
+                <!-- Featured Video -->
+
+                <div class="featured-video">
+
+                  <div class="video-thumb">
+
+                    <div class="video-placeholder">
+
+                      <span>
+                        ▶
+                      </span>
+
+                      <strong>
+                        NEET / JEE
+                      </strong>
+
+                      <small>
+                        Featured Lecture
+                      </small>
+
+                    </div>
+
+                  </div>
+
+
+                  <div class="video-info">
+
+                    <h4>
+                      NEET & JEE Complete Strategy
+                    </h4>
+
+                    <p>
+                      Study plan, concepts and preparation tips.
+                    </p>
+
+                    <button
+                      class="mini-btn"
+                      type="button"
+                      data-page="youtube"
+                    >
+                      Watch Now →
+                    </button>
+
+                  </div>
+
+                </div>
+
+
+                <!-- Video Controls -->
+
+                <div class="video-controls">
+
+                  <h4>
+                    Video Controls
+                  </h4>
+
+                  <button
+                    type="button"
+                    data-action="fullscreen"
+                  >
+                    ⛶ Fullscreen
+                  </button>
+
+                  <button
+                    type="button"
+                    data-action="back"
+                  >
+                    ← Back
+                  </button>
+
+                  <button
+                    type="button"
+                    data-action="forward"
+                  >
+                    → Forward
+                  </button>
+
+                  <button
+                    type="button"
+                    data-action="refresh"
+                  >
+                    ↻ Refresh
+                  </button>
+
+                  <div class="youtube-control-search">
+
+                    <input
+                      type="text"
+                      placeholder="Search on YouTube..."
+                    >
+
+                    <button type="button">
+                      🔍
+                    </button>
+
+                  </div>
+
+                  <label class="toggle-row">
+
+                    <span>
+                      Open in New Tab
+                    </span>
+
+                    <input
+                      type="checkbox"
+                      checked
+                    >
+
+                  </label>
+
+
+                  <label class="toggle-row">
+
+                    <span>
+                      Auto Play Next
+                    </span>
+
+                    <input
+                      type="checkbox"
+                      checked
+                    >
+
+                  </label>
+
+                </div>
+
+              </div>
+
+            </div>
+
+
+            <!-- Study Websites -->
+
+            <div class="dashboard-panel">
+
+              <div class="panel-header">
+
+                <div>
+
+                  <span class="section-kicker">
+                    RESOURCES
+                  </span>
+
+                  <h3>
+                    Study Websites
+                  </h3>
+
+                </div>
+
+                <button
+                  class="text-btn"
+                  type="button"
+                  data-page="resources"
+                >
+                  View All
+                </button>
+
+              </div>
+
+
+              <div class="website-row">
+
+
+                <button
+                  class="website-card"
+                  type="button"
+                  data-resource="ncert"
+                >
+
+                  <span>
+                    📘
+                  </span>
+
+                  <strong>
+                    NCERT
+                  </strong>
+
+                  <small>
+                    ncert.nic.in
+                  </small>
+
+                </button>
+
+
+                <button
+                  class="website-card"
+                  type="button"
+                  data-resource="khan"
+                >
+
+                  <span>
+                    🟢
+                  </span>
+
+                  <strong>
+                    Khan Academy
+                  </strong>
+
+                  <small>
+                    khanacademy.org
+                  </small>
+
+                </button>
+
+
+                <button
+                  class="website-card"
+                  type="button"
+                  data-resource="unacademy"
+                >
+
+                  <span>
+                    🔵
+                  </span>
+
+                  <strong>
+                    Unacademy
+                  </strong>
+
+                  <small>
+                    unacademy.com
+                  </small>
+
+                </button>
+
+
+                <button
+                  class="website-card"
+                  type="button"
+                  data-resource="embibe"
+                >
+
+                  <span>
+                    🟣
+                  </span>
+
+                  <strong>
+                    Embibe
+                  </strong>
+
+                  <small>
+                    embibe.com
+                  </small>
+
+                </button>
+
+
+                <button
+                  class="website-card"
+                  type="button"
+                  data-resource="drbatra"
+                >
+
+                  <span>
+                    🔴
+                  </span>
+
+                  <strong>
+                    Study Resource
+                  </strong>
+
+                  <small>
+                    Open Resource
+                  </small>
+
+                </button>
+
+
+                <button
+                  class="website-card add"
+                  type="button"
+                  data-action="add-resource"
+                >
+
+                  <span>
+                    +
+                  </span>
+
+                  <strong>
+                    Add Website
+                  </strong>
+
+                  <small>
+                    Add your resource
+                  </small>
+
+                </button>
+
+              </div>
+
+            </div>
+
+
+            <!-- Quick Features -->
+
+            <div class="dashboard-panel">
+
+              <div class="panel-header">
+
+                <h3>
+                  ⚡ Quick Features
+                </h3>
+
+              </div>
+
+
+              <div class="feature-row">
+
+
+                <button
+                  type="button"
+                  data-page="notes"
+                >
+                  <span>📚</span>
+                  <strong>Library</strong>
+                  <small>Your Personal Library</small>
+                </button>
+
+
+                <button
+                  type="button"
+                  data-page="planner"
+                >
+                  <span>📅</span>
+                  <strong>Planner</strong>
+                  <small>Plan Your Study</small>
+                </button>
+
+
+                <button
+                  type="button"
+                  data-page="analytics"
+                >
+                  <span>📊</span>
+                  <strong>Analytics</strong>
+                  <small>Track Progress</small>
+                </button>
+
+
+                <button
+                  type="button"
+                  data-page="bookmarks"
+                >
+                  <span>🔖</span>
+                  <strong>Bookmarks</strong>
+                  <small>Saved Content</small>
+                </button>
+
+
+                <button
+                  type="button"
+                  data-page="settings"
+                >
+                  <span>🎨</span>
+                  <strong>Themes</strong>
+                  <small>Customize UI</small>
+                </button>
+
+              </div>
+
+            </div>
+
+
+            <!-- Recent Activity -->
+
+            <div class="dashboard-panel">
+
+              <div class="panel-header">
+
+                <div>
+
+                  <span class="section-kicker">
+                    ACTIVITY
+                  </span>
+
+                  <h3>
+                    Recent Activity
+                  </h3>
+
+                </div>
+
+                <button
+                  class="text-btn"
+                  type="button"
+                  data-page="analytics"
+                >
+                  View All
+                </button>
+
+              </div>
+
+
+              <div
+                id="recentActivity"
+                class="activity-list"
+              >
+
+                <div class="activity-item">
+
+                  <span class="activity-icon red">
+                    ▶
+                  </span>
+
+                  <div>
+
+                    <strong>
+                      Watched a video
+                    </strong>
+
+                    <small>
+                      YouTube Learning
+                    </small>
+
+                  </div>
+
+                  <time>
+                    2h ago
+                  </time>
+
+                </div>
+
+
+                <div class="activity-item">
+
+                  <span class="activity-icon green">
+                    ✓
+                  </span>
+
+                  <div>
+
+                    <strong>
+                      Solved questions
+                    </strong>
+
+                    <small>
+                      Question Bank
+                    </small>
+
+                  </div>
+
+                  <time>
+                    4h ago
+                  </time>
+
+                </div>
+
+
+                <div class="activity-item">
+
+                  <span class="activity-icon purple">
+                    📝
+                  </span>
+
+                  <div>
+
+                    <strong>
+                      Completed DPP
+                    </strong>
+
+                    <small>
+                      Chemistry
+                    </small>
+
+                  </div>
+
+                  <time>
+                    6h ago
+                  </time>
+
+                </div>
+
+
+                <div class="activity-item">
+
+                  <span class="activity-icon yellow">
+                    🔖
+                  </span>
+
+                  <div>
+
+                    <strong>
+                      Added a bookmark
+                    </strong>
+
+                    <small>
+                      Biology Notes
+                    </small>
+
+                  </div>
+
+                  <time>
+                    1d ago
+                  </time>
+
+                </div>
+
+              </div>
+
+            </div>
+
+
+          </div>
+
+
+          <!-- =================================================
+               RIGHT SIDEBAR
+          ================================================== -->
+
+          <div class="dashboard-right-column">
+
+
+            <!-- My Progress -->
+
+            <div class="right-panel progress-panel">
+
+              <div class="right-panel-title">
+
+                <h3>
+                  🎓 My Progress
+                </h3>
+
+                <small>
+                  NEET / JEE 2027
+                </small>
+
+              </div>
+
+
+              <div class="progress-circle-area">
+
+                <div class="progress-circle">
+
+                  <span>
+                    68%
+                  </span>
+
+                  <small>
+                    Overall
+                  </small>
+
+                </div>
+
+
+                <div class="progress-stats">
+
+                  <div>
+                    <span>📚 Chapters</span>
+                    <strong>12/17</strong>
+                  </div>
+
+                  <div>
+                    <span>🏆 Tests</span>
+                    <strong>8/15</strong>
+                  </div>
+
+                  <div>
+                    <span>📝 DPP</span>
+                    <strong>5/10</strong>
+                  </div>
+
+                  <div>
+                    <span>🧠 Quiz</span>
+                    <strong>6/10</strong>
+                  </div>
+
+                  <div>
+                    <span>⏱ Study Hours</span>
+                    <strong>48h</strong>
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+
+            <!-- Planner -->
+
+            <div class="right-panel">
+
+              <div class="right-panel-header">
+
+                <h3>
+                  📅 Study Planner
+                </h3>
+
+                <button
+                  type="button"
+                  data-page="planner"
+                >
+                  View All
+                </button>
+
+              </div>
+
+              <div class="planner-date">
+                Today
+              </div>
+
+
+              <div class="planner-mini-list">
+
+
+                <div class="planner-mini-item">
+
+                  <span>
+                    ⚡
+                  </span>
+
+                  <div>
+                    <strong>
+                      Physics - Current Electricity
+                    </strong>
+                    <small>
+                      1h 30m
+                    </small>
+                  </div>
+
+                </div>
+
+
+                <div class="planner-mini-item">
+
+                  <span>
+                    🧪
+                  </span>
+
+                  <div>
+                    <strong>
+                      Chemistry - Chemical Bonding
+                    </strong>
+                    <small>
+                      1h 00m
+                    </small>
+                  </div>
+
+                </div>
+
+
+                <div class="planner-mini-item">
+
+                  <span>
+                    🧬
+                  </span>
+
+                  <div>
+                    <strong>
+                      Biology - Human Physiology
+                    </strong>
+                    <small>
+                      1h 00m
+                    </small>
+                  </div>
+
+                </div>
+
+
+                <div class="planner-mini-item">
+
+                  <span>
+                    📝
+                  </span>
+
+                  <div>
+                    <strong>
+                      DPP - Physics
+                    </strong>
+                    <small>
+                      Complete
+                    </small>
+                  </div>
+
+                </div>
+
+              </div>
+
+
+              <button
+                class="add-task-btn"
+                type="button"
+                data-action="add-task"
+              >
+                + Add Task
+              </button>
+
+            </div>
+
+
+            <!-- Quick Access Right -->
+
+            <div class="right-panel">
+
+              <div class="right-panel-header">
+
+                <h3>
+                  ⚡ Quick Access
+                </h3>
+
+              </div>
+
+
+              <button
+                class="right-quick-btn"
+                type="button"
+                data-page="ai"
+              >
+                <span>🤖</span>
+                <strong>AI Doubt Solver</strong>
+                <b>›</b>
+              </button>
+
+
+              <button
+                class="right-quick-btn"
+                type="button"
+                data-page="ai"
+              >
+                <span>🎙</span>
+                <strong>AI Voice</strong>
+                <b>›</b>
+              </button>
+
+
+              <button
+                class="right-quick-btn"
+                type="button"
+                data-action="focus-search"
+              >
+                <span>🔍</span>
+                <strong>Global Search</strong>
+                <b>›</b>
+              </button>
+
+
+              <button
+                class="right-quick-btn"
+                type="button"
+                data-page="dpp"
+              >
+                <span>📝</span>
+                <strong>DPP Practice</strong>
+                <b>›</b>
+              </button>
+
+            </div>
+
+
+            <!-- Notifications -->
+
+            <div class="right-panel">
+
+              <div class="right-panel-header">
+
+                <h3>
+                  🔔 Notifications
+                </h3>
+
+                <button
+                  type="button"
+                  data-action="notifications"
+                >
+                  View
+                </button>
+
+              </div>
+
+
+              <div class="notification-mini">
+
+                <span>
+                  🤖
+                </span>
+
+                <div>
+
+                  <strong>
+                    Khushi AI Doubt Solver
+                  </strong>
+
+                  <small>
+                    Ready to help you
+                  </small>
+
+                </div>
+
+              </div>
+
+
+              <div class="notification-mini">
+
+                <span>
+                  📅
+                </span>
+
+                <div>
+
+                  <strong>
+                    Your study plan
+                  </strong>
+
+                  <small>
+                    Keep your streak alive
+                  </small>
+
+                </div>
+
+              </div>
+
+
+              <div class="notification-mini">
+
+                <span>
+                  🔍
+                </span>
+
+                <div>
+
+                  <strong>
+                    Global Search
+                  </strong>
+
+                  <small>
+                    Find anything quickly
+                  </small>
+
+                </div>
+
+              </div>
+
+            </div>
+
+
+            <!-- Theme Preview -->
+
+            <div class="right-panel theme-preview-panel">
+
+              <div class="right-panel-header">
+
+                <h3>
+                  🎨 Theme & Mode
+                </h3>
+
+                <button
+                  type="button"
+                  data-page="settings"
+                >
+                  View All
+                </button>
+
+              </div>
+
+
+              <div class="theme-bubbles">
+
+                <button
+                  class="theme-bubble"
+                  type="button"
+                  data-theme="dark"
+                ></button>
+
+                <button
+                  class="theme-bubble"
+                  type="button"
+                  data-theme="blue"
+                ></button>
+
+                <button
+                  class="theme-bubble"
+                  type="button"
+                  data-theme="green"
+                ></button>
+
+                <button
+                  class="theme-bubble"
+                  type="button"
+                  data-theme="orange"
+                ></button>
+
+                <button
+                  class="theme-bubble"
+                  type="button"
+                  data-theme="purple"
+                ></button>
+
+              </div>
+
+
+              <div class="theme-mode-label">
+                <span>
+                  Light
+                </span>
+
+                <span>
+                  Dark
+                </span>
+
+                <span>
+                  Auto
+                </span>
+              </div>
+
+            </div>
+
+
+          </div>
+
+        </div>
+
+
+        <!-- Future Doctor -->
+
+        <div class="future-banner">
+
+          <div>
+
+            <span>
+              🩺
+            </span>
+
+            <div>
+
+              <strong>
+                Future Doctor
+              </strong>
+
+              <small>
+                Keep learning. Keep growing.
+              </small>
+
+            </div>
+
+          </div>
+
+          <div class="future-progress">
+
+            <div>
+              <span style="width:68%"></span>
+            </div>
+
+            <small>
+              68%
+            </small>
+
+          </div>
+
+          <p>
+            "Small steps every day lead to big results."
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <!-- ===================================================
+           COURSES
+      ==================================================== -->
+
+      <section
+        id="page-courses"
+        class="page"
+      >
+
+        <div class="page-heading">
+
+          <div>
+
+            <span class="section-kicker">
+              LEARNING
+            </span>
+
+            <h1>
+              Courses
+            </h1>
+
+            <p>
+              Complete NEET and JEE preparation from beginner to advanced.
+            </p>
+
+          </div>
+
+          <div class="heading-actions">
+
+            <button
+              class="filter-btn active"
+              type="button"
+              data-course-filter="all"
+            >
+              All
+            </button>
+
+            <button
+              class="filter-btn"
+              type="button"
+              data-course-filter="neet"
+            >
+              NEET
+            </button>
+
+            <button
+              class="filter-btn"
+              type="button"
+              data-course-filter="jee"
+            >
+              JEE
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <div class="course-grid">
+
+
+          <article
+            class="course-card"
+            data-course="neet"
+          >
+
+            <div class="course-cover physics">
+              ⚡
+            </div>
+
+            <div class="course-body">
+
+              <span class="course-category">
+                NEET
+              </span>
+
+              <h3>
+                Physics
+              </h3>
+
+              <p>
+                Mechanics, electricity, optics, modern physics and more.
+              </p>
+
+              <div class="course-meta">
+                <span>📚 29 Chapters</span>
+                <span>🎥 Lessons</span>
+              </div>
+
+              <div class="course-progress">
+                <div>
+                  <span style="width:68%"></span>
+                </div>
+
+                <small>
+                  68%
+                </small>
+              </div>
+
+              <button
+                class="course-btn"
+                type="button"
+              >
+                Continue Course →
+              </button>
+
+            </div>
+
+          </article>
+
+
+          <article
+            class="course-card"
+            data-course="neet"
+          >
+
+            <div class="course-cover chemistry">
+              🧪
+            </div>
+
+            <div class="course-body">
+
+              <span class="course-category">
+                NEET
+              </span>
+
+              <h3>
+                Chemistry
+              </h3>
+
+              <p>
+                Physical, organic and inorganic chemistry preparation.
+              </p>
+
+              <div class="course-meta">
+                <span>📚 30 Chapters</span>
+                <span>🎥 Lessons</span>
+              </div>
+
+              <div class="course-progress">
+                <div>
+                  <span style="width:52%"></span>
+                </div>
+
+                <small>
+                  52%
+                </small>
+              </div>
+
+              <button
+                class="course-btn"
+                type="button"
+              >
+                Continue Course →
+              </button>
+
+            </div>
+
+          </article>
+
+
+          <article
+            class="course-card"
+            data-course="neet"
+          >
+
+            <div class="course-cover biology">
+              🧬
+            </div>
+
+            <div class="course-body">
+
+              <span class="course-category">
+                NEET
+              </span>
+
+              <h3>
+                Biology
+              </h3>
+
+              <p>
+                Botany, zoology, NCERT concepts and NEET practice.
+              </p>
+
+              <div class="course-meta">
+                <span>📚 38 Chapters</span>
+                <span>🎥 Lessons</span>
+              </div>
+
+              <div class="course-progress">
+                <div>
+                  <span style="width:74%"></span>
+                </div>
+
+                <small>
+                  74%
+                </small>
+              </div>
+
+              <button
+                class="course-btn"
+                type="button"
+              >
+                Continue Course →
+              </button>
+
+            </div>
+
+          </article>
+
+
+          <article
+            class="course-card"
+            data-course="jee"
+          >
+
+            <div class="course-cover physics">
+              ⚛
+            </div>
+
+            <div class="course-body">
+
+              <span class="course-category">
+                JEE
+              </span>
+
+              <h3>
+                JEE Physics
+              </h3>
+
+              <p>
+                JEE Main and Advanced physics preparation.
+              </p>
+
+              <div class="course-meta">
+                <span>📚 Complete</span>
+                <span>🎯 JEE</span>
+              </div>
+
+              <div class="course-progress">
+                <div>
+                  <span style="width:45%"></span>
+                </div>
+
+                <small>
+                  45%
+                </small>
+              </div>
+
+              <button
+                class="course-btn"
+                type="button"
+              >
+                Start Course →
+              </button>
+
+            </div>
+
+          </article>
+
+
+          <article
+            class="course-card"
+            data-course="jee"
+          >
+
+            <div class="course-cover chemistry">
+              🔬
+            </div>
+
+            <div class="course-body">
+
+              <span class="course-category">
+                JEE
+              </span>
+
+              <h3>
+                JEE Chemistry
+              </h3>
+
+              <p>
+                Advanced chemistry concepts and problem solving.
+              </p>
+
+              <div class="course-meta">
+                <span>📚 Complete</span>
+                <span>🎯 JEE</span>
+              </div>
+
+              <div class="course-progress">
+                <div>
+                  <span style="width:40%"></span>
+                </div>
+
+                <small>
+                  40%
+                </small>
+              </div>
+
+              <button
+                class="course-btn"
+                type="button"
+              >
+                Start Course →
+              </button>
+
+            </div>
+
+          </article>
+
+
+          <article
+            class="course-card"
+            data-course="jee"
+          >
+
+            <div class="course-cover math">
+              ∑
+            </div>
+
+            <div class="course-body">
+
+              <span class="course-category">
+                JEE
+              </span>
+
+              <h3>
+                Mathematics
+              </h3>
+
+              <p>
+                Algebra, calculus, coordinate geometry and more.
+              </p>
+
+              <div class="course-meta">
+                <span>📚 Complete</span>
+                <span>🎯 JEE</span>
+              </div>
+
+              <div class="course-progress">
+                <div>
+                  <span style="width:36%"></span>
+                </div>
+
+                <small>
+                  36%
+                </small>
+              </div>
+
+              <button
+                class="course-btn"
+                type="button"
+              >
+                Start Course →
+              </button>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </section>
+
+
+      <!-- ===================================================
+           DPP
+      ==================================================== -->
+
+      <section
+        id="page-dpp"
+        class="page"
+      >
+
+        <div class="page-heading">
+
+          <div>
+
+            <span class="section-kicker">
+              DAILY PRACTICE
+            </span>
+
+            <h1>
+              DPP
+            </h1>
+
+            <p>
+              Daily Practice Problems for NEET and JEE.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="filter-panel">
+
+          <select id="dppExamFilter">
+            <option value="all">
+              NEET + JEE
+            </option>
+
+            <option value="neet">
+              NEET
+            </option>
+
+            <option value="jee">
+              JEE
+            </option>
+          </select>
+
+
+          <select id="dppSubjectFilter">
+
+            <option value="all">
+              All Subjects
+            </option>
+
+            <option value="physics">
+              Physics
+            </option>
+
+            <option value="chemistry">
+              Chemistry
+            </option>
+
+            <option value="biology">
+              Biology
+            </option>
+
+            <option value="maths">
+              Mathematics
+            </option>
+
+          </select>
+
+
+          <select id="dppDifficulty">
+
+            <option value="all">
+              All Difficulty
+            </option>
+
+            <option value="easy">
+              Easy
+            </option>
+
+            <option value="medium">
+              Medium
+            </option>
+
+            <option value="hard">
+              Hard
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <div class="question-list">
+
+          <article class="question-card">
+
+            <div class="question-top">
+
+              <span class="question-number">
+                Q1
+              </span>
+
+              <span class="difficulty easy">
+                Easy
+              </span>
+
+              <span class="question-subject">
+                Physics
+              </span>
+
+            </div>
+
+            <h3>
+              A body moves with constant velocity. What is its acceleration?
+            </h3>
+
+            <div class="options">
+
+              <button type="button">
+                A. Zero
+              </button>
+
+              <button type="button">
+                B. Constant
+              </button>
+
+              <button type="button">
+                C. Increasing
+              </button>
+
+              <button type="button">
+                D. Decreasing
+              </button>
+
+            </div>
+
+            <button
+              class="explanation-btn"
+              type="button"
+            >
+              View Explanation
+            </button>
+
+          </article>
+
+
+          <article class="question-card">
+
+            <div class="question-top">
+
+              <span class="question-number">
+                Q2
+              </span>
+
+              <span class="difficulty medium">
+                Medium
+              </span>
+
+              <span class="question-subject">
+                Chemistry
+              </span>
+
+            </div>
+
+            <h3>
+              Which type of bond is formed by sharing electrons?
+            </h3>
+
+            <div class="options">
+
+              <button type="button">
+                A. Ionic bond
+              </button>
+
+              <button type="button">
+                B. Covalent bond
+              </button>
+
+              <button type="button">
+                C. Metallic bond
+              </button>
+
+              <button type="button">
+                D. Hydrogen bond
+              </button>
+
+            </div>
+
+            <button
+              class="explanation-btn"
+              type="button"
+            >
+              View Explanation
+            </button>
+
+          </article>
+
+
+          <article class="question-card">
+
+            <div class="question-top">
+
+              <span class="question-number">
+                Q3
+              </span>
+
+              <span class="difficulty medium">
+                Medium
+              </span>
+
+              <span class="question-subject">
+                Biology
+              </span>
+
+            </div>
+
+            <h3>
+              Which organelle is known as the powerhouse of the cell?
+            </h3>
+
+            <div class="options">
+
+              <button type="button">
+                A. Nucleus
+              </button>
+
+              <button type="button">
+                B. Ribosome
+              </button>
+
+              <button type="button">
+                C. Mitochondria
+              </button>
+
+              <button type="button">
+                D. Golgi body
+              </button>
+
+            </div>
+
+            <button
+              class="explanation-btn"
+              type="button"
+            >
+              View Explanation
+            </button>
+
+          </article>
+
+        </div>
+
+      </section>
+
+
+      <!-- ===================================================
+           QUESTION BANK
+      ==================================================== -->
+
+      <section
+        id="page-question-bank"
+        class="page"
+      >
+
+        <div class="page-heading">
+
+          <div>
+
+            <span class="section-kicker">
+              PRACTICE
+            </span>
+
+            <h1>
+              Question Bank
+            </h1>
+
+            <p>
+              Practice MCQs with answers, explanations and difficulty levels.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div
+          id="questionBankContainer"
+          class="question-list"
+        ></div>
+
+      </section>
+
+
+      <!-- ===================================================
+           QUIZ
+      ==================================================== -->
+
+      <section
+        id="page-quiz"
+        class="page"
+      >
+
+        <div class="page-heading">
+
+          <div>
+
+            <span class="section-kicker">
+              TEST YOURSELF
+            </span>
+
+            <h1>
+              Quiz
+            </h1>
+
+            <p>
+              Chapter-wise and topic-wise timed quizzes.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="quiz-builder">
+
+          <div class="builder-card">
+
+            <div class="builder-icon">
+              🎯
+            </div>
+
+            <h3>
+              Create Your Quiz
+            </h3>
+
+            <p>
+              Select exam, subject and number of questions.
+            </p>
+
+
+            <label>
+              Exam
+
+              <select id="quizExam">
+
+                <option value="neet">
+                  NEET
+                </option>
+
+                <option value="jee">
+                  JEE
+                </option>
+
+              </select>
+
+            </label>
+
+
+            <label>
+              Subject
+
+              <select id="quizSubject">
+
+                <option value="physics">
+                  Physics
+                </option>
+
+                <option value="chemistry">
+                  Chemistry
+                </option>
+
+                <option value="biology">
+                  Biology
+                </option>
+
+                <option value="maths">
+                  Mathematics
+                </option>
+
+              </select>
+
+            </label>
+
+
+            <label>
+              Questions
+
+              <select id="quizCount">
+
+                <option value="10">
+                  10 Questions
+                </option>
+
+                <option value="20">
+                  20 Questions
+                </option>
+
+                <option value="30">
+                  30 Questions
+                </option>
+
+                <option value="50">
+                  50 Questions
+                </option>
+
+              </select>
+
+            </label>
+
+
+            <button
+              id="startQuizBtn"
+              class="primary-btn full"
+              type="button"
+            >
+              Start Quiz
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <div
+          id="quizContainer"
+          class="quiz-container"
+        ></div>
+
+      </section>
+
+
+      <!-- ===================================================
+           TESTS
+      ==================================================== -->
+
+      <section
+        id="page-tests"
+        class="page"
+      >
+
+        <div class="page-heading">
+
+          <div>
+
+            <span class="section-kicker">
+              EXAM PRACTICE
+            </span>
+
+            <h1>
+              Mock Tests
+            </h1>
+
+            <p>
+              NEET and JEE full-length and chapter tests.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="test-grid">
+
+
+          <article class="test-card">
+
+            <span class="test-badge">
+              NEET
+            </span>
+
+            <div class="test-icon">
+              🧬
+            </div>
+
+            <h3>
+              NEET Full Mock Test
+            </h3>
+
+            <p>
+              180 Questions • Physics 45 • Chemistry 45 • Biology 90
+            </p>
+
+            <div class="test-meta">
+              <span>⏱ 200 min</span>
+              <span>🎯 720 Marks</span>
+            </div>
+
+            <button
+              type="button"
+              class="primary-btn full"
+              data-test="neet-full"
+            >
+              Start Test
+            </button>
+
+          </article>
+
+
+          <article class="test-card">
+
+            <span class="test-badge">
+              JEE
+            </span>
+
+            <div class="test-icon">
+              ⚛
+            </div>
+
+            <h3>
+              JEE Full Mock Test
+            </h3>
+
+            <p>
+              Physics • Chemistry • Mathematics
+            </p>
+
+            <div class="test-meta">
+              <span>⏱ Timed</span>
+              <span>🎯 JEE Level</span>
+            </div>
+
+            <button
+              type="button"
+              class="primary-btn full"
+              data-test="jee-full"
+            >
+              Start Test
+            </button>
+
+          </article>
+
+
+          <article class="test-card">
+
+            <span class="test-badge">
+              CHAPTER
+            </span>
+
+            <div class="test-icon">
+              📚
+            </div>
+
+            <h3>
+              Chapter Test
+            </h3>
+
+            <p>
+              Choose any chapter and practice targeted questions.
+            </p>
+
+            <div class="test-meta">
+              <span>⏱ Timed</span>
+              <span>📊 Analysis</span>
+            </div>
+
+            <button
+              type="button"
+              class="primary-btn full"
+              data-test="chapter"
+            >
+              Choose Chapter
+            </button>
+
+          </article>
+
+        </div>
+
+      </section>
+
+
+      <!-- ===================================================
+           NOTES
+      ==================================================== -->
+
+      <section
+        id="page-notes"
+        class="page"
+      >
+
+        <div class="page-heading">
+
+          <div>
+
+            <span class="section-kicker">
+              STUDY MATERIAL
+            </span>
+
+            <h1>
+              Books & Notes
+            </h1>
+
+            <p>
+              Organize your books, notes and important study material.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="notes-tools">
+
+          <input
+            type="search"
+            placeholder="Search notes and books..."
+          >
+
+          <select>
+
+            <option>
+              All Subjects
+            </option>
+
+            <option>
+              Physics
+            </option>
+
+            <option>
+              Chemistry
+            </option>
+
+            <option>
+              Biology
+            </option>
+
+            <option>
+              Mathematics
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <div class="notes-grid">
+
+
+          <article class="note-card">
+
+            <div class="note-icon">
+              🧬
+            </div>
+
+            <h3>
+              Biology Notes
+            </h3>
+
+            <p>
+              NCERT-based important concepts and revision notes.
+            </p>
+
+            <button type="button">
+              Open Notes →
+            </button>
+
+          </article>
+
+
+          <article class="note-card">
+
+            <div class="note-icon">
+              ⚡
+            </div>
+
+            <h3>
+              Physics Notes
+            </h3>
+
+            <p>
+              Formulas, concepts and important problem-solving methods.
+            </p>
+
+            <button type="button">
+              Open Notes →
+            </button>
+
+          </article>
+
+
+          <article class="note-card">
+
+            <div class="note-icon">
+              🧪
+            </div>
+
+            <h3>
+              Chemistry Notes
+            </h3>
+
+            <p>
+              Organic, inorganic and physical chemistry revision.
+            </p>
+
+            <button type="button">
+              Open Notes →
+            </button>
+
+          </article>
+
+
+          <article class="note-card">
+
+            <div class="note-icon">
+              ∑
+            </div>
+
+            <h3>
+              Mathematics Notes
+            </h3>
+
+            <p>
+              JEE mathematics formulas and problem-solving notes.
+            </p>
+
+            <button type="button">
+              Open Notes →
+            </button>
+
+          </article>
+
+        </div>
+
+      </section>
+
+
+      <!-- ===================================================
+           YOUTUBE
+      ==================================================== -->
+
+      <section
+        id="page-youtube"
+        class="page"
+      >
+
+        <div class="page-heading">
+
+          <div>
+
+            <span class="section-kicker">
+              VIDEO LEARNING
+            </span>
+
+            <h1>
+              YouTube Learning
+            </h1>
+
+            <p>
+              Live classes, recorded lectures and NEET/JEE videos.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="youtube-search">
+
+          <input
+            id="youtubeSearch"
+            type="search"
+            placeholder="Search NEET / JEE lectures..."
+          >
+
+
+          <select id="youtubeSubject">
+
+            <option value="all">
+              All Subjects
+            </option>
+
+            <option value="physics">
+              Physics
+            </option>
+
+            <option value="chemistry">
+              Chemistry
+            </option>
+
+            <option value="biology">
+              Biology
+            </option>
+
+            <option value="maths">
+              Mathematics
+            </option>
+
+          </select>
+
+
+          <button
+            id="youtubeSearchBtn"
+            class="primary-btn"
+            type="button"
+          >
+            Search
+          </button>
+
+        </div>
+
+
+        <div class="live-banner">
+
+          <div class="live-pulse"></div>
+
+          <div>
+
+            <strong>
+              Live Classes
+            </strong>
+
+            <small>
+              Find currently live study sessions.
+            </small>
+
+          </div>
+
+          <button
+            type="button"
+            data-action="youtube-live"
+          >
+            Find Live →
+          </button>
+
+        </div>
+
+
+        <div
+          id="youtubeResults"
+          class="video-grid"
+        >
+
+          <article class="demo-video">
+
+            <div class="video-thumb">
+
+              <span>
+                ▶
+              </span>
+
+            </div>
+
+            <div class="video-body">
+
+              <h3>
+                Search YouTube Study Videos
+              </h3>
+
+              <p>
+                NEET Physics, Chemistry, Biology and JEE lectures.
+              </p>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </section>
+
+
+      <!-- ===================================================
+           PLANNER
+      ==================================================== -->
+
+      <section
+        id="page-planner"
+        class="page"
+      >
+
+        <div class="page-heading">
+
+          <div>
+
+            <span class="section-kicker">
+              PLAN YOUR DAY
+            </span>
+
+            <h1>
+              Study Planner
+            </h1>
+
+            <p>
+              Create tasks, goals and maintain your study streak.
+            </p>
+
+          </div>
+
+          <button
+            id="addTaskBtn"
+            class="primary-btn"
+            type="button"
+          >
+            + Add Task
+          </button>
+
+        </div>
+
+
+        <div class="planner-summary">
+
+          <div>
+            <span>
+              Total Tasks
+            </span>
+            <strong id="plannerTotal">
+              8
+            </strong>
+          </div>
+
+          <div>
+            <span>
+              Completed
+            </span>
+            <strong id="plannerCompleted">
+              5
+            </strong>
+          </div>
+
+          <div>
+            <span>
+              Streak
+            </span>
+            <strong id="plannerStreak">
+              7 🔥
+            </strong>
+          </div>
+
+          <div>
+            <span>
+              Progress
+            </span>
+            <strong id="plannerProgress">
+              63%
+            </strong>
+          </div>
+
+        </div>
+
+
+        <div class="planner-panel">
+
+          <div
+            id="plannerTasks"
+            class="planner-tasks"
+          >
+
+            <div class="planner-task">
+
+              <button
+                class="task-check"
+                type="button"
+              >
+                ✓
+              </button>
+
+              <div>
+
+                <strong>
+                  Physics - Current Electricity
+                </strong>
+
+                <small>
+                  1 hour 30 minutes
+                </small>
+
+              </div>
+
+              <span>
+                Completed
+              </span>
+
+            </div>
+
+
+            <div class="planner-task">
+
+              <button
+                class="task-check"
+                type="button"
+              >
+                ✓
+              </button>
+
+              <div>
+
+                <strong>
+                  Chemistry - Chemical Bonding
+                </strong>
+
+                <small>
+                  1 hour
+                </small>
+
+              </div>
+
+              <span>
+                Completed
+              </span>
+
+            </div>
+
+
+            <div class="planner-task">
+
+              <button
+                class="task-check"
+                type="button"
+              >
+                ○
+              </button>
+
+              <div>
+
+                <strong>
+                  Biology - Human Physiology
+                </strong>
+
+                <small>
+                  1 hour
+                </small>
+
+              </div>
+
+              <span>
+                Pending
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- ===================================================
+           BOOKMARKS
+      ==================================================== -->
+
+      <section
+        id="page-bookmarks"
+        class="page"
+      >
+
+        <div class="page-heading">
+
+          <div>
+
+            <span class="section-kicker">
+              SAVED CONTENT
+            </span>
+
+            <h1>
+              Bookmarks
+            </h1>
+
+            <p>
+              Your saved questions, lessons, notes, videos and resources.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div
+          id="bookmarksContainer"
+          class="bookmark-grid"
+        ></div>
+
+      </section>
+
+
+      <!-- ===================================================
+           ANALYTICS
+      ==================================================== -->
+
+      <section
+        id="page-analytics"
+        class="page"
+      >
+
+        <div class="page-heading">
+
+          <div>
+
+            <span class="section-kicker">
+              PERFORMANCE
+            </span>
+
+            <h1>
+              Analytics
+            </h1>
+
+            <p>
+              Understand your progress and improve your preparation.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="analytics-cards">
+
+
+          <div class="analytics-card">
+
+            <span>
+              📈
+            </span>
+
+            <small>
+              Overall Progress
+            </small>
+
+            <strong id="overallProgress">
+              68%
+            </strong>
+
+          </div>
+
+
+          <div class="analytics-card">
+
+            <span>
+              📝
+            </span>
+
+            <small>
+              Questions Attempted
+            </small>
+
+            <strong id="analyticsQuestions">
+              250
+            </strong>
+
+          </div>
+
+
+          <div class="analytics-card">
+
+            <span>
+              🎯
+            </span>
+
+            <small>
+              Accuracy
+            </small>
+
+            <strong id="analyticsAccuracy">
+              82%
+            </strong>
+
+          </div>
+
+
+          <div class="analytics-card">
+
+            <span>
+              🔥
+            </span>
+
+            <small>
+              Study Streak
+            </small>
+
+            <strong id="analyticsStreak">
+              7 Days
+            </strong>
+
+          </div>
+
+        </div>
+
+
+        <div class="analytics-grid">
+
+
+          <div class="dashboard-panel subject-performance">
+
+            <div class="panel-header">
+
+              <h3>
+                Subject Performance
+              </h3>
+
+            </div>
+
+
+            <div class="subject-row">
+
+              <span>
+                Physics
+              </span>
+
+              <div>
+                <span style="width:72%"></span>
+              </div>
+
+              <strong>
+                72%
+              </strong>
+
+            </div>
+
+
+            <div class="subject-row">
+
+              <span>
+                Chemistry
+              </span>
+
+              <div>
+                <span style="width:68%"></span>
+              </div>
+
+              <strong>
+                68%
+              </strong>
+
+            </div>
+
+
+            <div class="subject-row">
+
+              <span>
+                Biology
+              </span>
+
+              <div>
+                <span style="width:86%"></span>
+              </div>
+
+              <strong>
+                86%
+              </strong>
+
+            </div>
+
+
+            <div class="subject-row">
+
+              <span>
+                Mathematics
+              </span>
+
+              <div>
+                <span style="width:61%"></span>
+              </div>
+
+              <strong>
+                61%
+              </strong>
+
+            </div>
+
+          </div>
+
+
+          <div class="dashboard-panel">
+
+            <div class="panel-header">
+
+              <h3>
+                Weekly Study Activity
+              </h3>
+
+            </div>
+
+            <div
+              id="weeklyChart"
+              class="simple-chart"
+            >
+
+              <div class="chart-bar" style="height:55%">
+                <span>Mon</span>
+              </div>
+
+              <div class="chart-bar" style="height:70%">
+                <span>Tue</span>
+              </div>
+
+              <div class="chart-bar" style="height:40%">
+                <span>Wed</span>
+              </div>
+
+              <div class="chart-bar" style="height:80%">
+                <span>Thu</span>
+              </div>
+
+              <div class="chart-bar" style="height:62%">
+                <span>Fri</span>
+              </div>
+
+              <div class="chart-bar" style="height:90%">
+                <span>Sat</span>
+              </div>
+
+              <div class="chart-bar" style="height:65%">
+                <span>Sun</span>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- ===================================================
+           AI KHUSHI
+      ==================================================== -->
+
+      <section
+        id="page-ai"
+        class="page"
+      >
+
+        <div class="page-heading">
+
+          <div>
+
+            <span class="section-kicker">
+              AI STUDY TUTOR
+            </span>
+
+            <h1>
+              Meet Khushi
+            </h1>
+
+            <p>
+              Your friendly AI tutor for NEET and JEE preparation.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="ai-layout">
+
+
+          <!-- Khushi -->
+
+          <div class="khushi-card">
+
+            <div class="khushi-background">
+
+              <span class="ai-particle p1"></span>
+              <span class="ai-particle p2"></span>
+              <span class="ai-particle p3"></span>
+              <span class="ai-particle p4"></span>
+
+            </div>
+
+
+            <div class="khushi-avatar">
+
+              <!-- Real Khushi image -->
+
+              <img
+                src="images/khushi.png"
+                alt="Khushi AI Tutor"
+                class="khushi-real-image"
+                onerror="this.style.display='none'"
+              >
+
+
+              <!-- CSS fallback avatar -->
+
+              <div class="avatar-fallback">
+
+                <div class="avatar-hair"></div>
+
+                <div class="avatar-face">
+
+                  <span class="avatar-eye left"></span>
+                  <span class="avatar-eye right"></span>
+
+                  <span class="avatar-mouth"></span>
+
+                </div>
+
+                <div class="avatar-neck"></div>
+
+              </div>
+
+            </div>
+
+
+            <div class="khushi-info">
+
+              <div class="online-status">
+                <span></span>
+                Online
+              </div>
+
+              <h2>
+                Khushi
+              </h2>
+
+              <p>
+                AI Study Tutor
+              </p>
+
+              <div class="ai-subjects">
+
+                <span>
+                  Physics
+                </span>
+
+                <span>
+                  Chemistry
+                </span>
+
+                <span>
+                  Biology
+                </span>
+
+                <span>
+                  Maths
+                </span>
+
+              </div>
+
+
+              <div class="ai-capabilities">
+
+                <span>
+                  ✓ Step-by-step solutions
+                </span>
+
+                <span>
+                  ✓ Hindi + English
+                </span>
+
+                <span>
+                  ✓ Concept explanations
+                </span>
+
+                <span>
+                  ✓ Question image understanding
+                </span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- AI Chat -->
+
+          <div class="ai-chat">
+
+            <div class="ai-chat-header">
+
+              <div>
+
+                <strong>
+                  Khushi AI
+                </strong>
+
+                <small>
+                  Ask your study doubt
+                </small>
+
+              </div>
+
+
+              <div class="language-switch">
+
+                <button
+                  class="language-btn active"
+                  type="button"
+                  data-ai-language="hi"
+                >
+                  हिन्दी
+                </button>
+
+                <button
+                  class="language-btn"
+                  type="button"
+                  data-ai-language="en"
+                >
+                  English
+                </button>
+
+              </div>
+
+            </div>
+
+
+            <div
+              id="aiMessages"
+              class="ai-messages"
+            >
+
+              <div class="ai-message">
+
+                <div class="message-avatar">
+                  🤖
+                </div>
+
+                <div class="message-bubble">
+
+                  <strong>
+                    Khushi
+                  </strong>
+
+                  <p>
+                    नमस्ते! मैं Khushi हूँ।
+                    NEET या JEE का कोई भी doubt पूछो।
+                    मैं step-by-step समझाऊँगी।
+                  </p>
+
+                </div>
+
+              </div>
+
+            </div>
+
+
+            <div class="ai-quick-prompts">
+
+              <button
+                type="button"
+                data-ai-prompt="Explain this concept in simple Hindi."
+              >
+                📚 Explain Concept
+              </button>
+
+              <button
+                type="button"
+                data-ai-prompt="Solve this question step by step."
+              >
+                🧮 Solve Question
+              </button>
+
+              <button
+                type="button"
+                data-ai-prompt="Give me a NEET study plan."
+              >
+                📅 Study Plan
+              </button>
+
+              <button
+                type="button"
+                data-ai-prompt="Give me important revision points."
+              >
+                🔥 Revision
+              </button>
+
+            </div>
+
+
+            <form id="aiForm" class="ai-input-area">
+
+              <button
+                id="aiImageBtn"
+                type="button"
+                aria-label="Upload question image"
+              >
+                📷
+              </button>
+
+              <input
+                id="aiImageInput"
+                type="file"
+                accept="image/*"
+                hidden
+              >
+
+              <input
+                id="aiInput"
+                type="text"
+                placeholder="Ask Khushi your doubt..."
+                autocomplete="off"
+              >
+
+              <button
+                id="aiVoiceBtn"
+                type="button"
+                aria-label="Voice input"
+              >
+                🎙
+              </button>
+
+              <button
+                type="submit"
+                class="ai-send-btn"
+                aria-label="Send"
+              >
+                ➤
+              </button>
+
+            </form>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- ===================================================
+           RESOURCES
+      ==================================================== -->
+
+      <section
+        id="page-resources"
+        class="page"
+      >
+
+        <div class="page-heading">
+
+          <div>
+
+            <span class="section-kicker">
+              RESOURCES
+            </span>
+
+            <h1>
+              Study Websites
+            </h1>
+
+            <p>
+              Useful educational websites and study resources.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="resource-grid">
+
+
+          <article class="resource-card">
+
+            <div>
+              📘
+            </div>
+
+            <h3>
+              NCERT
+            </h3>
+
+            <p>
+              Official NCERT learning resources.
+            </p>
+
+            <button
+              type="button"
+              data-resource="ncert"
+            >
+              Open →
+            </button>
+
+          </article>
+
+
+          <article class="resource-card">
+
+            <div>
+              🎓
+            </div>
+
+            <h3>
+              Khan Academy
+            </h3>
+
+            <p>
+              Free educational learning resources.
+            </p>
+
+            <button
+              type="button"
+              data-resource="khan"
+            >
+              Open →
+            </button>
+
+          </article>
+
+
+          <article class="resource-card">
+
+            <div>
+              🏫
+            </div>
+
+            <h3>
+              Unacademy
+            </h3>
+
+            <p>
+              Exam preparation and learning resources.
+            </p>
+
+            <button
+              type="button"
+              data-resource="unacademy"
+            >
+              Open →
+            </button>
+
+          </article>
+
+
+          <article class="resource-card">
+
+            <div>
+              📊
+            </div>
+
+            <h3>
+              Embibe
+            </h3>
+
+            <p>
+              Practice and learning resources.
+            </p>
+
+            <button
+              type="button"
+              data-resource="embibe"
+            >
+              Open →
+            </button>
+
+          </article>
+
+
+          <article class="resource-card">
+
+            <div>
+              📝
+            </div>
+
+            <h3>
+              NTA Resources
+            </h3>
+
+            <p>
+              Official exam-related resources.
+            </p>
+
+            <button
+              type="button"
+              data-resource="nta"
+            >
+              Open →
+            </button>
+
+          </article>
+
+
+          <article class="resource-card">
+
+            <div>
+              📚
+            </div>
+
+            <h3>
+              PYQ Resources
+            </h3>
+
+            <p>
+              Previous year question practice.
+            </p>
+
+            <button
+              type="button"
+              data-resource="pyq"
+            >
+              Open →
+            </button>
+
+          </article>
+
+        </div>
+
+      </section>
+
+
+      <!-- ===================================================
+           PROFILE
+      ==================================================== -->
+
+      <section
+        id="page-profile"
+        class="page"
+      >
+
+        <div class="page-heading">
+
+          <div>
+
+            <span class="section-kicker">
+              ACCOUNT
+            </span>
+
+            <h1>
+              Student Profile
+            </h1>
+
+            <p>
+              Manage your profile and learning information.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="profile-layout">
+
+
+          <div class="profile-card-large">
+
+            <div
+              id="profileAvatar"
+              class="profile-large-avatar"
+            >
+              YA
+            </div>
+
+            <h2 id="profileDisplayName">
+              Yashpal Aagri
+            </h2>
+
+            <p>
+              NEET / JEE Aspirant
+            </p>
+
+
+            <div class="profile-stats">
+
+              <div>
+
+                <strong id="profileCourses">
+                  6
+                </strong>
+
+                <small>
+                  Courses
+                </small>
+
+              </div>
+
+
+              <div>
+
+                <strong id="profileTests">
+                  8
+                </strong>
+
+                <small>
+                  Tests
+                </small>
+
+              </div>
+
+
+              <div>
+
+                <strong id="profileBookmarks">
+                  24
+                </strong>
+
+                <small>
+                  Bookmarks
+                </small>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="settings-panel">
+
+            <h3>
+              Profile Information
+            </h3>
+
+
+            <label>
+
+              Your Name
+
+              <input
+                id="profileNameInput"
+                type="text"
+                value="Yashpal Aagri"
+              >
+
+            </label>
+
+
+            <label>
+
+              Exam
+
+              <select id="profileExam">
+
+                <option value="neet">
+                  NEET
+                </option>
+
+                <option value="jee">
+                  JEE
+                </option>
+
+                <option value="both">
+                  NEET + JEE
+                </option>
+
+              </select>
+
+            </label>
+
+
+            <button
+              id="saveProfileBtn"
+              class="primary-btn"
+              type="button"
+            >
+              Save Profile
+            </button>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- ===================================================
+           SETTINGS
+      ==================================================== -->
+
+      <section
+        id="page-settings"
+        class="page"
+      >
+
+        <div class="page-heading">
+
+          <div>
+
+            <span class="section-kicker">
+              CUSTOMIZE
+            </span>
+
+            <h1>
+              Settings
+            </h1>
+
+            <p>
+              Customize your Study Wallah experience.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="settings-sections">
+
+
+          <!-- Appearance -->
+
+          <div class="settings-card">
+
+            <div class="settings-title">
+
+              <span>
+                🎨
+              </span>
+
+              <div>
+
+                <h3>
+                  Appearance
+                </h3>
+
+                <p>
+                  Choose light, dark or automatic mode.
+                </p>
+
+              </div>
+
+            </div>
+
+
+            <div class="mode-options">
+
+              <button
+                class="mode-btn"
+                data-mode="light"
+                type="button"
+              >
+                ☀️ Light
+              </button>
+
+              <button
+                class="mode-btn active"
+                data-mode="dark"
+                type="button"
+              >
+                🌙 Dark
+              </button>
+
+              <button
+                class="mode-btn"
+                data-mode="system"
+                type="button"
+              >
+                ⚙ System
+              </button>
+
+            </div>
+
+          </div>
+
+
+          <!-- Language -->
+
+          <div class="settings-card">
+
+            <div class="settings-title">
+
+              <span>
+                🌐
+              </span>
+
+              <div>
+
+                <h3>
+                  Language
+                </h3>
+
+                <p>
+                  Select your preferred website language.
+                </p>
+
+              </div>
+
+            </div>
+
+
+            <div class="language-options">
+
+              <button
+                class="language-setting active"
+                data-language="en"
+                type="button"
+              >
+                English
+              </button>
+
+              <button
+                class="language-setting"
+                data-language="hi"
+                type="button"
+              >
+                हिन्दी
+              </button>
+
+            </div>
+
+          </div>
+
+
+          <!-- Themes -->
+
+          <div class="settings-card">
+
+            <div class="settings-title">
+
+              <span>
+                🎨
+              </span>
+
+              <div>
+
+                <h3>
+                  Themes & Modes
+                </h3>
+
+                <p>
+                  Choose from your theme collection.
+                </p>
+
+              </div>
+
+            </div>
+
+
+            <div
+              id="themeGrid"
+              class="theme-grid"
+            ></div>
+
+          </div>
+
+
+          <!-- Notifications -->
+
+          <div class="settings-card">
+
+            <div class="settings-title">
+
+              <span>
+                🔔
+              </span>
+
+              <div>
+
+                <h3>
+                  Notifications
+                </h3>
+
+                <p>
+                  Manage study reminders and updates.
+                </p>
+
+              </div>
+
+            </div>
+
+
+            <label class="switch-row">
+
+              <span>
+                Study reminders
+              </span>
+
+              <input
+                id="studyReminderToggle"
+                type="checkbox"
+                checked
+              >
+
+            </label>
+
+
+            <label class="switch-row">
+
+              <span>
+                Test reminders
+              </span>
+
+              <input
+                id="testReminderToggle"
+                type="checkbox"
+                checked
+              >
+
+            </label>
+
+          </div>
+
+
+          <!-- Data -->
+
+          <div class="settings-card danger-settings">
+
+            <div class="settings-title">
+
+              <span>
+                ⚠️
+              </span>
+
+              <div>
+
+                <h3>
+                  Data
+                </h3>
+
+                <p>
+                  Reset locally saved Study Wallah data.
+                </p>
+
+              </div>
+
+            </div>
+
+
+            <button
+              id="resetDataBtn"
+              type="button"
+            >
+              Reset Saved Data
+            </button>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- ===================================================
+           SUPPORT
+      ==================================================== -->
+
+      <section
+        id="page-support"
+        class="page"
+      >
+
+        <div class="page-heading">
+
+          <div>
+
+            <span class="section-kicker">
+              HELP CENTER
+            </span>
+
+            <h1>
+              Help & Support
+            </h1>
+
+            <p>
+              Get help with Study Wallah and report problems.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="support-grid">
+
+
+          <article class="support-card">
+
+            <span>
+              ❓
+            </span>
+
+            <h3>
+              FAQ
+            </h3>
+
+            <p>
+              Find answers to common questions.
+            </p>
+
+            <button type="button">
+              Open FAQ →
+            </button>
+
+          </article>
+
+
+          <article class="support-card">
+
+            <span>
+              💬
+            </span>
+
+            <h3>
+              Contact Support
+            </h3>
+
+            <p>
+              Need help? Contact Study Wallah support.
+            </p>
+
+            <button type="button">
+              Contact →
+            </button>
+
+          </article>
+
+
+          <article class="support-card">
+
+            <span>
+              📢
+            </span>
+
+            <h3>
+              Announcements
+            </h3>
+
+            <p>
+              See the latest Study Wallah updates.
+            </p>
+
+            <button type="button">
+              View Updates →
+            </button>
+
+          </article>
+
+
+          <article class="support-card">
+
+            <span>
+              ✈
+            </span>
+
+            <h3>
+              Telegram Support
+            </h3>
+
+            <p>
+              Get support through Telegram.
+            </p>
+
+            <a
+              href="https://t.me/Yashpal_aagri"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Open Telegram →
+            </a>
+
+          </article>
+
+
+          <article class="support-card">
+
+            <span>
+              🐛
+            </span>
+
+            <h3>
+              Report a Problem
+            </h3>
+
+            <p>
+              Tell us about a website issue.
+            </p>
+
+            <button type="button">
+              Report →
+            </button>
+
+          </article>
+
+
+          <article class="support-card">
+
+            <span>
+              ⭐
+            </span>
+
+            <h3>
+              Feedback
+            </h3>
+
+            <p>
+              Share ideas to improve Study Wallah.
+            </p>
+
+            <button type="button">
+              Send Feedback →
+            </button>
+
+          </article>
+
+        </div>
+
+
+        <div class="support-footer-card">
+
+          <h2>
+            Study Wallah
+          </h2>
+
+          <p>
+            Your complete NEET & JEE preparation platform.
+          </p>
+
+          <strong>
+            Created by Yashpal Aagri
+          </strong>
+
+        </div>
+
+      </section>
+
+
+    </div>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="site-footer">
+
+      <span>
+        © <span id="currentYear"></span> Study Wallah
+      </span>
+
+      <span>
+        Your Dream • Our Mission • NEET & JEE
+      </span>
+
+      <span>
+        Built with ❤️ by Yashpal Aagri
+      </span>
+
+    </footer>
+
+
+  </main>
+
+
+  <!-- =======================================================
+       MOBILE BOTTOM NAVIGATION
+  ======================================================== -->
+
+  <nav class="mobile-bottom-nav">
+
+
+    <button
+      class="mobile-nav-item active"
+      data-page="home"
+      type="button"
+    >
+
+      <span>
+        🏠
+      </span>
+
+      <small>
+        Home
+      </small>
+
+    </button>
+
+
+    <button
+      class="mobile-nav-item"
+      data-page="courses"
+      type="button"
+    >
+
+      <span>
+        📚
+      </span>
+
+      <small>
+        Courses
+      </small>
+
+    </button>
+
+
+    <button
+      class="mobile-nav-item"
+      data-page="dpp"
+      type="button"
+    >
+
+      <span>
+        📝
+      </span>
+
+      <small>
+        DPP
+      </small>
+
+    </button>
+
+
+    <button
+      class="mobile-nav-item"
+      data-page="ai"
+      type="button"
+    >
+
+      <span>
+        🤖
+      </span>
+
+      <small>
+        Khushi
+      </small>
+
+    </button>
+
+
+    <button
+      class="mobile-nav-item"
+      data-page="profile"
+      type="button"
+    >
+
+      <span>
+        👤
+      </span>
+
+      <small>
+        Profile
+      </small>
+
+    </button>
+
+
+  </nav>
+
+
+</div>
+
+
+<!-- =========================================================
+     TOAST
+========================================================= -->
+
+<div
+  id="toast"
+  class="toast"
+  aria-live="polite"
+>
+
+  <span id="toastIcon">
+    ✓
+  </span>
+
+  <span id="toastMessage">
+    Done
+  </span>
+
+</div>
+
+
+<!-- =========================================================
+     MODAL
+========================================================= -->
+
+<div
+  id="modal"
+  class="modal"
+  aria-hidden="true"
+>
+
+  <div class="modal-backdrop"></div>
+
+  <div class="modal-box">
+
+    <button
+      id="modalClose"
+      class="modal-close"
+      type="button"
+      aria-label="Close"
+    >
+      ×
+    </button>
+
+    <div id="modalContent"></div>
+
+  </div>
+
+</div>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script src="script.js"></script>
+
+
+<!-- =========================================================
+     SERVICE WORKER
+========================================================= -->
+
+<script>
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", function () {
+      navigator.serviceWorker.register("./sw.js").catch(function () {
+        console.log("Service worker registration skipped.");
+      });
+    });
+  }
+</script>
+
+
+<!-- =========================================================
+     SMALL FALLBACKS
+========================================================= -->
+
+<script>
+
+  /*
+   * Current year
+   */
+
+  const yearElement = document.getElementById("currentYear");
+
+  if (yearElement) {
+    yearElement.textContent = new Date().getFullYear();
+  }
+
+
+  /*
+   * Basic navigation fallback.
+   * Main functionality is handled by script.js.
+   */
+
+  document.addEventListener("click", function (event) {
+
+    const pageButton = event.target.closest("[data-page]");
+
+    if (!pageButton) return;
+
+    const pageName = pageButton.getAttribute("data-page");
+
+    if (!pageName) return;
+
+    const pages = document.querySelectorAll(".page");
+
+    pages.forEach(function (page) {
+      page.classList.remove("active");
+    });
+
+    const target = document.getElementById(
+      "page-" + pageName
+    );
+
+    if (target) {
+      target.classList.add("active");
+    }
+
+    document.querySelectorAll(
+      ".nav-item, .mobile-nav-item"
+    ).forEach(function (item) {
+      item.classList.remove("active");
+    });
+
+    document.querySelectorAll(
+      '[data-page="' + pageName + '"]'
+    ).forEach(function (item) {
+      item.classList.add("active");
+    });
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+
+  });
+
+
+  /*
+   * Mobile menu fallback
+   */
+
+  const menuBtn = document.getElementById("menuBtn");
+  const sidebar = document.getElementById("sidebar");
+  const overlay = document.getElementById("mobileOverlay");
+
+  if (menuBtn && sidebar) {
+
+    menuBtn.addEventListener("click", function () {
+
+      sidebar.classList.toggle("open");
+
+      if (overlay) {
+        overlay.classList.toggle("active");
+      }
+
+    });
+
+  }
+
+
+  if (overlay) {
+
+    overlay.addEventListener("click", function () {
+
+      sidebar.classList.remove("open");
+      overlay.classList.remove("active");
+
+    });
+
+  }
+
+
+  /*
+   * Close mobile menu after navigation
+   */
+
+  document.addEventListener("click", function (event) {
+
+    if (
+      event.target.closest(".nav-item") ||
+      event.target.closest(".mobile-nav-item")
+    ) {
+
+      if (sidebar) {
+        sidebar.classList.remove("open");
+      }
+
+      if (overlay) {
+        overlay.classList.remove("active");
+      }
+
+    }
+
+  });
+
+
+  /*
+   * Search focus
+   */
+
+  document.addEventListener("click", function (event) {
+
+    const button = event.target.closest(
+      '[data-action="focus-search"]'
+    );
+
+    if (!button) return;
+
+    const search = document.getElementById("globalSearch");
+
+    if (search) {
+      search.focus();
+    }
+
+  });
+
+</script>
+
+</body>
+</html>
