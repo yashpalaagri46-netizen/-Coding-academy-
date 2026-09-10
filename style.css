@@ -1,0 +1,589 @@
+/* =========================================================
+   STUDY WALLAH
+   Premium NEET + JEE Dashboard
+   Dark Mode + 150 Themes
+========================================================= */
+
+:root {
+  --bg: #07110c;
+  --bg-2: #0a1710;
+  --surface: #0d1b13;
+  --surface-2: #112319;
+  --surface-3: #162c20;
+
+  --text: #f4fff7;
+  --text-soft: #b5c8bb;
+  --text-muted: #74887b;
+
+  --primary: #22c55e;
+  --primary-2: #16a34a;
+  --primary-soft: rgba(34, 197, 94, .14);
+  --primary-glow: rgba(34, 197, 94, .35);
+
+  --blue: #38bdf8;
+  --purple: #a78bfa;
+  --orange: #fb923c;
+  --red: #fb7185;
+  --yellow: #facc15;
+
+  --border: rgba(255,255,255,.08);
+  --border-strong: rgba(255,255,255,.14);
+
+  --shadow: 0 20px 60px rgba(0,0,0,.35);
+  --glow: 0 0 35px var(--primary-glow);
+
+  --sidebar-width: 270px;
+  --topbar-height: 76px;
+
+  --radius-sm: 10px;
+  --radius: 16px;
+  --radius-lg: 24px;
+
+  --transition: .25s ease;
+}
+
+
+/* =========================================================
+   THEME VARIABLES
+   150 THEMES
+========================================================= */
+
+/* 001 Emerald */
+:root[data-theme="emerald"] {
+  --primary:#22c55e; --primary-2:#16a34a;
+}
+
+/* 002 Forest */
+:root[data-theme="forest"] {
+  --primary:#16a34a; --primary-2:#15803d;
+}
+
+/* 003 Mint */
+:root[data-theme="mint"] {
+  --primary:#34d399; --primary-2:#10b981;
+}
+
+/* 004 Neon Green */
+:root[data-theme="neon-green"] {
+  --primary:#39ff88; --primary-2:#00d968;
+}
+
+/* 005 Lime */
+:root[data-theme="lime"] {
+  --primary:#84cc16; --primary-2:#65a30d;
+}
+
+/* 006 Green Apple */
+:root[data-theme="green-apple"] {
+  --primary:#65e21d; --primary-2:#3f9f0b;
+}
+
+/* 007 Spring */
+:root[data-theme="spring"] {
+  --primary:#4ade80; --primary-2:#22c55e;
+}
+
+/* 008 Jungle */
+:root[data-theme="jungle"] {
+  --primary:#15803d; --primary-2:#166534;
+}
+
+/* 009 Pine */
+:root[data-theme="pine"] {
+  --primary:#0f9f6e; --primary-2:#087f5b;
+}
+
+/* 010 Teal */
+:root[data-theme="teal"] {
+  --primary:#14b8a6; --primary-2:#0f766e;
+}
+
+/* 011 Cyan */
+:root[data-theme="cyan"] {
+  --primary:#06b6d4; --primary-2:#0891b2;
+}
+
+/* 012 Aqua */
+:root[data-theme="aqua"] {
+  --primary:#22d3ee; --primary-2:#06b6d4;
+}
+
+/* 013 Sky */
+:root[data-theme="sky"] {
+  --primary:#38bdf8; --primary-2:#0284c7;
+}
+
+/* 014 Ocean */
+:root[data-theme="ocean"] {
+  --primary:#0ea5e9; --primary-2:#0369a1;
+}
+
+/* 015 Deep Ocean */
+:root[data-theme="deep-ocean"] {
+  --primary:#0284c7; --primary-2:#075985;
+}
+
+/* 016 Blue */
+:root[data-theme="blue"] {
+  --primary:#3b82f6; --primary-2:#2563eb;
+}
+
+/* 017 Royal Blue */
+:root[data-theme="royal-blue"] {
+  --primary:#2563eb; --primary-2:#1d4ed8;
+}
+
+/* 018 Electric Blue */
+:root[data-theme="electric-blue"] {
+  --primary:#2979ff; --primary-2:#155eef;
+}
+
+/* 019 Sapphire */
+:root[data-theme="sapphire"] {
+  --primary:#0f52ba; --primary-2:#083b8c;
+}
+
+/* 020 Indigo */
+:root[data-theme="indigo"] {
+  --primary:#6366f1; --primary-2:#4f46e5;
+}
+
+/* 021 Violet */
+:root[data-theme="violet"] {
+  --primary:#8b5cf6; --primary-2:#7c3aed;
+}
+
+/* 022 Purple */
+:root[data-theme="purple"] {
+  --primary:#a855f7; --primary-2:#9333ea;
+}
+
+/* 023 Electric Purple */
+:root[data-theme="electric-purple"] {
+  --primary:#b026ff; --primary-2:#7e22ce;
+}
+
+/* 024 Lavender */
+:root[data-theme="lavender"] {
+  --primary:#c084fc; --primary-2:#a855f7;
+}
+
+/* 025 Orchid */
+:root[data-theme="orchid"] {
+  --primary:#d946ef; --primary-2:#a21caf;
+}
+
+/* 026 Magenta */
+:root[data-theme="magenta"] {
+  --primary:#ec4899; --primary-2:#db2777;
+}
+
+/* 027 Pink */
+:root[data-theme="pink"] {
+  --primary:#f472b6; --primary-2:#ec4899;
+}
+
+/* 028 Rose */
+:root[data-theme="rose"] {
+  --primary:#fb7185; --primary-2:#e11d48;
+}
+
+/* 029 Red */
+:root[data-theme="red"] {
+  --primary:#ef4444; --primary-2:#dc2626;
+}
+
+/* 030 Crimson */
+:root[data-theme="crimson"] {
+  --primary:#dc2626; --primary-2:#991b1b;
+}
+
+/* 031 Ruby */
+:root[data-theme="ruby"] {
+  --primary:#e11d48; --primary-2:#be123c;
+}
+
+/* 032 Coral */
+:root[data-theme="coral"] {
+  --primary:#fb7185; --primary-2:#f43f5e;
+}
+
+/* 033 Orange */
+:root[data-theme="orange"] {
+  --primary:#f97316; --primary-2:#ea580c;
+}
+
+/* 034 Sunset */
+:root[data-theme="sunset"] {
+  --primary:#fb923c; --primary-2:#f97316;
+}
+
+/* 035 Amber */
+:root[data-theme="amber"] {
+  --primary:#f59e0b; --primary-2:#d97706;
+}
+
+/* 036 Gold */
+:root[data-theme="gold"] {
+  --primary:#eab308; --primary-2:#ca8a04;
+}
+
+/* 037 Yellow */
+:root[data-theme="yellow"] {
+  --primary:#facc15; --primary-2:#eab308;
+}
+
+/* 038 Lemon */
+:root[data-theme="lemon"] {
+  --primary:#d9f99d; --primary-2:#a3e635;
+}
+
+/* 039 Bronze */
+:root[data-theme="bronze"] {
+  --primary:#d97706; --primary-2:#92400e;
+}
+
+/* 040 Copper */
+:root[data-theme="copper"] {
+  --primary:#c2410c; --primary-2:#9a3412;
+}
+
+
+/* 041 Arctic */
+:root[data-theme="arctic"] {
+  --primary:#67e8f9; --primary-2:#22d3ee;
+}
+
+/* 042 Glacier */
+:root[data-theme="glacier"] {
+  --primary:#93c5fd; --primary-2:#60a5fa;
+}
+
+/* 043 Ice */
+:root[data-theme="ice"] {
+  --primary:#bae6fd; --primary-2:#7dd3fc;
+}
+
+/* 044 Moon */
+:root[data-theme="moon"] {
+  --primary:#c4b5fd; --primary-2:#818cf8;
+}
+
+/* 045 Night */
+:root[data-theme="night"] {
+  --primary:#818cf8; --primary-2:#6366f1;
+}
+
+/* 046 Midnight */
+:root[data-theme="midnight"] {
+  --primary:#60a5fa; --primary-2:#2563eb;
+}
+
+/* 047 Cyber */
+:root[data-theme="cyber"] {
+  --primary:#00ffcc; --primary-2:#00b894;
+}
+
+/* 048 Cyber Blue */
+:root[data-theme="cyber-blue"] {
+  --primary:#00e5ff; --primary-2:#0097a7;
+}
+
+/* 049 Cyber Purple */
+:root[data-theme="cyber-purple"] {
+  --primary:#d500f9; --primary-2:#7b1fa2;
+}
+
+/* 050 Cyber Pink */
+:root[data-theme="cyber-pink"] {
+  --primary:#ff2bd6; --primary-2:#d500a4;
+}
+
+
+/* 051 Matrix */
+:root[data-theme="matrix"] {
+  --primary:#00ff41; --primary-2:#00b82e;
+}
+
+/* 052 Hacker */
+:root[data-theme="hacker"] {
+  --primary:#39ff14; --primary-2:#16a34a;
+}
+
+/* 053 Neon Cyan */
+:root[data-theme="neon-cyan"] {
+  --primary:#00ffff; --primary-2:#00bcd4;
+}
+
+/* 054 Neon Blue */
+:root[data-theme="neon-blue"] {
+  --primary:#00aaff; --primary-2:#0066ff;
+}
+
+/* 055 Neon Violet */
+:root[data-theme="neon-violet"] {
+  --primary:#9d00ff; --primary-2:#6a00ff;
+}
+
+/* 056 Neon Pink */
+:root[data-theme="neon-pink"] {
+  --primary:#ff00aa; --primary-2:#e0008f;
+}
+
+/* 057 Neon Orange */
+:root[data-theme="neon-orange"] {
+  --primary:#ff7b00; --primary-2:#ff4500;
+}
+
+/* 058 Neon Yellow */
+:root[data-theme="neon-yellow"] {
+  --primary:#ffff00; --primary-2:#ffd000;
+}
+
+/* 059 Neon Red */
+:root[data-theme="neon-red"] {
+  --primary:#ff1744; --primary-2:#d50000;
+}
+
+/* 060 Plasma */
+:root[data-theme="plasma"] {
+  --primary:#ff00ff; --primary-2:#7a00ff;
+}
+
+
+/* 061 Space */
+:root[data-theme="space"] {
+  --primary:#7c3aed; --primary-2:#4c1d95;
+}
+
+/* 062 Galaxy */
+:root[data-theme="galaxy"] {
+  --primary:#a855f7; --primary-2:#4f46e5;
+}
+
+/* 063 Nebula */
+:root[data-theme="nebula"] {
+  --primary:#e879f9; --primary-2:#8b5cf6;
+}
+
+/* 064 Cosmos */
+:root[data-theme="cosmos"] {
+  --primary:#38bdf8; --primary-2:#6366f1;
+}
+
+/* 065 Meteor */
+:root[data-theme="meteor"] {
+  --primary:#fb923c; --primary-2:#ef4444;
+}
+
+/* 066 Solar */
+:root[data-theme="solar"] {
+  --primary:#facc15; --primary-2:#f97316;
+}
+
+/* 067 Lunar */
+:root[data-theme="lunar"] {
+  --primary:#d1d5db; --primary-2:#818cf8;
+}
+
+/* 068 Aurora */
+:root[data-theme="aurora"] {
+  --primary:#34d399; --primary-2:#22d3ee;
+}
+
+/* 069 Borealis */
+:root[data-theme="borealis"] {
+  --primary:#2dd4bf; --primary-2:#60a5fa;
+}
+
+/* 070 Eclipse */
+:root[data-theme="eclipse"] {
+  --primary:#a78bfa; --primary-2:#64748b;
+}
+
+
+/* 071 Royal Purple */
+:root[data-theme="royal-purple"] {
+  --primary:#7c3aed; --primary-2:#5b21b6;
+}
+
+/* 072 Deep Violet */
+:root[data-theme="deep-violet"] {
+  --primary:#6d28d9; --primary-2:#4c1d95;
+}
+
+/* 073 Amethyst */
+:root[data-theme="amethyst"] {
+  --primary:#8b5cf6; --primary-2:#6d28d9;
+}
+
+/* 074 Grape */
+:root[data-theme="grape"] {
+  --primary:#9333ea; --primary-2:#6b21a8;
+}
+
+/* 075 Plum */
+:root[data-theme="plum"] {
+  --primary:#a855f7; --primary-2:#7e22ce;
+}
+
+/* 076 Berry */
+:root[data-theme="berry"] {
+  --primary:#c026d3; --primary-2:#86198f;
+}
+
+/* 077 Raspberry */
+:root[data-theme="raspberry"] {
+  --primary:#e11d48; --primary-2:#be123c;
+}
+
+/* 078 Strawberry */
+:root[data-theme="strawberry"] {
+  --primary:#f43f5e; --primary-2:#e11d48;
+}
+
+/* 079 Watermelon */
+:root[data-theme="watermelon"] {
+  --primary:#fb7185; --primary-2:#22c55e;
+}
+
+/* 080 Flamingo */
+:root[data-theme="flamingo"] {
+  --primary:#f472b6; --primary-2:#fb7185;
+}
+
+
+/* 081 Forest Night */
+:root[data-theme="forest-night"] {
+  --primary:#4ade80; --primary-2:#15803d;
+}
+
+/* 082 Dark Forest */
+:root[data-theme="dark-forest"] {
+  --primary:#22c55e; --primary-2:#166534;
+}
+
+/* 083 Emerald Night */
+:root[data-theme="emerald-night"] {
+  --primary:#10b981; --primary-2:#047857;
+}
+
+/* 084 Deep Green */
+:root[data-theme="deep-green"] {
+  --primary:#16a34a; --primary-2:#14532d;
+}
+
+/* 085 Moss */
+:root[data-theme="moss"] {
+  --primary:#84cc16; --primary-2:#4d7c0f;
+}
+
+/* 086 Olive */
+:root[data-theme="olive"] {
+  --primary:#a3a300; --primary-2:#707000;
+}
+
+/* 087 Sage */
+:root[data-theme="sage"] {
+  --primary:#86efac; --primary-2:#4ade80;
+}
+
+/* 088 Jade */
+:root[data-theme="jade"] {
+  --primary:#10b981; --primary-2:#059669;
+}
+
+/* 089 Shamrock */
+:root[data-theme="shamrock"] {
+  --primary:#22c55e; --primary-2:#15803d;
+}
+
+/* 090 Clover */
+:root[data-theme="clover"] {
+  --primary:#4ade80; --primary-2:#16a34a;
+}
+
+
+/* 091 Ocean Night */
+:root[data-theme="ocean-night"] {
+  --primary:#38bdf8; --primary-2:#0369a1;
+}
+
+/* 092 Deep Sea */
+:root[data-theme="deep-sea"] {
+  --primary:#06b6d4; --primary-2:#155e75;
+}
+
+/* 093 Marine */
+:root[data-theme="marine"] {
+  --primary:#0284c7; --primary-2:#075985;
+}
+
+/* 094 Lagoon */
+:root[data-theme="lagoon"] {
+  --primary:#2dd4bf; --primary-2:#0f766e;
+}
+
+/* 095 Tropical */
+:root[data-theme="tropical"] {
+  --primary:#2dd4bf; --primary-2:#22c55e;
+}
+
+/* 096 Caribbean */
+:root[data-theme="caribbean"] {
+  --primary:#22d3ee; --primary-2:#14b8a6;
+}
+
+/* 097 River */
+:root[data-theme="river"] {
+  --primary:#60a5fa; --primary-2:#2563eb;
+}
+
+/* 098 Rain */
+:root[data-theme="rain"] {
+  --primary:#38bdf8; --primary-2:#64748b;
+}
+
+/* 099 Storm */
+:root[data-theme="storm"] {
+  --primary:#94a3b8; --primary-2:#64748b;
+}
+
+/* 100 Thunder */
+:root[data-theme="thunder"] {
+  --primary:#facc15; --primary-2:#6366f1;
+}
+
+
+/* 101 Coffee */
+:root[data-theme="coffee"] {
+  --primary:#d97706; --primary-2:#92400e;
+}
+
+/* 102 Chocolate */
+:root[data-theme="chocolate"] {
+  --primary:#a16207; --primary-2:#713f12;
+}
+
+/* 103 Caramel */
+:root[data-theme="caramel"] {
+  --primary:#f59e0b; --primary-2:#b45309;
+}
+
+/* 104 Vanilla */
+:root[data-theme="vanilla"] {
+  --primary:#fde68a; --primary-2:#f59e0b;
+}
+
+/* 105 Rose Gold */
+:root[data-theme="rose-gold"] {
+  --primary:#f9a8d4; --primary-2:#c084fc;
+}
+
+/* 106 Silver */
+:root[data-theme="silver"] {
+  --primary:#d1d5db; --primary-2:#9ca3af;
+}
+
+/* 107 Platinum */
+:root[data-theme="pl
